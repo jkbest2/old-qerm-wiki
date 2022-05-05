@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>STAT 512-513 - QERM Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qerm/opensearch_desc.php" title="QERM Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.cbr.washington.edu/qerm/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="QERM Wiki Atom feed" href="/qerm/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/qerm/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared&amp;only=styles&amp;skin=monobook&amp;*" />
+<link rel="stylesheet" href="/qerm/skins/monobook/main.css?301" media="screen" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE50Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE55Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/qerm/skins/monobook/IE60Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/qerm/skins/monobook/IE70Fixes.css?301" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-STAT_512-513 skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">STAT 512-513</h1>
+	<div id="bodyContent">
+		<div id="siteSub">From QERM Wiki</div>
+		<div id="contentSub">
+				<div id="mw-revision-info">Revision as of 23:53, 15 June 2009 by <a href="/qerm/index.php/User:Eileen" title="User:Eileen" class="mw-userlink">Eileen</a>  <span class="mw-usertoollinks">(<a href="/qerm/index.php/User_talk:Eileen" title="User talk:Eileen">Talk</a> | <a href="/qerm/index.php/Special:Contributions/Eileen" title="Special:Contributions/Eileen">contribs</a>)</span></div>
+
+				<div id="mw-revision-nav">(<a href="/qerm/index.php?title=STAT_512-513&amp;diff=prev&amp;oldid=1814" title="STAT 512-513">diff</a>) <a href="/qerm/index.php?title=STAT_512-513&amp;direction=prev&amp;oldid=1814" title="STAT 512-513">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div>
+			</div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Useful_things"><span class="tocnumber">1</span> <span class="toctext">Useful things</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#maxima"><span class="tocnumber">1.1</span> <span class="toctext">maxima</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Lagrange_Multipliers"><span class="tocnumber">1.2</span> <span class="toctext">Lagrange Multipliers</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Matrices"><span class="tocnumber">1.3</span> <span class="toctext">Matrices</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Useful_things"> Useful things </span></h2>
+<h3> <span class="mw-headline" id="maxima"> maxima </span></h3>
+<p>If you need symbolic math software and don't have access to Mathematica or Maple, check out <a href="http://maxima.sourceforge.net/" class="external text" rel="nofollow">maxima</a> (thanks to Aditya for the tip).  There are binaries for Windows and Linux, though installing on Mac is a bit more challenging.  On Linux, I found xmaxima provided a nice UI if you're not already an Emacs user.  --<a href="/qerm/index.php/User:Chloe" title="User:Chloe">Chloe</a> 12:01, 21 January 2008 (PST)
+</p>
+<h3> <span class="mw-headline" id="Lagrange_Multipliers"> Lagrange Multipliers </span></h3>
+<p>This will help with 7.42 a
+If we have a function of <span class="texhtml"><i>n</i></span> variables, <img class="tex" alt="f(x_1,x_2,\ldots,x_n)" src="/qerm/sites/qerm/images/math/7/f/7/7f7ba28ced06fe36da29b1232e27be8f.png" /> that we want to optimize under a constraint of the form <img class="tex" alt="g(x_1,x_2,\ldots,x_n) = c" src="/qerm/sites/qerm/images/math/1/8/6/1865b55ce1f2acfa9e87327241c73cec.png" /> where <span class="texhtml"><i>c</i></span> is constant, we can use Lagrange multipliers.  Basically do
+</p><p><img class="tex" alt="\nabla(f) = \lambda\nabla(g)" src="/qerm/sites/qerm/images/math/1/0/9/10956e47163785b8aa3797cadf52778f.png" />
+</p><p>where <img class="tex" alt="\nabla(f)" src="/qerm/sites/qerm/images/math/b/3/1/b31b1557493e16d2c1381bcb2f30ab83.png" /> is the gradient vector of <img class="tex" alt="f(x_1,x_2,\ldots,x_n)" src="/qerm/sites/qerm/images/math/7/f/7/7f7ba28ced06fe36da29b1232e27be8f.png" />, <img class="tex" alt="\nabla(g)" src="/qerm/sites/qerm/images/math/d/1/1/d1130fc478108b959a00297332bb42f5.png" /> is the gradient vector of <img class="tex" alt="g(x_1,x_2,\ldots,x_n)" src="/qerm/sites/qerm/images/math/5/5/6/556b365f19ed6bf1842a26f3fe49fca7.png" />, and <span class="texhtml">&#955;</span> is a constant to be determined.
+</p><p>You will get <span class="texhtml"><i>n</i></span> equations of the form
+<img class="tex" alt="\frac{\partial f}{\partial x_i} = \lambda(\frac{\partial g}{\partial x_i})" src="/qerm/sites/qerm/images/math/3/e/d/3ed01a7fe191510da739407b081b5de8.png" />, along with the original constraint equation <img class="tex" alt="g(x_1,x_2,\ldots,x_n) = c" src="/qerm/sites/qerm/images/math/1/8/6/1865b55ce1f2acfa9e87327241c73cec.png" />, makes <span class="texhtml"><i>n</i> + 1</span> equations of <span class="texhtml"><i>n</i> + 1</span> unknowns, which can be solved to find the optimum (minimum or maximum, to be determined using other means).  This method makes 7.42a much, much, much ... simpler.--<a href="/qerm/index.php?title=User:Nick&amp;action=edit&amp;redlink=1" class="new" title="User:Nick (page does not exist)">Nick</a> 17:37, 29 January 2008 (PST)
+</p><p>See <a href="http://en.wikipedia.org/wiki/Lagrange_multiplier" class="extiw" title="wikipedia:Lagrange multiplier">Wikipedia</a> for some examples.
+</p>
+<h3> <span class="mw-headline" id="Matrices"> Matrices </span></h3>
+<p>More than you ever wanted to know about matrices: <a href="http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/3274/pdf/imm3274.pdf" class="external text" rel="nofollow">The Matrix Cookbook</a>.  --<a href="/qerm/index.php/User:Chloe" title="User:Chloe">Chloe</a> 11:46, 20 February 2008 (PST)
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 149/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb-qerm_:pcache:idhash:23-0!1!0!!en!*!edit=0 and timestamp 20220505181025 -->
+<div class="printfooter">
+Retrieved from "<a href="https://www.cbr.washington.edu/qerm/index.php/STAT_512-513">https://www.cbr.washington.edu/qerm/index.php/STAT_512-513</a>"</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/qerm/index.php/Special:Categories" title="Special:Categories">Category</a>: <span dir='ltr'><a href="/qerm/index.php/Category:Courses" title="Category:Courses">Courses</a></span></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/qerm/index.php/STAT_512-513" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="/qerm/index.php?title=Talk:STAT_512-513&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="/qerm/index.php?title=STAT_512-513&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/qerm/index.php?title=STAT_512-513&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/qerm/index.php/User:10.19.28.84" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">10.19.28.84</a></li>
+				<li id="pt-anontalk"><a href="/qerm/index.php/User_talk:10.19.28.84" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+				<li id="pt-anonlogin"><a href="/qerm/index.php?title=Special:UserLogin&amp;returnto=STAT_512-513&amp;returntoquery=oldid%3D1814" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/qerm/sites/qerm/logo.gif);" href="/qerm/index.php/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/qerm/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="/qerm/index.php/QERM_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/qerm/index.php/QERM_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/qerm/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/qerm/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/qerm/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/qerm/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search QERM Wiki" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&#160;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/qerm/index.php/Special:WhatLinksHere/STAT_512-513" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/qerm/index.php/Special:RecentChangesLinked/STAT_512-513" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/qerm/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="/qerm/index.php?title=STAT_512-513&amp;oldid=1814&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/qerm/index.php?title=STAT_512-513&amp;oldid=1814" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/qerm/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="privacy"><a href="/qerm/index.php/QERM_Wiki:Privacy_policy" title="QERM Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/qerm/index.php/QERM_Wiki:About" title="QERM Wiki:About">About QERM Wiki</a></li>
+		<li id="disclaimer"><a href="/qerm/index.php/QERM_Wiki:General_disclaimer" title="QERM Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+<script src="/qerm/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "STAT_512-513", "wgTitle": "STAT 512-513", "wgAction": "view", "wgArticleId": 23, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 1814, "wgCategories": ["Courses"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script><!-- Served in 0.129 secs. --></body></html>

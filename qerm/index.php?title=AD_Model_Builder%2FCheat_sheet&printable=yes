@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>AD Model Builder/Cheat sheet - QERM Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qerm/opensearch_desc.php" title="QERM Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.cbr.washington.edu/qerm/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="QERM Wiki Atom feed" href="/qerm/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/qerm/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared&amp;only=styles&amp;printable=1&amp;skin=monobook&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-AD_Model_Builder_Cheat_sheet skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">AD Model Builder/Cheat sheet</h1>
+	<div id="bodyContent">
+		<div id="siteSub">From QERM Wiki</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<p><b>ADMB Handy operations and functions (aka ADMB cheat sheet)</b>
+</p><p>Adapted from a <a href="http://courses.washington.edu/fish507/ADMB_operations%20and%20functions.doc" class="external text" rel="nofollow">Word document written by Carolina Minte-Vera</a>.
+</p><p>Let <span class="texhtml"><i>V</i></span>, <span class="texhtml"><i>X</i></span>, <span class="texhtml"><i>Y</i></span> be vectors  and <span class="texhtml"><i>v</i><sub><i>i</i></sub></span>, <span class="texhtml"><i>x</i><sub><i>i</i></sub></span>, <span class="texhtml"><i>y</i><sub><i>i</i></sub></span> be the elements of the vectors.
+Let <span class="texhtml"><i>M</i></span>, <span class="texhtml"><i>N</i></span>, <span class="texhtml"><i>A</i></span> be matrices and <span class="texhtml"><i>m</i><sub><i>i</i><i>j</i></sub></span>, <span class="texhtml"><i>n</i><sub><i>i</i><i>j</i></sub></span>, <span class="texhtml"><i>a</i><sub><i>i</i><i>j</i></sub></span> be the elements of the matrices.
+Let <span class="texhtml">&#945;</span> be a scalar.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Matrix_and_vector_operations"><span class="tocnumber">1</span> <span class="toctext">Matrix and vector operations</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Element.E2.80.93wise_.28e-w.29_operations_in_a_matrix_or_vector_object"><span class="tocnumber">2</span> <span class="toctext">Element–wise (e-w) operations in a matrix or vector object</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Other_matrix_or_vector_operations"><span class="tocnumber">3</span> <span class="toctext">Other matrix or vector operations</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Still_more_matrix_or_vector_operations"><span class="tocnumber">4</span> <span class="toctext">Still more matrix or vector operations</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Useful_functions"><span class="tocnumber">5</span> <span class="toctext">Useful functions</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Matrix_and_vector_operations">Matrix and vector operations</span></h2>
+<table border="1" cellpadding="6" cellspacing="0">
+<tr>
+<th> Operation </th>
+<th> Math notation </th>
+<th> ADMB slow code </th>
+<th> ADMB fast code
+</th></tr>
+<tr>
+<td> Sum of two vectors               </td>
+<td> <span class="texhtml"><i>v</i><sub><i>i</i></sub> = <i>x</i><sub><i>i</i></sub> + <i>y</i><sub><i>i</i></sub></span>                   </td>
+<td> <code> V = X + Y         </code>  </td>
+<td> <code> X+=Y      </code>
+</td></tr>
+<tr>
+<td> Sum of scalar to a vector        </td>
+<td> <span class="texhtml"><i>v</i><sub><i>i</i></sub> = <i>x</i><sub><i>i</i></sub> + &#945;</span>                </td>
+<td> <code> V =  X + nu       </code>  </td>
+<td> <code> X+=nu     </code>
+</td></tr>
+<tr>
+<td> Sum of two matrices              </td>
+<td> <span class="texhtml"><i>a</i><sub><i>i</i><i>j</i></sub> = <i>m</i><sub><i>i</i><i>j</i></sub> + <i>n</i><sub><i>i</i><i>j</i></sub></span>          </td>
+<td> <code> A = M + N         </code>  </td>
+<td> <code>           </code>
+</td></tr>
+<tr>
+<td> Sum of a scalar to a matrix      </td>
+<td> <span class="texhtml"><i>a</i><sub><i>i</i><i>j</i></sub> = <i>m</i><sub><i>i</i><i>j</i></sub> + &#945;</span>          </td>
+<td> <code> A = M +alpha      </code>  </td>
+<td> <code> M+=alpha  </code>
+</td></tr>
+<tr>
+<td> Subtract two vectors             </td>
+<td> <span class="texhtml"><i>v</i><sub><i>i</i></sub> = <i>x</i><sub><i>i</i></sub> &#8722; <i>y</i><sub><i>i</i></sub></span>                   </td>
+<td> <code> V = X - Y         </code>  </td>
+<td> <code> X-=Y      </code>
+</td></tr>
+<tr>
+<td> Subtract a scalar from a vector  </td>
+<td> <span class="texhtml"><i>v</i><sub><i>i</i></sub> = <i>x</i><sub><i>i</i></sub> &#8722; &#945;</span>                </td>
+<td> <code> V=X-alpha         </code>  </td>
+<td> <code> X-=alpha  </code>
+</td></tr>
+<tr>
+<td> Subtract a scalar from a matrix  </td>
+<td> <span class="texhtml"><i>v</i><sub><i>i</i></sub> = <i>x</i><sub><i>i</i></sub> &#8722; &#945;</span>                </td>
+<td> <code> A=M-alpha         </code>  </td>
+<td> <code> M-=alpha  </code>
+</td></tr>
+<tr>
+<td> Subtract two matrices            </td>
+<td> <span class="texhtml"><i>a</i><sub><i>i</i><i>j</i></sub> = <i>m</i><sub><i>i</i><i>j</i></sub> &#8722; <i>n</i><sub><i>i</i><i>j</i></sub></span>          </td>
+<td> <code> A=M-N             </code>  </td>
+<td> <code> M-=N      </code>
+</td></tr>
+<tr>
+<td> Vector dot product               </td>
+<td> <span class="texhtml">
+<table>
+		<tr style='text-align: center;'><td>&#945; = </td><td><span style='font-size: x-large; font-family: serif;'>&#8721;</span></td><td><i>x</i><sub><i>i</i></sub><i>y</i><sub><i>i</i></sub></td></tr>
+		<tr style='text-align: center; vertical-align: top;'><td></td><td><i>i</i></td><td></td></tr>
+</table>
+</span>       </td>
+<td> <code> alpha=X*Y         </code>  </td>
+<td> <code>           </code>
+</td></tr>
+<tr>
+<td> Outer product of two vectors     </td>
+<td> <span class="texhtml"><i>m</i><sub><i>i</i><i>j</i></sub> = <i>x</i><sub><i>i</i></sub><i>y</i><sub><i>j</i></sub></span>                </td>
+<td> <code> M=outer_prod(X,Y) </code>  </td>
+<td> <code>           </code>
+</td></tr>
+<tr>
+<td> Multiply a scalar by a vector    </td>
+<td> <span class="texhtml"><i>x</i><sub><i>i</i></sub> = &#945;<i>y</i><sub><i>i</i></sub></span>                </td>
+<td> <code> X=alpha*Y         </code>  </td>
+<td> <code> Y*=alpha  </code>
+</td></tr>
+<tr>
+<td> Multiply a vector by a scalar    </td>
+<td> <span class="texhtml"><i>x</i><sub><i>i</i></sub> = <i>y</i><sub><i>i</i></sub>&#945;</span>                </td>
+<td> <code> X=Y*alpha         </code>  </td>
+<td> <code>           </code>
+</td></tr>
+<tr>
+<td> Multiply a scalar by a matrix    </td>
+<td> <span class="texhtml"><i>m</i><sub><i>i</i><i>j</i></sub> = &#945;<i>a</i><sub><i>i</i><i>j</i></sub></span>          </td>
+<td> <code> A=alpha*M         </code>  </td>
+<td> <code> M*=alpha  </code>
+</td></tr>
+<tr>
+<td> Multiply a vector by a matrix    </td>
+<td> <span class="texhtml">
+<table>
+		<tr style='text-align: center;'><td><i>x</i><sub><i>j</i></sub> = </td><td><span style='font-size: x-large; font-family: serif;'>&#8721;</span></td><td><i>y</i><sub><i>i</i></sub><i>m</i><sub><i>i</i><i>j</i></sub></td></tr>
+		<tr style='text-align: center; vertical-align: top;'><td></td><td><i>i</i></td><td></td></tr>
+</table>
+</span>       </td>
+<td> <code> X=Y*M             </code>  </td>
+<td> <code>           </code>
+</td></tr>
+<tr>
+<td> Multiply a matrix by a vector    </td>
+<td> <span class="texhtml">
+<table>
+		<tr style='text-align: center;'><td><i>x</i><sub><i>i</i></sub> = </td><td><span style='font-size: x-large; font-family: serif;'>&#8721;</span></td><td><i>m</i><sub><i>i</i><i>j</i></sub><i>y</i><sub><i>i</i></sub></td></tr>
+		<tr style='text-align: center; vertical-align: top;'><td></td><td><i>j</i></td><td></td></tr>
+</table>
+</span>       </td>
+<td> <code> X=M*Y             </code>  </td>
+<td> <code>           </code>
+</td></tr>
+<tr>
+<td> Multiply two matrices            </td>
+<td> <span class="texhtml">
+<table>
+		<tr style='text-align: center;'><td><i>a</i><sub><i>i</i><i>j</i></sub> = </td><td><span style='font-size: x-large; font-family: serif;'>&#8721;</span></td><td><i>m</i><sub><i>i</i><i>k</i></sub><i>n</i><sub><i>k</i><i>j</i></sub></td></tr>
+		<tr style='text-align: center; vertical-align: top;'><td></td><td><i>k</i></td><td></td></tr>
+</table>
+</span> </td>
+<td> <code> A=M*N             </code>  </td>
+<td> <code>           </code>
+</td></tr>
+<tr>
+<td> Division of vector by scalar     </td>
+<td> <span class="texhtml"><i>y</i><sub><i>i</i></sub> = <i>x</i><sub><i>i</i></sub> / &#945;</span>                </td>
+<td> <code> Y=X/alpha         </code>  </td>
+<td> <code> X/=alpha  </code>
+</td></tr>
+<tr>
+<td> Division of scalar by a vector   </td>
+<td> <span class="texhtml"><i>y</i><sub><i>i</i></sub> = &#945; / <i>x</i><sub><i>i</i></sub></span>                </td>
+<td> <code> Y=alpha/X         </code>  </td>
+<td> <code>           </code>
+</td></tr>
+<tr>
+<td> Division of a matrix by a scalar </td>
+<td> <span class="texhtml"><i>m</i><sub><i>i</i><i>j</i></sub> = <i>a</i><sub><i>i</i><i>j</i></sub> / &#945;</span>          </td>
+<td> <code> M=N/alpha         </code>  </td>
+<td> <code>           </code>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Element.E2.80.93wise_.28e-w.29_operations_in_a_matrix_or_vector_object">Element–wise (e-w) operations in a matrix or vector object</span></h2>
+<table border="1" cellpadding="6" cellspacing="0">
+<tr>
+<th> Operation [need objects of the same dimension] </th>
+<th> Math notation </th>
+<th> ADMB code
+</th></tr>
+<tr>
+<td>Vectors e-w multiplication  </td>
+<td> <span class="texhtml"><i>v</i><sub><i>i</i></sub> = <i>x</i><sub><i>i</i></sub><i>y</i><sub><i>i</i></sub></span>            </td>
+<td> <code> V=elem_prod(X,Y)   </code>
+</td></tr>
+<tr>
+<td>Vectors e-w division        </td>
+<td> <span class="texhtml"><i>v</i><sub><i>i</i></sub> = <i>x</i><sub><i>i</i></sub> / <i>y</i><sub><i>i</i></sub></span>          </td>
+<td> <code> V=elem_div(X,Y)    </code>
+</td></tr>
+<tr>
+<td>Matrices e-w multiplication </td>
+<td> <span class="texhtml"><i>m</i><sub><i>i</i><i>j</i></sub> = <i>a</i><sub><i>i</i><i>j</i></sub><i>n</i><sub><i>i</i><i>j</i></sub></span>   </td>
+<td> <code> M=elem_prod(A,N)   </code>
+</td></tr>
+<tr>
+<td>Matrices e-w division       </td>
+<td> <span class="texhtml"><i>m</i><sub><i>i</i><i>j</i></sub> = <i>a</i><sub><i>i</i><i>j</i></sub> / <i>n</i><sub><i>i</i><i>j</i></sub></span> </td>
+<td> <code> M=elem_div(A,N)    </code>
+</td></tr>
+<tr>
+<td>Vectors e-w multiplication  </td>
+<td> <span class="texhtml"><i>v</i><sub><i>i</i></sub> = <i>x</i><sub><i>i</i></sub><i>y</i><sub><i>i</i></sub></span>            </td>
+<td> <code> V=elem_prod (X,Y)  </code>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Other_matrix_or_vector_operations">Other matrix or vector operations</span></h2>
+<table border="1" cellpadding="6" cellspacing="0">
+<tr>
+<th> Operation </th>
+<th> Math notation </th>
+<th> ADMB code
+</th></tr>
+<tr>
+<td>Norm of a vector                </td>
+<td> <img class="tex" alt=" \alpha=\sqrt{\sum_{i} v_i^2}        " src="/qerm/sites/qerm/images/math/5/7/f/57f3ed281e3416bc6e518ab2a0f3345f.png" />   </td>
+<td> <code> alpha=norm(V)  </code>
+</td></tr>
+<tr>
+<td>Norm square of a vector         </td>
+<td> <img class="tex" alt=" \alpha=\sum_{i} v_i^2           " src="/qerm/sites/qerm/images/math/5/1/8/518030578065bc4b4b62989ccfa0d76b.png" />   </td>
+<td> <code> alpha=norm2(V) </code>
+</td></tr>
+<tr>
+<td>Norm of a matrix                </td>
+<td> <img class="tex" alt=" \alpha=\sqrt{\sum_{i} \sum_{j} m_{ij}^2} " src="/qerm/sites/qerm/images/math/6/f/7/6f7822d9f65950cb844a893aed7fe04d.png" /> </td>
+<td> <code> alpha=norm(M)  </code>
+</td></tr>
+<tr>
+<td>Norm square of a matrix         </td>
+<td> <img class="tex" alt=" \alpha=\sum_{i} \sum_{j} m_{ij}^2  " src="/qerm/sites/qerm/images/math/0/d/9/0d9c52f80aba60942530ec18905f590b.png" />   </td>
+<td> <code> alpha=norm2(M) </code>
+</td></tr>
+<tr>
+<td>Sum over elements of a vector   </td>
+<td> <span class="texhtml">
+<table>
+		<tr style='text-align: center;'><td>&#945; = </td><td><span style='font-size: x-large; font-family: serif;'>&#8721;</span></td><td><i>v</i><sub><i>i</i></sub></td></tr>
+		<tr style='text-align: center; vertical-align: top;'><td></td><td><i>i</i></td><td></td></tr>
+</table>
+</span>   </td>
+<td> <code> alpha=sum(V)   </code>
+</td></tr>
+<tr>
+<td>Row sums of a matrix object     </td>
+<td> <span class="texhtml">
+<table>
+		<tr style='text-align: center;'><td><i>x</i><sub><i>i</i></sub> = </td><td><span style='font-size: x-large; font-family: serif;'>&#8721;</span></td><td><i>m</i><sub><i>i</i><i>j</i></sub></td></tr>
+		<tr style='text-align: center; vertical-align: top;'><td></td><td><i>j</i></td><td></td></tr>
+</table>
+</span>   </td>
+<td> <code> X=rowsum(M)    </code>
+</td></tr>
+<tr>
+<td>Column sum of a matrix object   </td>
+<td> <span class="texhtml">
+<table>
+		<tr style='text-align: center;'><td><i>y</i><sub><i>j</i></sub> = </td><td><span style='font-size: x-large; font-family: serif;'>&#8721;</span></td><td><i>m</i><sub><i>i</i><i>j</i></sub></td></tr>
+		<tr style='text-align: center; vertical-align: top;'><td></td><td><i>i</i></td><td></td></tr>
+</table>
+</span>   </td>
+<td> <code> Y=colsum(M)    </code>
+</td></tr>
+<tr>
+<td>Concatenation                   </td>
+<td> <span class="texhtml"><i>X</i> = (<i>x</i><sub>1</sub>,<i>x</i><sub>2</sub>,<i>x</i><sub>3</sub>),<i>Y</i> = (<i>y</i><sub>1</sub>,<i>y</i><sub>2</sub>),<i>V</i> = (<i>x</i><sub>1</sub>,<i>x</i><sub>2</sub>,<i>x</i><sub>3</sub>,<i>y</i><sub>1</sub>,<i>y</i><sub>2</sub>)</span>  </td>
+<td> <code>  V=X&amp;Y </code>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Still_more_matrix_or_vector_operations">Still more matrix or vector operations</span></h2>
+<table border="1" cellpadding="6" cellspacing="0">
+<tr>
+<th> Operation </th>
+<th> ADMB code
+</th></tr>
+<tr>
+<td>Determinant (must be a square matrix cols=rows)  </td>
+<td>  <code> alpha=det(M)                         </code>
+</td></tr>
+<tr>
+<td>Logarithm of the determinant? (must be a square matrix cols=rows), sgn is an integer. Not explained in the manual, but used in the codes. </td>
+<td> <code> alpha=ln_det(M,sgn) </code>
+</td></tr>
+<tr>
+<td>Inverse (must be a square matrix cols=rows)      </td>
+<td>  <code> N=inv(M)                             </code>
+</td></tr>
+<tr>
+<td>Minimum value of a vector object                 </td>
+<td>  <code> alpha=min(V)                         </code>
+</td></tr>
+<tr>
+<td>Maximum value of a vector object                 </td>
+<td>  <code> alpha=max(V)                         </code>
+</td></tr>
+<tr>
+<td>Eigenvalues of a symmetric matrix                </td>
+<td>  <code> V=Eigenvalues(M)                     </code>
+</td></tr>
+<tr>
+<td>Eigenvectors of a symmetric matrix               </td>
+<td>  <code> N=eigenvectors(M)                    </code>
+</td></tr>
+<tr>
+<td>Identity matrix function                         </td>
+<td>  <code> M=identity_matrix(int min, int max)  </code>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Useful_functions">Useful functions</span></h2>
+<table border="1" cellpadding="6" cellspacing="0">
+<tr>
+<th> Function </th>
+<th> Action
+</th></tr>
+<tr>
+<td> <code> current_phase()      </code> </td>
+<td> return an integer that is the value of the current phase
+</td></tr>
+<tr>
+<td> <code> last_phase()         </code> </td>
+<td> return a binary: "true" if the current phase is the last phase and "false" (=0) otherwise
+</td></tr>
+<tr>
+<td> <code> Active(Par)          </code> </td>
+<td> return a binary: "true" if the parameter Par is active in the current phase  and "false" (=0) otherwise
+</td></tr>
+<tr>
+<td> <code> mceval_phase()       </code> </td>
+<td> return a binary: "true" if the current phase is the mceval phase and "false" (=0) otherwise
+</td></tr>
+<tr>
+<td> <code> bolinha.initialize() </code> </td>
+<td> Initializes (sets all elements equal to zero) the object bolinha
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 424/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb-qerm_:pcache:idhash:312-0!1!0!!en!*!edit=0 and timestamp 20220505024737 -->
+<div class="printfooter">
+Retrieved from "<a href="https://www.cbr.washington.edu/qerm/index.php/AD_Model_Builder/Cheat_sheet">https://www.cbr.washington.edu/qerm/index.php/AD_Model_Builder/Cheat_sheet</a>"</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/qerm/index.php/AD_Model_Builder/Cheat_sheet" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk"><a href="/qerm/index.php/Talk:AD_Model_Builder/Cheat_sheet" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="/qerm/index.php?title=AD_Model_Builder/Cheat_sheet&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/qerm/index.php?title=AD_Model_Builder/Cheat_sheet&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/qerm/index.php/User:10.19.28.84" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">10.19.28.84</a></li>
+				<li id="pt-anontalk"><a href="/qerm/index.php/User_talk:10.19.28.84" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+				<li id="pt-anonlogin"><a href="/qerm/index.php?title=Special:UserLogin&amp;returnto=AD_Model_Builder/Cheat_sheet&amp;returntoquery=printable%3Dyes" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/qerm/sites/qerm/logo.gif);" href="/qerm/index.php/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/qerm/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="/qerm/index.php/QERM_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/qerm/index.php/QERM_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/qerm/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/qerm/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/qerm/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/qerm/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search QERM Wiki" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&#160;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/qerm/index.php/Special:WhatLinksHere/AD_Model_Builder/Cheat_sheet" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/qerm/index.php/Special:RecentChangesLinked/AD_Model_Builder/Cheat_sheet" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/qerm/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-permalink"><a href="/qerm/index.php?title=AD_Model_Builder/Cheat_sheet&amp;oldid=2066" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/qerm/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="lastmod"> This page was last modified on 9 April 2010, at 18:51.</li>
+		<li id="viewcount">This page has been accessed 7,682 times.</li>
+		<li id="privacy"><a href="/qerm/index.php/QERM_Wiki:Privacy_policy" title="QERM Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/qerm/index.php/QERM_Wiki:About" title="QERM Wiki:About">About QERM Wiki</a></li>
+		<li id="disclaimer"><a href="/qerm/index.php/QERM_Wiki:General_disclaimer" title="QERM Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+<script src="/qerm/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "AD_Model_Builder/Cheat_sheet", "wgTitle": "AD Model Builder/Cheat sheet", "wgAction": "view", "wgArticleId": 312, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 2066, "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script><!-- Served in 0.081 secs. --></body></html>

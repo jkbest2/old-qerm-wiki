@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>BCPA/All BCPA Functions - QERM Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qerm/opensearch_desc.php" title="QERM Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.cbr.washington.edu/qerm/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="QERM Wiki Atom feed" href="/qerm/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/qerm/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared&amp;only=styles&amp;skin=monobook&amp;*" />
+<link rel="stylesheet" href="/qerm/skins/monobook/main.css?301" media="screen" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE50Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE55Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/qerm/skins/monobook/IE60Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/qerm/skins/monobook/IE70Fixes.css?301" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-BCPA_All_BCPA_Functions skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">BCPA/All BCPA Functions</h1>
+	<div id="bodyContent">
+		<div id="siteSub">From QERM Wiki</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<pre>
+GetRho &lt;- function (x, t) 
+{
+    getL &lt;- function(rho) {
+        dt &lt;- diff(t)
+        s &lt;- sd(x)
+        mu &lt;- mean(x)
+        n &lt;- length(x)
+        x.plus &lt;- x[-1]
+        x.minus &lt;- x[-length(x)]
+        Likelihood &lt;- dnorm(x.plus, mean = mu + (rho^dt) * (x.minus - 
+            mu), sd = s * sqrt(1 - rho^(2 * dt)))
+        logL &lt;- sum(log(Likelihood))
+        if (!is.finite(logL)) 
+            logL &lt;- -10^10
+        return(-logL)
+    }
+    o &lt;- optimize(getL, lower = 0, upper = 1, tol = 1e-04)
+    return(c(o$minimum, o$objective))
+}
+
+GetLL &lt;- function (x, t, mu, s, rho) 
+{
+    dt &lt;- diff(t)
+    n &lt;- length(x)
+    x.plus &lt;- x[-1]
+    x.minus &lt;- x[-length(x)]
+    Likelihood &lt;- dnorm(x.plus, mean = mu + (rho^dt) * (x.minus - 
+        mu), sd = s * sqrt(1 - rho^(2 * dt)))
+    LL &lt;- -sum(log(Likelihood))
+    return(LL)
+}
+
+GetDoubleL &lt;- function(x,t,tbreak)
+  {  
+    x1 &lt;- x[1:tbreak]  
+    x2 &lt;- x[tbreak:length(x)]
+    
+    t1 &lt;- t[1:tbreak]
+    t2 &lt;- t[tbreak:length(t)]
+
+    o1&lt;-GetRho(x1,t1)
+    o2&lt;-GetRho(x2,t2)
+    
+    mu1 &lt;- mean(x1)
+    sigma1 &lt;- sd(x1)
+    rho1 &lt;- o1[1]
+    
+    mu2 &lt;- mean(x2)
+    sigma2 &lt;- sd(x2)
+    rho2 &lt;- o2[1]
+  
+    LL1 &lt;- -o1[2]
+    LL2 &lt;- -o2[2]
+
+    m &lt;- matrix(c(mu1,mu2,sigma1,sigma2,rho1,rho2,LL1,LL2),2,4)
+    colnames(m) &lt;- c(&quot;mu&quot;,&quot;sigma&quot;,&quot;rho&quot;,&quot;LL&quot;)
+    
+    return(m)
+  }
+
+SweepBreaks &lt;- function(x,t,range=0.6)
+    {
+      n&lt;-length(t)
+      start &lt;- (1-range)/2
+      breaks&lt;-round((start*n):((1-start)*n))
+      Ls&lt;-breaks*0
+      
+      l&lt;-length(breaks)
+      
+      BreakParams &lt;- matrix(NA,l,8)
+      #BreakParams &lt;- data.frame(mu1=NA,s1=NA,rho1=NA,LL1=NA,mu2=NA,s2=NA,rho2=NA,LL2=NA)
+      
+      for(i in 1:l)
+      {
+        myDoubleL &lt;- GetDoubleL(x,t,breaks[i])
+        BreakParams[i,] &lt;- c(myDoubleL[1,],myDoubleL[2,])
+      }
+      
+      # remember: LL1 and LL2 are columns 4 and 8
+      BreakMatrix&lt;- cbind(breaks,t[breaks], BreakParams, 
+      BreakParams[,4]+BreakParams[,8])
+      
+      colnames(BreakMatrix) &lt;- c(&quot;breaks&quot;,&quot;tbreaks&quot;,&quot;mu1&quot;,&quot;sigma1&quot;,&quot;rho1&quot;,&quot;LL1&quot;,&quot;mu2&quot;,&quot;sigma2&quot;,&quot;rho2&quot;,&quot;LL2&quot;,&quot;LL&quot;)
+      
+      return(BreakMatrix[2:nrow(BreakMatrix),])
+    }
+
+GetModels &lt;- function(x,t,tbreak,K=2)
+{
+  for(i in 0:7)
+  {
+    f&lt;-get(paste(&quot;M&quot;,i,sep=&quot;&quot;))
+    myr&lt;-data.frame(Model=i,f(x,t,tbreak,K))
+    ifelse(i==0,
+      r&lt;-myr,
+      r&lt;-rbind(r,myr))
+  }
+  return(r)
+}
+
+  M0 &lt;- function(x,t,tbreak,K=2)
+	# null model: all mus, s's, rhos the same
+	{
+		rhoLL &lt;- GetRho(x,t)
+		LL &lt;- rhoLL[2]
+		
+		bic &lt;- K*LL + 3*log(length(x))
+		
+		rho1&lt;-rhoLL[1]
+		rho2&lt;-rho1
+		
+		mu1&lt;-mean(x)
+		mu2&lt;-mu1
+		
+		s1&lt;-sd(x)
+		s2&lt;-s1
+		
+		return(data.frame(LL,bic,mu1,s1,rho1,mu2,s2,rho2))
+	}
+	
+	M1 &lt;- function(x,t,tbreak,K=2)
+	# mus different, all else the same
+	{
+		
+		x1&lt;-x[1:tbreak]
+		x2&lt;-x[(tbreak+1):length(x)]
+		t1&lt;-t[1:tbreak]
+		t2&lt;-t[(tbreak+1):length(x)]
+		
+		mu1&lt;-mean(x1)
+		mu2&lt;-mean(x2)
+		
+		xprime &lt;- c(x1-mu1,x2-mu2)
+		s1&lt;-sd(xprime)
+		s2&lt;-s1
+		
+		rho1&lt;-as.numeric(GetRho(xprime,t)[1])
+		rho2&lt;-rho1
+		
+		LL1&lt;-GetLL(x1,t1,mu1,s1,rho1)
+		LL2&lt;-GetLL(x2,t2,mu2,s2,rho2)
+		LL&lt;-LL1+LL2
+		bic &lt;- K*LL + 5*log(length(x))
+		
+		return(data.frame(LL,bic,mu1,s1,rho1,mu2,s2,rho2))
+	}
+	
+	M2 &lt;- function(x,t,tbreak,K=2)
+	# sds different, all else same
+	{
+		
+		x1&lt;-x[1:tbreak]
+		x2&lt;-x[(tbreak+1):length(x)]
+		
+		t1&lt;-t[1:tbreak]
+		t2&lt;-t[(tbreak+1):length(x)]
+		
+		mu1&lt;-mean(x)
+		mu2&lt;-mu1
+		
+		s1&lt;-sd(x1)
+		s2&lt;-sd(x2)
+		
+		xprime &lt;- c( (x1-mu1)/s1 , (x2-mu2)/s2 )
+		rho1 &lt;- as.numeric(GetRho(xprime,t)[1])
+		rho2 &lt;- rho1
+		
+		LL1&lt;-GetLL(x1,t1,mu1,s1,rho1)
+		LL2&lt;-GetLL(x2,t2,mu2,s2,rho2)
+		LL&lt;-LL1+LL2
+		bic &lt;- K*LL + 5*log(length(x))
+		
+		return(data.frame(LL,bic,mu1,s1,rho1,mu2,s2,rho2))
+	}	
+		
+	M3 &lt;- function(x,t,tbreak,K=2)
+	# rhos different, all else same
+	{
+		x1&lt;-x[1:tbreak]
+		x2&lt;-x[(tbreak+1):length(x)]
+		t1&lt;-t[1:tbreak]
+		t2&lt;-t[(tbreak+1):length(x)]
+		
+		mu1 &lt;- mean(x)
+		mu2 &lt;- mu1
+		
+		s1 &lt;- sd(x)
+		s2 &lt;- s1
+		
+		rho1&lt;-as.numeric(GetRho(x1,t1)[1])
+		rho2&lt;-as.numeric(GetRho(x2,t2)[1])
+				
+		LL1&lt;-GetLL(x1,t1,mu1,s1,rho1)
+		LL2&lt;-GetLL(x2,t2,mu2,s2,rho2)
+		LL&lt;-LL1+LL2
+		bic &lt;- K*LL + 5*log(length(x))
+		
+		return(data.frame(LL,bic,mu1,s1,rho1,mu2,s2,rho2))
+	}		
+	
+	M4 &lt;- function(x,t,tbreak,K=2)
+	# mu and sigma different, rho same
+	{
+		x1&lt;-x[1:tbreak]
+		x2&lt;-x[(tbreak+1):length(x)]
+		t1&lt;-t[1:tbreak]
+		t2&lt;-t[(tbreak+1):length(x)]
+		
+		mu1&lt;-mean(x1)
+		mu2&lt;-mean(x2)
+		s1&lt;-sd(x1)
+		s2&lt;-sd(x2)
+		
+		xprime &lt;- c( (x1-mu1)/s1 , (x2-mu2)/s2 )
+		rho1 &lt;- as.numeric(GetRho(xprime,t)[1])
+		rho2 &lt;- rho1
+			
+		LL1&lt;-GetLL(x1,t1,mu1,s1,rho1)
+		LL2&lt;-GetLL(x2,t2,mu2,s2,rho2)
+		LL&lt;-LL1+LL2
+		bic &lt;- K*LL + 6*log(length(x))
+		
+		return(data.frame(LL,bic,mu1,s1,rho1,mu2,s2,rho2))
+	}		
+
+	M5 &lt;- function(x,t,tbreak,K=2)
+	# mu and rho different, sigma same
+	{
+		x1&lt;-x[1:tbreak]
+		x2&lt;-x[(tbreak+1):length(x)]
+		t1&lt;-t[1:tbreak]
+		t2&lt;-t[(tbreak+1):length(x)]
+		
+		mu1&lt;-mean(x1)
+		mu2&lt;-mean(x2)
+		
+		xprime &lt;- c(x1-mu1, x2-mu2)
+		s1&lt;-sd(xprime)
+		s2&lt;-s1
+				
+		rho1&lt;-as.numeric(GetRho(x1,t1)[1])
+		rho2&lt;-as.numeric(GetRho(x2,t2)[1])
+		
+		LL1&lt;-GetLL(x1,t1,mu1,s1,rho1)
+		LL2&lt;-GetLL(x2,t2,mu2,s2,rho2)
+		LL&lt;-LL1+LL2
+		bic &lt;- K*LL+ 6*log(length(x))
+		
+		return(data.frame(LL,bic,mu1,s1,rho1,mu2,s2,rho2))
+	}		
+
+	M6 &lt;- function(x,t,tbreak,K=2)
+	# sigma and rho different, mu same
+	{
+		x1&lt;-x[1:tbreak]
+		x2&lt;-x[(tbreak+1):length(x)]
+		t1&lt;-t[1:tbreak]
+		t2&lt;-t[(tbreak+1):length(x)]
+		
+		mu1&lt;-mean(x)
+		mu2&lt;-mean(x)
+		s1&lt;-sd(x1)
+		s2&lt;-sd(x2)
+		
+		x1prime &lt;- (x1-mu1)/s1 
+		x2prime &lt;- (x2-mu2)/s2
+		
+		rho1 &lt;- as.numeric(GetRho(x1prime,t1)[1])
+		rho2 &lt;- as.numeric(GetRho(x2prime,t2)[1])
+			
+		LL1&lt;-GetLL(x1,t1,mu1,s1,rho1)
+		LL2&lt;-GetLL(x2,t2,mu2,s2,rho2)
+		
+		LL&lt;-LL1+LL2
+		
+		bic &lt;- K*LL+ 6*log(length(x))
+		
+		return(data.frame(LL,bic,mu1,s1,rho1,mu2,s2,rho2))
+	}	
+
+	M7 &lt;- function(x,t,tbreak,K=2)
+	# most &quot;alternative&quot; model: all mus, s's, rhos different
+	{
+		rhoLL1 &lt;- GetRho(x[1:tbreak],t[1:tbreak])
+		rhoLL2 &lt;- GetRho(x[(tbreak+1):length(x)],t[(tbreak+1):length(x)])
+		
+		LL1 &lt;- rhoLL1[2]
+		LL2 &lt;- rhoLL2[2]
+		
+		x1&lt;-x[1:tbreak]
+		x2&lt;-x[(tbreak+1):length(x)]
+		t1&lt;-t[1:tbreak]
+		t2&lt;-t[(tbreak+1):length(x)]
+		
+		mu1&lt;-mean(x1)
+		mu2&lt;-mean(x2)
+		s1&lt;-sd(x1)
+		s2&lt;-sd(x2)
+		rho1 &lt;- rhoLL1[1]
+		rho2 &lt;- rhoLL2[1]
+		
+		LL &lt;- LL1+LL2
+		bic &lt;- K*LL + 7*log(length(x))
+		return(data.frame(LL,bic,mu1,s1,rho1,mu2,s2,rho2))
+	}
+
+WindowSweep &lt;- function (x, t, windowsize = 50, windowstep = 1, sine = 0, K = 2, plotme = TRUE) 
+{
+    low &lt;- seq(1, (length(t) - windowsize), windowstep)
+    hi &lt;- low + windowsize
+    for (i in 1:length(low)) {
+        myx &lt;- x[low[i]:hi[i]]
+        myt &lt;- t[low[i]:hi[i]]
+        bp &lt;- SweepBreaks(myx, myt)
+        myestimate &lt;- bp[bp[, 11] == max(bp[, 11]), ]
+        breakpoint &lt;- myestimate[1]
+        tbreak &lt;- myestimate[2]
+        ifelse(sine, 
+                allmodels &lt;- GetModelsSin(myx, myt, breakpoint, K), 
+                allmodels &lt;- GetModels(myx, myt, breakpoint, K))
+        mymodel &lt;- allmodels[allmodels$bic == min(allmodels$bic),]
+        mymodel &lt;- data.frame(mymodel, Break = tbreak)
+        ifelse(i == 1, 
+               estimates &lt;- mymodel, 
+               estimates &lt;- rbind(estimates, mymodel))
+        if (plotme) {
+            plot.ts(t, x, type = &quot;l&quot;, col = &quot;grey&quot;)
+            lines(t, x, type = &quot;l&quot;)
+            lines(myt, myx, col = &quot;green&quot;)
+            abline(v = tbreak)
+            print(estimates[i, ])
+        }
+    }
+    return(data.frame(estimates))
+}
+
+PartitionParameters &lt;- function(ws,t,windowsize=50,windowstep=1)
+{
+  n.col&lt;-length(t)
+	n.row&lt;-dim(ws)[1]
+
+	mu.M &lt;- matrix(NA,n.row,n.col)
+	s.M &lt;- matrix(NA,n.row,n.col)
+	rho.M &lt;- matrix(NA,n.row,n.col)
+
+	for(i in 1:n.row)
+	{
+		myws&lt;-ws[i,]
+		dts &lt;- abs(t-myws$Break)
+		tbreak &lt;- match(min(dts),dts)
+
+		max &lt;- min(n.col,i+windowsize)
+
+		mu.M[i,i:tbreak] &lt;- myws$mu1
+		mu.M[i,(tbreak+1):max] &lt;- myws$mu2
+		s.M[i,i:tbreak] &lt;- myws$s1
+		s.M[i,(tbreak+1):max] &lt;- myws$s2
+		rho.M[i,i:tbreak] &lt;- myws$rho1
+		rho.M[i,(tbreak+1):max] &lt;- myws$rho2
+	}
+
+	adjust &lt;- colSums(!is.na(mu.M))
+
+
+	mu.hat&lt;-colSums(mu.M,na.rm=1)/adjust
+	s.hat&lt;-colSums(s.M,na.rm=1)/adjust
+	rho.hat&lt;-colSums(rho.M,na.rm=1)/adjust
+
+	return(data.frame(mu.hat,s.hat,rho.hat))
+}
+
+
+PlotBCPA &lt;- function (t, x, ws, pp, threshold=10) 
+{
+    plot(t, x, type = &quot;n&quot;, main = &quot;&quot;, ylim = c(min(x), max(x) * 
+        1.3))
+    x.breaks &lt;- ws$Break
+    x.model &lt;- ws$Model
+    x.breaks &lt;- x.breaks[x.model &gt; 0]
+    x.model &lt;- x.model[x.model &gt; 0]
+    mids &lt;- hist(x.breaks, breaks = t, plot = F)$mid
+    freq &lt;- hist(x.breaks, breaks = t, plot = F)$count
+    goodbreaks &lt;- mids[freq &gt; threshold]
+    freq &lt;- freq[freq &gt; threshold]
+    break.cols &lt;- heat.colors(max(freq))
+    break.cols &lt;- break.cols[length(break.cols):1]
+    abline(v = goodbreaks, lwd = freq, col = &quot;orange&quot;)
+    lines(t, x, col = &quot;darkgrey&quot;)
+    lines(t, pp$mu.hat, lwd = 2)
+    lines(t, pp$mu.hat + pp$s.hat, col = 2, lwd = 1.5)
+    lines(t, pp$mu.hat - pp$s.hat, col = 2, lwd = 1.5)
+    rho.hat &lt;- pp$rho.hat
+    rho.int &lt;- round((rho.hat - min(rho.hat, na.rm = 1)) * 1000) + 
+        1
+    rho.col &lt;- topo.colors(max(rho.int, na.rm=TRUE))[rho.int]
+    rho.cex &lt;- (rho.hat - min(rho.hat, na.rm=TRUE))/(diff(range(rho.hat))) * 
+        1.5 + 0.5
+    points(t, x, col = rho.col, pch = 19)
+    rho.index &lt;- quantile(0:max(rho.int))
+    rho.index[1] &lt;- 1
+    legend.cols &lt;- topo.colors(max(rho.int, na.rm=TRUE))[round(rho.index)]
+    legend.rhos &lt;- round(quantile((min(rho.hat) * 1000):(max(rho.hat) * 
+        1000))/1000, 2)
+    legend(&quot;bottomright&quot;, bg = &quot;white&quot;, legend = c(expression(hat(rho)), 
+        legend.rhos), pch = c(0, rep(19, 5)), ncol = 2, col = c(0, 
+        legend.cols), xjust = 0.5, yjust = 0.5, cex = 1.2)
+    legend(&quot;topright&quot;, bg = &quot;white&quot;, legend = c(expression(hat(mu)), 
+        expression(hat(mu)&#160;%+-% hat(sigma))), lty = 1, lwd = 2:1, 
+        col = 1:2, xjust = 0.5, yjust = 0.5, cex = 1.2)
+}
+
+PathPlot &lt;- function(t, z, ws, pp, threshold = 10)
+{
+	n&lt;-names(pp)
+	for(i in 1:length(n))
+		assign(n[i],pp[,i])
+
+	# Prep rho legend
+	rho.int &lt;- round((rho.hat-min(rho.hat,na.rm=1))*1000)+1
+	rho.col &lt;- topo.colors(max(rho.int))[rho.int]
+	rho.index&lt;-quantile(0:max(rho.int))
+	rho.index[1]&lt;-1
+
+	legend.cols&lt;-topo.colors(max(rho.int))[round(rho.index)]	
+	legend.rhos&lt;-round(quantile((min(rho.hat)*1000):(max(rho.hat)*1000))/1000,1)
+
+	# Prep mu legend
+	sizes &lt;- round(quantile(seq(0,max(mu.hat,na.rm=1),.01)),2)[2:5]
+
+	# get &quot;notable&quot; changepoints and corresponding locations
+	x.breaks &lt;- ws$Break
+	x.model &lt;- ws$Model
+
+	mids &lt;- hist(x.breaks, breaks = t, plot = F)$mid
+	freq &lt;- hist(x.breaks, breaks = t, plot = F)$count
+
+	t.breaks &lt;- mids[freq &gt; threshold]
+	z.mid &lt;- (z[-(1:2)]+z[-( (length(z)-1):(length(z)))])/2
+	t.mid &lt;- (t[-1]+t[-length(t)])/2
+	z.breaks &lt;- z.mid[match(t.breaks, t.mid)+1]
+
+
+	# plot everything
+	plot(z, asp=1, type=&quot;l&quot;, xlab=&quot;X&quot;, ylab=&quot;Y&quot;)
+	segments(Re(z[-1]), Im(z[-1]), Re(z[-length(z)]), Im(Z[-length(Z)]), 
+		 lwd=mu.hat/max(mu.hat)*12, col=&quot;darkgrey&quot;)
+	segments(Re(z[-1]), Im(z[-1]), Re(z[-length(z)]), Im(Z[-length(Z)]), 
+		 lwd=mu.hat/max(mu.hat)*10, col=rho.col)
+	points(z.breaks, col=rgb(1,.2,.2,.8), cex=sqrt(freq/max(freq))*5, pch=4, lwd=2)
+	points(z,pch=19,cex=0.5)
+	lines(z, lwd=0.75) 
+
+	# add a legend
+	legend(&quot;topright&quot;,fill=legend.cols,legend=legend.rhos,
+		title=expression(hat(rho)),bty=&quot;n&quot;,cex=1.2)
+	legend(&quot;bottomleft&quot;,col=&quot;darkgrey&quot;,legend=round(sizes, -1),
+		lty=1, lwd=sizes/max(mu.hat)*10,title=expression(hat(mu)),cex=1.2,bty=&quot;n&quot;)
+}
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 4/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb-qerm_:pcache:idhash:687-0!*!0!!*!*!edit=0 and timestamp 20220505181017 -->
+<div class="printfooter">
+Retrieved from "<a href="https://www.cbr.washington.edu/qerm/index.php/BCPA/All_BCPA_Functions">https://www.cbr.washington.edu/qerm/index.php/BCPA/All_BCPA_Functions</a>"</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/qerm/index.php/Special:Categories" title="Special:Categories">Category</a>: <span dir='ltr'><a href="/qerm/index.php/Category:BCPA" title="Category:BCPA">BCPA</a></span></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/qerm/index.php/BCPA/All_BCPA_Functions" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="/qerm/index.php?title=Talk:BCPA/All_BCPA_Functions&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="/qerm/index.php?title=BCPA/All_BCPA_Functions&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/qerm/index.php?title=BCPA/All_BCPA_Functions&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/qerm/index.php/User:10.19.28.84" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">10.19.28.84</a></li>
+				<li id="pt-anontalk"><a href="/qerm/index.php/User_talk:10.19.28.84" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+				<li id="pt-anonlogin"><a href="/qerm/index.php?title=Special:UserLogin&amp;returnto=BCPA/All_BCPA_Functions" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/qerm/sites/qerm/logo.gif);" href="/qerm/index.php/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/qerm/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="/qerm/index.php/QERM_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/qerm/index.php/QERM_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/qerm/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/qerm/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/qerm/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/qerm/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search QERM Wiki" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&#160;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/qerm/index.php/Special:WhatLinksHere/BCPA/All_BCPA_Functions" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/qerm/index.php/Special:RecentChangesLinked/BCPA/All_BCPA_Functions" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/qerm/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="/qerm/index.php?title=BCPA/All_BCPA_Functions&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/qerm/index.php?title=BCPA/All_BCPA_Functions&amp;oldid=2792" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/qerm/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="lastmod"> This page was last modified on 17 August 2012, at 12:15.</li>
+		<li id="viewcount">This page has been accessed 5,040 times.</li>
+		<li id="privacy"><a href="/qerm/index.php/QERM_Wiki:Privacy_policy" title="QERM Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/qerm/index.php/QERM_Wiki:About" title="QERM Wiki:About">About QERM Wiki</a></li>
+		<li id="disclaimer"><a href="/qerm/index.php/QERM_Wiki:General_disclaimer" title="QERM Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+<script src="/qerm/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "BCPA/All_BCPA_Functions", "wgTitle": "BCPA/All BCPA Functions", "wgAction": "view", "wgArticleId": 687, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 2792, "wgCategories": ["BCPA"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script><!-- Served in 0.108 secs. --></body></html>

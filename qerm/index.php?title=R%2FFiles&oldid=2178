@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>R/Files - QERM Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qerm/opensearch_desc.php" title="QERM Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.cbr.washington.edu/qerm/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="QERM Wiki Atom feed" href="/qerm/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/qerm/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared&amp;only=styles&amp;skin=monobook&amp;*" />
+<link rel="stylesheet" href="/qerm/skins/monobook/main.css?301" media="screen" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE50Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE55Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/qerm/skins/monobook/IE60Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/qerm/skins/monobook/IE70Fixes.css?301" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-R_Files skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">R/Files</h1>
+	<div id="bodyContent">
+		<div id="siteSub">From QERM Wiki</div>
+		<div id="contentSub">
+				<div id="mw-revision-info">Revision as of 20:42, 2 June 2010 by <a href="/qerm/index.php/User:Ian" title="User:Ian" class="mw-userlink">Ian</a>  <span class="mw-usertoollinks">(<a href="/qerm/index.php/User_talk:Ian" title="User talk:Ian">Talk</a> | <a href="/qerm/index.php/Special:Contributions/Ian" title="Special:Contributions/Ian">contribs</a>)</span></div>
+
+				<div id="mw-revision-nav">(<a href="/qerm/index.php?title=R/Files&amp;diff=prev&amp;oldid=2178" title="R/Files">diff</a>) <a href="/qerm/index.php?title=R/Files&amp;direction=prev&amp;oldid=2178" title="R/Files">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div>
+			</div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Reading_files"><span class="tocnumber">1</span> <span class="toctext">Reading files</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Writing_files"><span class="tocnumber">2</span> <span class="toctext">Writing files</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#cat.28.29_and_sink.28.29"><span class="tocnumber">2.1</span> <span class="toctext">cat() and sink()</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#write.28.29_and_friends"><span class="tocnumber">2.2</span> <span class="toctext">write() and friends</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Reading_files"> Reading files </span></h2>
+<h2> <span class="mw-headline" id="Writing_files"> Writing files </span></h2>
+<p>There are several ways to write files in R
+</p>
+<h3> <span class="mw-headline" id="cat.28.29_and_sink.28.29"> <tt>cat()</tt> and <tt>sink()</tt> </span></h3>
+<p>Example:
+</p>
+<pre>
+sink(&quot;C://filepath//filename.txt&quot;, append=FALSE, split=FALSE)
+
+VAR1=3.5; VAR2=5
+
+cat(paste(VAR1, &quot;x+&quot;, VAR2, &quot;y&lt;j&quot;, sep=&quot;&quot;))
+
+sink()
+</pre>
+<p>Tips:
+</p>
+<ul><li> Special characters
+<ul><li> <tt>\n</tt> newline
+</li><li> <tt>\t</tt> tab
+</li><li> <tt>\"</tt> quote
+</li></ul>
+</li><li> Use this technique along with <tt>xtable()</tt> to easily write pretty TeX files for tables
+</li></ul>
+<h3> <span class="mw-headline" id="write.28.29_and_friends"> <tt>write()</tt> and friends </span></h3>
+<ul><li> <tt>write()</tt> will write data to the file specified with the file argument
+</li><li> <tt>write.table()</tt> for writing matrices/data frames (use append=T if already text in document)
+</li><li> <tt>write.csv()</tt> for writing comma-separated files
+</li><li> <tt>file()</tt> / <tt>close()</tt> to open and close connections to file for writing or reading
+</li><li> <tt>writeLines()</tt> / <tt>readLines()</tt> for writing lines and reading lines of a file ( <tt>readLines()</tt> is especially helpful for getting files into R that can't be handled by <tt>scan()</tt> or <tt>read.table()</tt> )
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 23/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb-qerm_:pcache:idhash:499-0!*!0!!en!*!edit=0 and timestamp 20220504200413 -->
+<div class="printfooter">
+Retrieved from "<a href="https://www.cbr.washington.edu/qerm/index.php/R/Files">https://www.cbr.washington.edu/qerm/index.php/R/Files</a>"</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/qerm/index.php/Special:Categories" title="Special:Categories">Category</a>: <span dir='ltr'><a href="/qerm/index.php/Category:R_tips" title="Category:R tips">R tips</a></span></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/qerm/index.php/R/Files" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="/qerm/index.php?title=Talk:R/Files&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="/qerm/index.php?title=R/Files&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/qerm/index.php?title=R/Files&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/qerm/index.php/User:10.19.28.84" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">10.19.28.84</a></li>
+				<li id="pt-anontalk"><a href="/qerm/index.php/User_talk:10.19.28.84" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+				<li id="pt-anonlogin"><a href="/qerm/index.php?title=Special:UserLogin&amp;returnto=R/Files&amp;returntoquery=oldid%3D2178" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/qerm/sites/qerm/logo.gif);" href="/qerm/index.php/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/qerm/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="/qerm/index.php/QERM_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/qerm/index.php/QERM_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/qerm/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/qerm/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/qerm/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/qerm/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search QERM Wiki" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&#160;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/qerm/index.php/Special:WhatLinksHere/R/Files" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/qerm/index.php/Special:RecentChangesLinked/R/Files" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/qerm/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="/qerm/index.php?title=R/Files&amp;oldid=2178&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/qerm/index.php?title=R/Files&amp;oldid=2178" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/qerm/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="privacy"><a href="/qerm/index.php/QERM_Wiki:Privacy_policy" title="QERM Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/qerm/index.php/QERM_Wiki:About" title="QERM Wiki:About">About QERM Wiki</a></li>
+		<li id="disclaimer"><a href="/qerm/index.php/QERM_Wiki:General_disclaimer" title="QERM Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+<script src="/qerm/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "R/Files", "wgTitle": "R/Files", "wgAction": "view", "wgArticleId": 499, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 2178, "wgCategories": ["R tips"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script><!-- Served in 0.093 secs. --></body></html>

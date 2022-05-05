@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>View source - QERM Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="next" href="https://www.cbr.washington.edu/qerm/index.php/R/Interfacing_with_GIS" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qerm/opensearch_desc.php" title="QERM Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.cbr.washington.edu/qerm/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="QERM Wiki Atom feed" href="/qerm/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/qerm/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 8]><link rel="stylesheet" href="/qerm/skins/common/IE80Fixes.css?301" media="screen" /><![endif]-->
+<link rel="stylesheet" href="/qerm/skins/monobook/main.css?301" media="screen" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE50Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE55Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/qerm/skins/monobook/IE60Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/qerm/skins/monobook/IE70Fixes.css?301" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-R_Interfacing_with_GIS skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">View source</h1>
+	<div id="bodyContent">
+		<div id="siteSub">From QERM Wiki</div>
+		<div id="contentSub">for <a href="/qerm/index.php/R/Interfacing_with_GIS" title="R/Interfacing with GIS">R/Interfacing with GIS</a></div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in the group: <a href="/qerm/index.php?title=QERM_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="QERM Wiki:Users (page does not exist)">Users</a>.
+</p>
+</div>
+<p>You can view and copy the source of this page:
+</p><textarea id="wpTextbox1" name="wpTextbox1" cols="80" rows="25" readonly="">[[Image: SampleNikiHabitat.png | right| 480px]]
+
+Loading [[Wikipedia: shapefile| shapefiles]] in R and doing some "basic" data manipulations.
+
+== Some background ==
+
+I did an analysis in [[User:Eli/Early Impressions of Finland | Finland]] of wolf movements that involved a lot of GIS-based analysis.  Specifically, I needed to look at locations of remotely tracked wolves with respect to all sorts of landscape covariates: habitat types, distance from linear elements (paved roads, forest roads, rivers, railways, power lines, habitat edges), and so on.  The land-class data, for example, came from an openly available Europe-wide [http://www.eea.europa.eu/publications/COR0-landcover CORINE] land cover database, which divides up all of Europe into [http://wiki.cbr.washington.edu/qerm/images/6/6f/CorineLandCover.png land cover classes] ranging from "1.1.1 Continuous Urban fFabric" to "5.2.3 Sea and Ocean" passing through "2.2.3 Olive groves" and "2.2.1 Vineyards" to "3.3.5 Glacial and perpetual snow" in between (you know - typical Brussels - simultaneously irritating everyone from [http://lh6.ggpht.com/_HaliGCzLIks/TCNEfTl92UI/AAAAAAAABgA/jLq5vEOwNE0/maryse_nicolai_folklore_corse.jpg Corsican olive growers] to [http://img10.imageshack.us/img10/7440/800pxsaamifamily19001.jpg  Sami reindeer herders] in one fell, bureaucratic swoop).
+
+I did most of this in R, using functions in the [http://cran.r-project.org/web/packages/maptools/index.html "maptools"] package, doing things that looked like this:
+
+&lt;pre>
+  NH &lt;- read.shape("habitat_data_niki")	
+  NH.data &lt;- NH$att.data
+  NH.poly &lt;- Map2poly(NH)
+&lt;/pre>
+
+Where "read.shape" would load the whole shapefile for the territory of a wolf (named Niki) and turning it into some kind of R shapefile list class, in which NH$att.data would be a table listing the ID, centerpoint, perimeter, area and habitat type of each polygon in the shapefile, and "Map2poly" would convert the R shapefile into a list of polygons which could be independently manipulated. 
+
+It was a little fussy, but eventually worked great, and we came up with some nice results and wrote them up and everyone was happy.
+
+==Tragedy==
+
+BUT THEN ... less than one year later, I tried to revisit the code, and discovered that NONE OF THE FUNCTIONS I HAD BEEN USING WORK!  Not a one! They had all been "deprecated", which I guess is some kind of code euphemism similar to "[http://papers.ssrn.com/sol3/papers.cfm?abstract_id=937130 rendered]" for undesirable people, but apparently more absolute. 
+
+==Resolution==
+
+Anyways, I pulled my hair for a while, and tried to figure out what to do, and what the new functions were, and how to do something really, really, basic, like identify the habitat type of a known location.  It took hours and hours and a lot of futile attempts, but I finally got things to work.  It is MUCH uglier than it used to be, and very confusing, and opened up a whole terrifying world of "Slots" (does anyone have experience with these?) and lots of other horrors.  But it sort of worked
+
+So let me lay a little code on you now.  
+
+=== Loading and plotting shapefiles ===
+
+I uploaded the shapefile for the territory snip [http://www.brillig.org/~elzizi/niki/ here].  Unfortunately (and inexplicably ... can anyone help?)  you cannot load the shape file directly from the website. So, if you are foolish enough to actually try this, you will have to download the files (all bundled in [http://www.brillig.org/~elzizi/niki/habitat_data_niki.zip]) and place them in some appropriate location.  Then: 
+&lt;pre>
+ require(maptools)
+ NH &lt;- readShapeSpatial("./data/Habitat/habitat_data_Niki")
+&lt;/pre>
+loads the data.  So far so good.  But what IS NH? It is a "SpatialPolygonsDataFrame".  What is that?  A nightmare.  For one thing, it is not a list or a dataframe, it is an "S4 formal class", which does not contains "elements", but things called "slots", which are accessed not via "$" but via "@" (Has anybody heard of this?  Does anybody have any insight into this?). Also, where "names" tells you what the column names are in a "data.frame", for an "S4 formal class" the relevant command is "slotNames".  Thus:
+&lt;pre>
+slotNames(NH)
+&lt;/pre>
+gives: "> "data"        "polygons"    "plotOrder"   "bbox"        "proj4string"
+Incidentally, in order to learn what an exotic object is, and how it is structured, I discovered the incredibly useful function "str", as in:
+&lt;pre>
+  str(NH)
+&lt;/pre>
+Anyways, marching forward, we extract some useful pieces of "NH" using slot commands.  Here is the table of attributes:
+&lt;pre>
+  NH.data &lt;- NH@data                  
+&lt;/pre>
+Just for illustration, we can look at the first few rows of this table:
+&lt;pre> 
+        AREA PERIMETER CLC_EU25HA CLC_EU25_1 CODE_00 LEVEL3 LEVEL2 LEVEL1
+0  2384796.0 12986.283      61188      63758     313    313     31      3
+1  1366056.7  9959.354      61230      63800     512    512     51      5
+2   395430.1  3364.520      61264      63834     312    312     31      3
+3 10050618.4 50082.922      61277      63847     324    324     32      3
+4  5931044.7 34088.445      61316      63886     313    313     31      3
+5   404233.0  4933.306      61363      63933     313    313     31      3
+&lt;/pre>
+Most of these are self-explanatory. The column "LEVEL3" is the finest scale habitat classification according to CORINE.  The bounding box of the data is:
+&lt;pre>
+  NH.bbox &lt;- NH@bbox	  
+&lt;/pre>
+Finally, we need to dig inside of this S4 formal class to extract a "list" of polygons:
+&lt;pre>
+  NH.polygons &lt;- NH@polygons
+&lt;/pre>
+For some reason, for plotting, we need to convert "NH.polygons" to a SpatialPolygons class object.  Why? I don't know.  Steps like this are why it takes a long time to figure things out. 
+&lt;pre>
+  NH.polylist &lt;- as.SpatialPolygons.PolygonsList(NH.polygons)
+&lt;/pre>
+
+This is how I made the plot at the top of the page:
+&lt;pre>
+   Habitat &lt;- factor(NH.data$LEVEL3)
+# recall that "LEVEL3" is the habitat
+   HabitatColors &lt;- c("wheat","forestgreen","darkgreen","lightgreen","brown","blue")
+   HabitatNames &lt;- c("Agriculture", "Coniferous forest", "Mixed forest", "Transitional woodland shrub", "Peatbogs", "Water")
+   HabitatNames &lt;- paste(levels(Habitat), HabitatNames)
+   plot(NH.polylist, bor=NA, col=HabitatColors[as.integer(Habitat)])
+# so somehow "plot" knows that when you plot a polylist, 
+# you can call out the colors from this vector associated with the "NH.data"
+   legend("topleft", legend=HabitatNames, fill=HabitatColors, bty="n")
+&lt;/pre>
+
+=== Identifying the land class of points in the landscape ===
+
+Create some random points within the bounding box:
+
+&lt;pre>
+xy &lt;- data.frame(x=runif(20,NH.bbox[1,1],NH.bbox[1,2]),
+		 y=runif(20,NH.bbox[2,1],NH.bbox[2,2]))
+&lt;/pre>
+
+Plot those points (note the pale colors)!
+[[Image: SampleNikiHabitatWithPoints.png | right | 200 px]]
+&lt;pre>
+# this is a sneaky sequence that allows you to make pale colors (by adding "alpha" to named colors)
+   HabitatCols.matrix &lt;- col2rgb(HabitatColors)
+   HabitatCols.pale &lt;- rgb(t(HabitatCols.matrix), max=255, alpha=100)
+
+   plot(NH.polylist, bor=NA, col=HabitatCols.pale[as.integer(Habitat)])
+   points(xy, pch=21, bg="darkred", fg=1)
+&lt;/pre>
+
+Some of these points are outside the edges of the habitat snip.  That's OK.  
+
+The key for identifying points in polygons is the simple function "inout" which tells you whether a data frame of points "xy" is inside a polygon. It is part of the [http://cran.r-project.org/web/packages/splancs/index.html splancs] package.  That part is Ok. 
+
+A more brutal piece (that took a long time to figure out, and that I could not find elsewhere on the web, and that is probably easier to do than I did) is actually extracting the polygon coordinates from a polygon list.  Basically, the way to get the "i"th polygon is:
+
+&lt;pre> 
+  IthPolygonCoordinates &lt;- NH.polygons[[i]]@Polygons[[1]]@coords
+&lt;/pre>
+
+Which, to me, looks crazy.  If you were going to extract it from the shape file itself it would look like:
+
+&lt;pre> 
+  IthPolygonCoordinates &lt;- NH@polygonslist[[i]]@Polygons[[1]]@coords
+&lt;/pre>
+
+What the logic is behind this deeply layered over-structured object is beyond me.  It does not seem as simple as the older functions.  But who am I to question the wisdom on [http://spatial-analyst.net/book/quotes/author/Roger%20Bivand,%20Norwegian%20School%20of%20Economics%20and%20Business%20Administration Roger Bivand]?
+
+Anyways, now we're ready for the final coup. 
+
+&lt;pre>
+# number of polygons
+n &lt;- nrow(NH.data)
+
+# null vector of habitats
+
+require(splancs)
+xy.habitat &lt;- factor(vector(len=nrow(xy)), levels=levels(Habitat))
+
+for(i in 1:n)
+{
+  mycoords &lt;- NH.polygons[[i]]@Polygons[[1]]@coords
+  inout &lt;- inout(xy, mycoords)
+  if(sum(inout)>0)
+     xy.habitat[inout] &lt;- Habitat[i]
+}
+&lt;/pre>
+
+Basically I take each polygon and I see if any points land in it.  Most of the time, I'm pretty dissappointed.  But occasionally, something comes up - and the habitat level of that "i"th polygon gets stored in the blank xy.habitats vector.  
+
+===An important caveat and solution ===
+
+The extremely astute observer will wonder if there might not maybe possibly perhaps be an issue with toroidal polygons, or a point within a habitat sections within a larger habitat section.  How do we know that the habitat identified is the habitat of the smaller bit?  Well, we don't.  HOWEVER, if we loop through the polygons in descending order of area size, then we are guaranteed that the eventual point selection will be in the smallest polygon.  To fix that small but important point, we use the AREA column from "NH.data"
+
+Thus:
+&lt;pre>
+polygon.order &lt;- order(NH.data$AREA, decreasing=TRUE)
+for(i in polygon.order)
+{
+  mycoords &lt;- NH.polygons[[i]]@Polygons[[1]]@coords
+  inout &lt;- inout(xy, mycoords)
+  if(sum(inout)>0)
+     xy.habitat[inout] &lt;- Habitat[i]
+}
+&lt;/pre>
+Does everything right.  
+
+Plot it to satisfy that the points have been Accurately Identified!
+&lt;pre>
+   plot(NH.polylist, bor=NA, col=HabitatCols.pale[as.integer(Habitat)])
+   points(xy, pch=21, bg=HabitatColors[as.integer(xy.habitat)], cex=2)
+&lt;/pre>
+
+[[Image:SampleNikiHabitatWithIdentifiedPoints.png | 500px]]
+
+Mission accomplished!
+
+==Complete Code==
+&lt;pre>
+require(maptools)
+require(splancs)
+ 
+NH &lt;- readShapeSpatial("./data/Habitat/habitat_data_Niki")
+NH.data &lt;- NH@data  
+NH.bbox &lt;- NH@bbox	
+NH.polygons &lt;- NH@polygons
+NH.polylist &lt;- as.SpatialPolygons.PolygonsList(NH.polygons)
+Habitat &lt;- factor(NH.data$LEVEL3)
+
+xy &lt;- data.frame(x=runif(20,NH.bbox[1,1],NH.bbox[1,2]),
+		 y=runif(20,NH.bbox[2,1],NH.bbox[2,2]))
+
+xy.habitat &lt;- factor(vector(len=nrow(xy)), levels=levels(Habitat))
+polygon.order &lt;- order(NH.data$AREA, decreasing=TRUE)
+for(i in polygon.order)
+{
+  mycoords &lt;- NH.polygons[[i]]@Polygons[[1]]@coords
+  inout &lt;- inout(xy, mycoords)
+  if(sum(inout)>0)
+     xy.habitat[inout] &lt;- Habitat[i]
+}
+
+HabitatColors &lt;- c("wheat","forestgreen","darkgreen","lightgreen","brown","blue")
+HabitatNames &lt;- c("Agriculture", "Coniferous forest", "Mixed forest", "Transitional woodland shrub", "Peatbogs", "Water")
+HabitatNames &lt;- paste(levels(Habitat), HabitatNames)
+HabitatCols.matrix &lt;- col2rgb(HabitatColors)
+HabitatCols.pale &lt;- rgb(t(HabitatCols.matrix), max=255, alpha=100)
+
+plot(NH.polylist, bor=NA, col=HabitatCols.pale[as.integer(Habitat)])
+points(xy, pch=21, bg=HabitatColors[as.integer(xy.habitat)], cex=2)
+&lt;/pre>
+
+[[Category: R tips]]</textarea><div class='templatesUsed'>
+
+</div>
+<p id="mw-returnto">Return to <a href="/qerm/index.php/R/Interfacing_with_GIS" title="R/Interfacing with GIS">R/Interfacing with GIS</a>.</p>
+<div class="printfooter">
+Retrieved from "<a href="https://www.cbr.washington.edu/qerm/index.php/R/Interfacing_with_GIS">https://www.cbr.washington.edu/qerm/index.php/R/Interfacing_with_GIS</a>"</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/qerm/index.php/R/Interfacing_with_GIS" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk"><a href="/qerm/index.php/Talk:R/Interfacing_with_GIS" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource" class="selected"><a href="/qerm/index.php?title=R/Interfacing_with_GIS&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/qerm/index.php?title=R/Interfacing_with_GIS&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/qerm/index.php/User:10.19.28.84" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">10.19.28.84</a></li>
+				<li id="pt-anontalk"><a href="/qerm/index.php/User_talk:10.19.28.84" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+				<li id="pt-anonlogin"><a href="/qerm/index.php?title=Special:UserLogin&amp;returnto=R/Interfacing_with_GIS&amp;returntoquery=action%3Dedit" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/qerm/sites/qerm/logo.gif);" href="/qerm/index.php/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/qerm/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="/qerm/index.php/QERM_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/qerm/index.php/QERM_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/qerm/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/qerm/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/qerm/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/qerm/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search QERM Wiki" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&#160;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/qerm/index.php/Special:WhatLinksHere/R/Interfacing_with_GIS" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/qerm/index.php/Special:RecentChangesLinked/R/Interfacing_with_GIS" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/qerm/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/qerm/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="privacy"><a href="/qerm/index.php/QERM_Wiki:Privacy_policy" title="QERM Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/qerm/index.php/QERM_Wiki:About" title="QERM Wiki:About">About QERM Wiki</a></li>
+		<li id="disclaimer"><a href="/qerm/index.php/QERM_Wiki:General_disclaimer" title="QERM Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+<script src="/qerm/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "R/Interfacing_with_GIS", "wgTitle": "R/Interfacing with GIS", "wgAction": "edit", "wgArticleId": 530, "wgIsArticle": false, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 2305, "wgCategories": [], "wgBreakFrames": true, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.legacy.edit", "mediawiki.action.edit", "mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script><!-- Served in 0.087 secs. --></body></html>

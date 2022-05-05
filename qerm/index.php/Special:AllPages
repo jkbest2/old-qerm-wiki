@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>All pages - QERM Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qerm/opensearch_desc.php" title="QERM Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.cbr.washington.edu/qerm/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="QERM Wiki Atom feed" href="/qerm/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/qerm/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared&amp;only=styles&amp;skin=monobook&amp;*" />
+<link rel="stylesheet" href="/qerm/skins/monobook/main.css?301" media="screen" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE50Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE55Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/qerm/skins/monobook/IE60Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/qerm/skins/monobook/IE70Fixes.css?301" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+</head>
+<body class="mediawiki ltr ns--1 ns-special page-Special_AllPages skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">All pages</h1>
+	<div id="bodyContent">
+		<div id="siteSub">From QERM Wiki</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<table class="mw-allpages-table-form"><tr>
+							<td><div class="namespaceoptions"><form method="get" action="/qerm/index.php"><input type="hidden" value="Special:AllPages" name="title" /><fieldset><legend>All pages</legend><table id="nsselect" class="allpages"><tr>
+	<td class='mw-label'><label for="nsfrom">Display pages starting at:</label>	</td>
+	<td class='mw-input'><input name="from" size="30" value="" id="nsfrom" />	</td>
+</tr>
+<tr>
+	<td class='mw-label'><label for="nsto">Display pages ending at:</label>	</td>
+			<td class='mw-input'><input name="to" size="30" value="" id="nsto" />		</td>
+</tr>
+<tr>
+	<td class='mw-label'><label for="namespace">Namespace:</label>	</td>
+			<td class='mw-input'><select id="namespace" name="namespace" class="namespaceselector">
+<option value="0" selected="selected">(Main)</option>
+<option value="1">Talk</option>
+<option value="2">User</option>
+<option value="3">User talk</option>
+<option value="4">QERM Wiki</option>
+<option value="5">QERM Wiki talk</option>
+<option value="6">File</option>
+<option value="7">File talk</option>
+<option value="8">MediaWiki</option>
+<option value="9">MediaWiki talk</option>
+<option value="10">Template</option>
+<option value="11">Template talk</option>
+<option value="12">Help</option>
+<option value="13">Help talk</option>
+<option value="14">Category</option>
+<option value="15">Category talk</option>
+</select> <input type="submit" value="Go" />	</td>
+</tr></table></fieldset></form></div></td>
+							<td class="mw-allpages-nav"><a href="/qerm/index.php/Special:AllPages" title="Special:AllPages">All pages</a></td></tr></table><table class="mw-allpages-table-chunk"><tr><td style="width:33%"><a href="/qerm/index.php/AD_Model_Builder" title="AD Model Builder">AD Model Builder</a></td><td style="width:33%"><a href="/qerm/index.php/AD_Model_Builder/Cheat_sheet" title="AD Model Builder/Cheat sheet">AD Model Builder/Cheat sheet</a></td><td style="width:33%"><a href="/qerm/index.php/AD_Model_Builder/Installing_Open-Source_ADMB_in_Linux" title="AD Model Builder/Installing Open-Source ADMB in Linux">AD Model Builder/Installing Open-Source ADMB in Linux</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/AD_Model_Builder/Running_ADMB_from_TextPad" title="AD Model Builder/Running ADMB from TextPad">AD Model Builder/Running ADMB from TextPad</a></td><td style="width:33%"><a href="/qerm/index.php/AD_Model_Builder/Runtime_Options" title="AD Model Builder/Runtime Options">AD Model Builder/Runtime Options</a></td><td style="width:33%"><a href="/qerm/index.php/AD_Model_Builder/Syntax_Highlighting" title="AD Model Builder/Syntax Highlighting">AD Model Builder/Syntax Highlighting</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/AD_Model_Builder/Tips_and_Tricks" title="AD Model Builder/Tips and Tricks">AD Model Builder/Tips and Tricks</a></td><td style="width:33%"><a href="/qerm/index.php/AMATH" title="AMATH">AMATH</a></td><td style="width:33%"><a href="/qerm/index.php/Advice_for_Choosing_an_Advisor" title="Advice for Choosing an Advisor">Advice for Choosing an Advisor</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/Advice_on_surviving_grad_school" title="Advice on surviving grad school">Advice on surviving grad school</a></td><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/BCPA" title="BCPA">BCPA</a></div></td><td style="width:33%"><a href="/qerm/index.php/BCPA/All_BCPA_Functions" title="BCPA/All BCPA Functions">BCPA/All BCPA Functions</a></td></tr>
+<tr><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/BCPA/Model_Selection" title="BCPA/Model Selection">BCPA/Model Selection</a></div></td><td style="width:33%"><a href="/qerm/index.php/BCPA/Model_Specification" title="BCPA/Model Specification">BCPA/Model Specification</a></td><td style="width:33%"><a href="/qerm/index.php/BCPA/PathPlot" title="BCPA/PathPlot">BCPA/PathPlot</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/BCPA/PlotBCPA" title="BCPA/PlotBCPA">BCPA/PlotBCPA</a></td><td style="width:33%"><a href="/qerm/index.php/BIOSTAT" title="BIOSTAT">BIOSTAT</a></td><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/Bathymetry_Data" title="Bathymetry Data">Bathymetry Data</a></div></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/Bathymetry_data" title="Bathymetry data">Bathymetry data</a></td><td style="width:33%"><a href="/qerm/index.php/Bathymetry_data/Rcode_2" title="Bathymetry data/Rcode 2">Bathymetry data/Rcode 2</a></td><td style="width:33%"><a href="/qerm/index.php/Behavioral_Change_Point_Analysis" title="Behavioral Change Point Analysis">Behavioral Change Point Analysis</a></td></tr>
+<tr><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/Behavioral_change_point_analysis" title="Behavioral change point analysis">Behavioral change point analysis</a></div></td><td style="width:33%"><a href="/qerm/index.php/Beyond_the_First_Year" title="Beyond the First Year">Beyond the First Year</a></td><td style="width:33%"><a href="/qerm/index.php/Big_Time_Boycott" title="Big Time Boycott">Big Time Boycott</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/Biology" title="Biology">Biology</a></td><td style="width:33%"><a href="/qerm/index.php/CFR" title="CFR">CFR</a></td><td style="width:33%"><a href="/qerm/index.php/Computer_Science" title="Computer Science">Computer Science</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/Dalai_Impalas" title="Dalai Impalas">Dalai Impalas</a></td><td style="width:33%"><a href="/qerm/index.php/Data" title="Data">Data</a></td><td style="width:33%"><a href="/qerm/index.php/Desserts" title="Desserts">Desserts</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/ESRM" title="ESRM">ESRM</a></td><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/Early_Impressions_of_Finland" title="Early Impressions of Finland">Early Impressions of Finland</a></div></td><td style="width:33%"><a href="/qerm/index.php/Epidemiology" title="Epidemiology">Epidemiology</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/FISH" title="FISH">FISH</a></td><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/Finland" title="Finland">Finland</a></div></td><td style="width:33%"><a href="/qerm/index.php/Fur_Seal_Analysis" title="Fur Seal Analysis">Fur Seal Analysis</a></td></tr>
+<tr><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/Fur_Seal_Analysis_Plots" title="Fur Seal Analysis Plots">Fur Seal Analysis Plots</a></div></td><td style="width:33%"><a href="/qerm/index.php/GPSS_Money" title="GPSS Money">GPSS Money</a></td><td style="width:33%"><a href="/qerm/index.php/Gurarie.sty" title="Gurarie.sty">Gurarie.sty</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/IBM" title="IBM">IBM</a></td><td style="width:33%"><a href="/qerm/index.php/IND_E_599G" title="IND E 599G">IND E 599G</a></td><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/Imps" title="Imps">Imps</a></div></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/Industrial_Engineering" title="Industrial Engineering">Industrial Engineering</a></td><td style="width:33%"><a href="/qerm/index.php/Inkscape_tips" title="Inkscape tips">Inkscape tips</a></td><td style="width:33%"><a href="/qerm/index.php/Job_Opportunities" title="Job Opportunities">Job Opportunities</a></td></tr>
+<tr><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/LaTeX" title="LaTeX">LaTeX</a></div></td><td style="width:33%"><a href="/qerm/index.php/LaTeX/Beamer" title="LaTeX/Beamer">LaTeX/Beamer</a></td><td style="width:33%"><a href="/qerm/index.php/LaTeX/Colors" title="LaTeX/Colors">LaTeX/Colors</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/LaTeX/Creating_Customized_Packages" title="LaTeX/Creating Customized Packages">LaTeX/Creating Customized Packages</a></td><td style="width:33%"><a href="/qerm/index.php/LaTeX/Thesis" title="LaTeX/Thesis">LaTeX/Thesis</a></td><td style="width:33%"><a href="/qerm/index.php/LaTeX_tips" title="LaTeX tips">LaTeX tips</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/Lagerheads" title="Lagerheads">Lagerheads</a></td><td style="width:33%"><a href="/qerm/index.php/Lagerheads_photos" title="Lagerheads photos">Lagerheads photos</a></td><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/Latex" title="Latex">Latex</a></div></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/Main_Page" title="Main Page">Main Page</a></td><td style="width:33%"><a href="/qerm/index.php/Migration_Literature_Review" title="Migration Literature Review">Migration Literature Review</a></td><td style="width:33%"><a href="/qerm/index.php/Nesse.sty" title="Nesse.sty">Nesse.sty</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/Ocean_Colors" title="Ocean Colors">Ocean Colors</a></td><td style="width:33%"><a href="/qerm/index.php/Oceanography" title="Oceanography">Oceanography</a></td><td style="width:33%"><a href="/qerm/index.php/Optimization" title="Optimization">Optimization</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/Presentation_tips" title="Presentation tips">Presentation tips</a></td><td style="width:33%"><a href="/qerm/index.php/QERM_514" title="QERM 514">QERM 514</a></td><td style="width:33%"><a href="/qerm/index.php/QERM_514/notes-Spr08" title="QERM 514/notes-Spr08">QERM 514/notes-Spr08</a></td></tr>
+<tr><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/QERM_597" title="QERM 597">QERM 597</a></div></td><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/QERM_597_BAK" title="QERM 597 BAK">QERM 597 BAK</a></div></td><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/QERM_598" title="QERM 598">QERM 598</a></div></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/QERM_598/Final_Projects" title="QERM 598/Final Projects">QERM 598/Final Projects</a></td><td style="width:33%"><a href="/qerm/index.php/QERM_598:_Computational_Methods_in_Quantitative_Ecology" title="QERM 598: Computational Methods in Quantitative Ecology">QERM 598: Computational Methods in Quantitative Ecology</a></td><td style="width:33%"><a href="/qerm/index.php/QERM_Applicant_FAQ" title="QERM Applicant FAQ">QERM Applicant FAQ</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/QERM_ISEC_reunion_2016" title="QERM ISEC reunion 2016">QERM ISEC reunion 2016</a></td><td style="width:33%"><a href="/qerm/index.php/QERM_Library" title="QERM Library">QERM Library</a></td><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/QERM_Library_(in_Loew)" title="QERM Library (in Loew)">QERM Library (in Loew)</a></div></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/QERM_Student_Seminar" title="QERM Student Seminar">QERM Student Seminar</a></td><td style="width:33%"><a href="/qerm/index.php/QERM_Student_Seminar/2008" title="QERM Student Seminar/2008">QERM Student Seminar/2008</a></td><td style="width:33%"><a href="/qerm/index.php/QERM_Student_Seminar/2009" title="QERM Student Seminar/2009">QERM Student Seminar/2009</a></td></tr>
+<tr><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/QERM_T-shirt" title="QERM T-shirt">QERM T-shirt</a></div></td><td style="width:33%"><a href="/qerm/index.php/QERM_T-shirts" title="QERM T-shirts">QERM T-shirts</a></td><td style="width:33%"><a href="/qerm/index.php/QERM_seminar" title="QERM seminar">QERM seminar</a></td></tr>
+<tr><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/QERM_seminar/2008" title="QERM seminar/2008">QERM seminar/2008</a></div></td><td style="width:33%"><a href="/qerm/index.php/QERM_seminar_Fall_2009" title="QERM seminar Fall 2009">QERM seminar Fall 2009</a></td><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/QERM_seminar_Spring_2009" title="QERM seminar Spring 2009">QERM seminar Spring 2009</a></div></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/QERM_simulation_servers" title="QERM simulation servers">QERM simulation servers</a></td><td style="width:33%"><a href="/qerm/index.php/QUACK" title="QUACK">QUACK</a></td><td style="width:33%"><a href="/qerm/index.php/Q_Sci" title="Q Sci">Q Sci</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/QualifyingExams" title="QualifyingExams">QualifyingExams</a></td><td style="width:33%"><a href="/qerm/index.php/R/Adding_letters" title="R/Adding letters">R/Adding letters</a></td><td style="width:33%"><a href="/qerm/index.php/R/C_Code" title="R/C Code">R/C Code</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/R/Classes" title="R/Classes">R/Classes</a></td><td style="width:33%"><a href="/qerm/index.php/R/Colors" title="R/Colors">R/Colors</a></td><td style="width:33%"><a href="/qerm/index.php/R/Contour_Plots" title="R/Contour Plots">R/Contour Plots</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/R/Converting_Geographic_Coordinates_to_Kilometers" title="R/Converting Geographic Coordinates to Kilometers">R/Converting Geographic Coordinates to Kilometers</a></td><td style="width:33%"><a href="/qerm/index.php/R/Correlated_Random_Walk" title="R/Correlated Random Walk">R/Correlated Random Walk</a></td><td style="width:33%"><a href="/qerm/index.php/R/Debugging" title="R/Debugging">R/Debugging</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/R/Editors" title="R/Editors">R/Editors</a></td><td style="width:33%"><a href="/qerm/index.php/R/Files" title="R/Files">R/Files</a></td><td style="width:33%"><a href="/qerm/index.php/R/General_Information_on_Plotting" title="R/General Information on Plotting">R/General Information on Plotting</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/R/Interactive_Plots" title="R/Interactive Plots">R/Interactive Plots</a></td><td style="width:33%"><a href="/qerm/index.php/R/Interfacing_with_GIS" title="R/Interfacing with GIS">R/Interfacing with GIS</a></td><td style="width:33%"><a href="/qerm/index.php/R/Java" title="R/Java">R/Java</a></td></tr>
+<tr><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/R/Making_Inset_Maps" title="R/Making Inset Maps">R/Making Inset Maps</a></div></td><td style="width:33%"><a href="/qerm/index.php/R/Making_Maps" title="R/Making Maps">R/Making Maps</a></td><td style="width:33%"><a href="/qerm/index.php/R/Margins" title="R/Margins">R/Margins</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/R/Optimizers" title="R/Optimizers">R/Optimizers</a></td><td style="width:33%"><a href="/qerm/index.php/R/Perspective_Plots" title="R/Perspective Plots">R/Perspective Plots</a></td><td style="width:33%"><a href="/qerm/index.php/R/Perspective_Plots/Code2" title="R/Perspective Plots/Code2">R/Perspective Plots/Code2</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/R/Polygons" title="R/Polygons">R/Polygons</a></td><td style="width:33%"><a href="/qerm/index.php/R/Publication_Plots" title="R/Publication Plots">R/Publication Plots</a></td><td style="width:33%"><a href="/qerm/index.php/R/String_Manipulation" title="R/String Manipulation">R/String Manipulation</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/R/Test" title="R/Test">R/Test</a></td><td style="width:33%"><a href="/qerm/index.php/R/Totally_Miscellaneous" title="R/Totally Miscellaneous">R/Totally Miscellaneous</a></td><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/R/Window_Commands" title="R/Window Commands">R/Window Commands</a></div></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/R/Windows_Commands" title="R/Windows Commands">R/Windows Commands</a></td><td style="width:33%"><a href="/qerm/index.php/R/Working_with_Data_Frames" title="R/Working with Data Frames">R/Working with Data Frames</a></td><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/R/_Window_Commands" title="R/ Window Commands">R/ Window Commands</a></div></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/R/tidyverse" title="R/tidyverse">R/tidyverse</a></td><td style="width:33%"><a href="/qerm/index.php/R_tips" title="R tips">R tips</a></td><td style="width:33%"><a href="/qerm/index.php/R_tips/Contingency_Tables" title="R tips/Contingency Tables">R tips/Contingency Tables</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/References_and_Bibliographies" title="References and Bibliographies">References and Bibliographies</a></td><td style="width:33%"><a href="/qerm/index.php/Retreat_RSVPs" title="Retreat RSVPs">Retreat RSVPs</a></td><td style="width:33%"><a href="/qerm/index.php/STAT" title="STAT">STAT</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/STAT_512-513" title="STAT 512-513">STAT 512-513</a></td><td style="width:33%"><a href="/qerm/index.php/STAT_516-517" title="STAT 516-517">STAT 516-517</a></td><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/Sea_Otter" title="Sea Otter">Sea Otter</a></div></td></tr>
+<tr><td style="width:33%"><div class="allpagesredirect"><a href="/qerm/index.php/Sea_Otters" title="Sea Otters">Sea Otters</a></div></td><td style="width:33%"><a href="/qerm/index.php/Seminars" title="Seminars">Seminars</a></td><td style="width:33%"><a href="/qerm/index.php/Sinister_Muffins" title="Sinister Muffins">Sinister Muffins</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/Software_Development_tips" title="Software Development tips">Software Development tips</a></td><td style="width:33%"><a href="/qerm/index.php/Soup" title="Soup">Soup</a></td><td style="width:33%"><a href="/qerm/index.php/Soup_schedule_archive" title="Soup schedule archive">Soup schedule archive</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/Theses_and_Dissertations" title="Theses and Dissertations">Theses and Dissertations</a></td><td style="width:33%"><a href="/qerm/index.php/Time_Series_Tips" title="Time Series Tips">Time Series Tips</a></td><td style="width:33%"><a href="/qerm/index.php/Website_tips" title="Website tips">Website tips</a></td></tr>
+<tr><td style="width:33%"><a href="/qerm/index.php/YearEndParty2009" title="YearEndParty2009">YearEndParty2009</a></td></tr>
+</table><div class="printfooter">
+Retrieved from "<a href="https://www.cbr.washington.edu/qerm/index.php/Special:AllPages">https://www.cbr.washington.edu/qerm/index.php/Special:AllPages</a>"</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-special" class="selected"><a href="/qerm/index.php/Special:AllPages" title="This is a special page, you cannot edit the page itself">Special page</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/qerm/index.php?title=Special:UserLogin&amp;returnto=Special:AllPages" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/qerm/sites/qerm/logo.gif);" href="/qerm/index.php/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/qerm/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="/qerm/index.php/QERM_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/qerm/index.php/QERM_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/qerm/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/qerm/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/qerm/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/qerm/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search QERM Wiki" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&#160;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+<li id="t-specialpages"><a href="/qerm/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/qerm/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="privacy"><a href="/qerm/index.php/QERM_Wiki:Privacy_policy" title="QERM Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/qerm/index.php/QERM_Wiki:About" title="QERM Wiki:About">About QERM Wiki</a></li>
+		<li id="disclaimer"><a href="/qerm/index.php/QERM_Wiki:General_disclaimer" title="QERM Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+<script src="/qerm/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "Special", "wgCanonicalSpecialPageName": "Allpages", "wgNamespaceNumber": -1, "wgPageName": "Special:AllPages", "wgTitle": "AllPages", "wgAction": "view", "wgArticleId": 0, "wgIsArticle": false, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 0, "wgCategories": [], "wgBreakFrames": false, "wgRestrictionCreate": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script><!-- Served in 0.148 secs. --></body></html>

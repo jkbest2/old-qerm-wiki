@@ -1,0 +1,183 @@
+###################################
+# QERM 598
+# Homework 0
+# by Mike Keim and Eli Gurarie)
+# 1.2.2007
+###################################
+
+#########################
+# An introduction to R	#
+#########################
+
+
+
+# The following examples and exercises should give you a first look
+# at what R does and how it works. 
+#
+# R is a command-line program, which just means commands are entered
+# line-by-line at the prompt. Being a programming language it is very
+# finicky. Everything has to be entered just right - including case-
+# sensitivity.  Get used to seeing the following succinct and redundant
+# message in blue: "Error: syntax error"
+#
+# More typically, extended pieces of code are written in a text-
+# editor and copy-pasted into R.  
+
+# There is a script editor in R itself (under the file menu), which 
+# allows users to run code by highlighting text and hitting ctrl-R.
+
+# Tinn-R (http://www.sciviews.org/Tinn-R/) is a more specifically 
+# R-oriented text editor which has a similar feature to the R-script 
+# editor.  
+
+# A very popular one among Windows users (especiallin in QERM) is 
+# "CRIMSON EDITOR" - (downloadable at http://www.crimsoneditor.com), 
+# which is very versatile, can color-code many programming languages,
+# and has a bunches of neat features. 
+
+# The comment operator is '#' (which is why they're all over the 
+# place in this script).  You can (just for fun) highlight this entire 
+# document and paste it into R and watch all sorts of stuff happen).  
+# It is a good habit in general to write lots of comments in your 
+# code describing what you're having R do for you.
+
+# If you're brand new to R, your best bet is probably to print out 
+# this lab and type things in by hand... just to get used to the 
+# syntax. 
+
+# The assignment operator '<-'
+x<-5			# sets x equal to 5
+
+# Notice that using the assignment operator sets the value of x
+# but doesn't necessarily return anything.  To see what x is, you
+# need to type:
+x				# tell us what x is
+
+# x can be many things more than just a single number.  We consider
+# some more simple examples first.
+x<-c(3,4,5)		# sets x equal to the vector (3,4,5)
+
+# "c" is a function - a very very useful function that creates "vectors"
+# or "lists". In all functions, arguments are passed within parentheses. 
+
+x<-3:5			# is a shortcut for the same thing
+x<-seq(3,5)		# does the same thing with a different function.
+
+# You can learn more about how functions work by using "?"
+
+?c
+?seq 
+
+# A help window appears with all sorts of information about the functions
+# Note, in particular, the examples at the bottom of the window
+
+
+#########################################################
+# Some notes on vectors, matrices and matrix arithmetic	#
+#########################################################
+# You might be wondering after the last example whether x is
+# a column vector or a row vector.  Usually in statistics, vectors
+# are considered column vectors, but this isn't *always* the case.
+
+# Usual operators '+', '-', '*' and '/' operate on vectors element by
+# element, so we can see
+x+x
+x-x
+x*x
+x^2
+x/x
+# give the expected returns
+
+
+# Surrounding the operator with '%' specifies that matrix operations apply
+x%*%x			# returns the inner product
+t(x)%*%x 		# again returns the inner product, note that this implies
+				# R was interpreting x as both a column and row vector in
+				# the previous line of code...
+x%*%t(x)		# returns the outer product
+
+# Some 'semi-intuitive' things that R does:
+x+1
+y<-1
+x+y
+y<-c(1)
+x+y			# so we can add vectors of length 1 to other vectors, but
+y<-c(1,2)
+x+y			# this will make R choke.
+
+
+# What about a matrix?
+y<-matrix(c(1,2,3,4,5,6,7,8,9,10,11,12),nrow=4)
+y
+# Notice that we can do this:
+y+x
+# and this:
+y+1
+# and even this:
+y+c(1,2)	
+# but this may not be intuitive to everyone... e.g. me.
+
+# Here's a tiresome calculation that R can do for you very quickly:
+z<-matrix(rnorm(25),nrow=5)
+z.inverse<-solve(z)
+z%*%z.inverse
+# Notice that the off-diagonals are 'zero' to within computer precision.
+# Set your own precision like this:
+round(z%*%z.inverse)
+
+# What the heck is the "rnorm" function?  How does "matrix" make matrices?
+# What can "round" do?   Find out all this and more yourself!
+?matrix
+?rnorm
+?round
+
+
+#############################################
+# Selecting certain elements of an R object #
+#############################################
+# We can call out specific items in vectors and matrices using 
+# square brackets (an important contrast from parentheses.  
+
+x[1]		# returns the first element of x
+x[-1]		# returns all but the first element of x
+x[c(1,2)]	# returns the first two elements of x
+# Square brackets can also use logical operators
+x[x>=4]		# returns the elements of x that are >= 4
+z[z>0]		# returns the positive elements of z.
+z[1,]		# returns the first row of z
+z[,1]		# returns the first column of z
+z[1:2,3:5]	# returns the 2x3 submatrix in z's upper right corner
+
+
+
+
+
+
+#####################################
+# Homework for Wednesday 1.7.2007	#
+#####################################
+
+# 1.  Download R onto your computer from
+# http://www.r-project.org/
+
+# 2. Spend a little time poking around the website given above.
+
+# 3. Create a vector of all the even numbers from 2 to 100 using the ':'
+# operator described above in the definition of 'x'.
+
+# 4. Create a vector of all the even numbers from 2 to 100 using the seq() function.
+
+# 5. Create a vector of all the even numbers from 2 to 100 using
+# the square brackets. (One way of doing this will seem very redundant
+# after you do number 3.)
+
+# 6. 
+#	a) Create a 6x6 matrix of standard normal random variables.  
+#	b) Invert it.
+#	c) Extract the elements of the matrix that are <1
+#	d) Use the mean() function to calculate the mean of your matrix.
+
+
+
+
+

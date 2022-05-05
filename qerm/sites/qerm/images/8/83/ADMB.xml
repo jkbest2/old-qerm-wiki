@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE MODE SYSTEM "xmode.dtd">
+
+<!-- 	jedit edit mode file for ADMB: http://admb-project.org
+
+	written by Ian Taylor
+
+	Installing instructions:
+	Copy this file in your jedit/modes directory, then edit file 'catalog' and add an entry like the following line:
+  <MODE NAME="ADMB" FILE="admb.xml" FILE_NAME_GLOB="*.tpl" />
+
+	-->
+
+<MODE>
+  <PROPS>
+    <PROPERTY NAME="indentOpenBrackets" VALUE="{" />
+    <PROPERTY NAME="indentCloseBrackets" VALUE="}" />
+    <PROPERTY NAME="indentPrevLine"
+      VALUE="\s*(((if|while)\s*\(|else\s*(\{|$)|else\s+if\s*\(|for\s*\(.*)|repeat\s*" />
+
+    <PROPERTY NAME="wordBreakChars" VALUE=",+-=&lt;&gt;/?^&amp;*!" />
+    <PROPERTY NAME="doubleBracketIndent" VALUE="false" />
+    <PROPERTY NAME="lineComment" VALUE="//" />
+  </PROPS>
+
+  <RULES ESCAPE="\" IGNORE_CASE="FALSE" HIGHLIGHT_DIGITS="TRUE">
+
+    <SPAN TYPE="LITERAL1" NO_LINE_BREAK="TRUE">
+      <BEGIN>"</BEGIN>
+      <END>"</END>
+    </SPAN>
+
+   <SPAN TYPE="LITERAL1" NO_LINE_BREAK="TRUE">
+      <BEGIN>'</BEGIN>
+      <END>'</END>
+    </SPAN>
+
+    <EOL_SPAN TYPE="COMMENT1">//</EOL_SPAN>
+
+
+
+    <WHITESPACE> </WHITESPACE>
+    <WHITESPACE>  </WHITESPACE>
+
+
+    <!-- uncomment this if you want user defined functions to be highlighted, too -->
+    <!-- <MARK_PREVIOUS EXCLUDE_MATCH="TRUE" TYPE="FUNCTION">(</MARK_PREVIOUS> -->
+
+    <SEQ TYPE="NULL">(</SEQ>
+    <SEQ TYPE="NULL">)</SEQ>
+
+
+    <SEQ TYPE="OPERATOR">&lt;-</SEQ>
+    <SEQ TYPE="OPERATOR">-&gt;</SEQ>
+    <SEQ TYPE="OPERATOR">&gt;=</SEQ>
+    <SEQ TYPE="OPERATOR">&lt;=</SEQ>
+    <SEQ TYPE="OPERATOR">==</SEQ>
+    <SEQ TYPE="OPERATOR">!=</SEQ>
+    <SEQ TYPE="OPERATOR">=</SEQ>
+    <SEQ TYPE="OPERATOR">!</SEQ>
+    <SEQ TYPE="OPERATOR">&amp;&amp;</SEQ>
+    <SEQ TYPE="OPERATOR">|</SEQ>
+    <SEQ TYPE="OPERATOR">||</SEQ>
+    <SEQ TYPE="OPERATOR">&amp;</SEQ>
+    <SEQ TYPE="OPERATOR">~</SEQ>
+    <SEQ TYPE="OPERATOR">$</SEQ>
+    <SEQ TYPE="OPERATOR">:</SEQ>
+    <SEQ TYPE="OPERATOR">&gt;</SEQ>
+    <SEQ TYPE="OPERATOR">&lt;</SEQ>
+    <SEQ TYPE="OPERATOR">+</SEQ>
+    <SEQ TYPE="OPERATOR">-</SEQ>
+    <SEQ TYPE="OPERATOR">*</SEQ>
+    <SEQ TYPE="OPERATOR">/</SEQ>
+    <SEQ TYPE="OPERATOR">^</SEQ>
+    <SEQ TYPE="OPERATOR">]</SEQ>
+    <SEQ TYPE="OPERATOR">[</SEQ>
+    <SEQ TYPE="OPERATOR">{</SEQ>
+    <SEQ TYPE="OPERATOR">}</SEQ>
+
+    <KEYWORDS IGNORE_CASE="FALSE">
+
+    <LITERAL2>NULL</LITERAL2>
+
+    <KEYWORD1>abs</KEYWORD1>
+    <KEYWORD1>and</KEYWORD1>
+    <KEYWORD1>and_eq</KEYWORD1>
+    <KEYWORD1>asm</KEYWORD1>
+    <KEYWORD1>auto</KEYWORD1>
+    <KEYWORD1>bitand</KEYWORD1>
+    <KEYWORD1>bitor</KEYWORD1>
+    <KEYWORD1>bool</KEYWORD1>
+    <KEYWORD1>break</KEYWORD1>
+    <KEYWORD1>case</KEYWORD1>
+    <KEYWORD1>catch</KEYWORD1>
+    <KEYWORD1>char</KEYWORD1>
+    <KEYWORD1>class</KEYWORD1>
+    <KEYWORD1>compl</KEYWORD1>
+    <KEYWORD1>const</KEYWORD1>
+    <KEYWORD1>const_cast</KEYWORD1>
+    <KEYWORD1>continue</KEYWORD1>
+    <KEYWORD1>cout</KEYWORD1>
+    <KEYWORD1>cube</KEYWORD1>
+    <KEYWORD1>default</KEYWORD1>
+    <KEYWORD1>delete</KEYWORD1>
+    <KEYWORD1>dmatrix</KEYWORD1>
+    <KEYWORD1>do</KEYWORD1>
+    <KEYWORD1>dvar_matrix</KEYWORD1>
+    <KEYWORD1>dynamic_cast</KEYWORD1>
+    <KEYWORD1>elem_div</KEYWORD1>
+    <KEYWORD1>elem_prod</KEYWORD1>
+    <KEYWORD1>else</KEYWORD1>
+    <KEYWORD1>endl</KEYWORD1>
+    <KEYWORD1>enum</KEYWORD1>
+    <KEYWORD1>explicit</KEYWORD1>
+    <KEYWORD1>export</KEYWORD1>
+    <KEYWORD1>extern</KEYWORD1>
+    <KEYWORD1>fabs</KEYWORD1>
+    <KEYWORD1>float</KEYWORD1>
+    <KEYWORD1>for</KEYWORD1>
+    <KEYWORD1>friend</KEYWORD1>
+    <KEYWORD1>function</KEYWORD1>
+    <KEYWORD1>goto</KEYWORD1>
+    <KEYWORD1>if</KEYWORD1>
+    <KEYWORD1>inline</KEYWORD1>
+    <KEYWORD1>mutable</KEYWORD1>
+    <KEYWORD1>namespace</KEYWORD1>
+    <KEYWORD1>new</KEYWORD1>
+    <KEYWORD1>not</KEYWORD1>
+    <KEYWORD1>not_eq</KEYWORD1>
+    <KEYWORD1>operator</KEYWORD1>
+    <KEYWORD1>or</KEYWORD1>
+    <KEYWORD1>or_eq</KEYWORD1>
+    <KEYWORD1>private</KEYWORD1>
+    <KEYWORD1>protected</KEYWORD1>
+    <KEYWORD1>public</KEYWORD1>
+    <KEYWORD1>register</KEYWORD1>
+    <KEYWORD1>reinterpret_cast</KEYWORD1>
+    <KEYWORD1>report</KEYWORD1>
+    <KEYWORD1>return</KEYWORD1>
+    <KEYWORD1>sfabs</KEYWORD1>
+    <KEYWORD1>short</KEYWORD1>
+    <KEYWORD1>signed</KEYWORD1>
+    <KEYWORD1>sizeof</KEYWORD1>
+    <KEYWORD1>square</KEYWORD1>
+    <KEYWORD1>static</KEYWORD1>
+    <KEYWORD1>static_cast</KEYWORD1>
+    <KEYWORD1>struct</KEYWORD1>
+    <KEYWORD1>sum</KEYWORD1>
+    <KEYWORD1>switch</KEYWORD1>
+    <KEYWORD1>template</KEYWORD1>
+    <KEYWORD1>this</KEYWORD1>
+    <KEYWORD1>throw</KEYWORD1>
+    <KEYWORD1>try</KEYWORD1>
+    <KEYWORD1>typedef</KEYWORD1>
+    <KEYWORD1>typeid</KEYWORD1>
+    <KEYWORD1>typename</KEYWORD1>
+    <KEYWORD1>union</KEYWORD1>
+    <KEYWORD1>unsigned</KEYWORD1>
+    <KEYWORD1>using</KEYWORD1>
+    <KEYWORD1>virtual</KEYWORD1>
+    <KEYWORD1>void</KEYWORD1>
+    <KEYWORD1>volatile</KEYWORD1>
+    <KEYWORD1>wchar_t</KEYWORD1>
+    <KEYWORD1>while</KEYWORD1>
+    <KEYWORD1>xor</KEYWORD1>
+    <KEYWORD1>xor_eq</KEYWORD1>
+    <KEYWORD1>FALSE</KEYWORD1>
+    <KEYWORD1>TRUE</KEYWORD1>
+    
+    <KEYWORD2>DATA_SECTION</KEYWORD2>
+    <KEYWORD2>PARAMETER_SECTION</KEYWORD2>
+    <KEYWORD2>INITIALIZATION_SECTION</KEYWORD2>
+    <KEYWORD2>PRELIMINARY_CALCS_SECTION</KEYWORD2>
+    <KEYWORD2>PROCEDURE_SECTION</KEYWORD2>
+    <KEYWORD2>REPORT_SECTION</KEYWORD2>
+    <KEYWORD2>RUNTIME_SECTION</KEYWORD2>
+    <KEYWORD2>FUNCTION</KEYWORD2>
+    <KEYWORD2>TOP_OF_MAIN_SECTION</KEYWORD2>
+    <KEYWORD2>GLOBALS_SECTION</KEYWORD2>
+    <KEYWORD2>FINAL_SECTION</KEYWORD2>
+    <KEYWORD2>BETWEEN_PHASES_SECTION</KEYWORD2>
+
+    <KEYWORD3>double</KEYWORD3>
+    <KEYWORD3>int</KEYWORD3>
+    <KEYWORD3>long</KEYWORD3>
+    <KEYWORD3>imatrix</KEYWORD3>
+    <KEYWORD3>matrix</KEYWORD3>
+    <KEYWORD3>number</KEYWORD3>
+    <KEYWORD3>ivector</KEYWORD3>
+    <KEYWORD3>vector</KEYWORD3>
+    <KEYWORD3>3darray</KEYWORD3>
+    <KEYWORD3>dvector</KEYWORD3>
+    <KEYWORD3>init_int</KEYWORD3>
+    <KEYWORD3>init_ivector</KEYWORD3>
+    <KEYWORD3>init_imatrix</KEYWORD3>
+    <KEYWORD3>init_number</KEYWORD3>
+    <KEYWORD3>init_vector</KEYWORD3>
+    <KEYWORD3>init_matrix</KEYWORD3>
+    <KEYWORD3>init_bounded_number</KEYWORD3>
+    <KEYWORD3>init_bounded_vector</KEYWORD3>
+    <KEYWORD3>init_bounded_matrix</KEYWORD3>
+    <KEYWORD3>init_3darray</KEYWORD3>
+    <KEYWORD3>init_4darray</KEYWORD3>
+    <KEYWORD3>init_bounded_dev_vector</KEYWORD3>
+    <KEYWORD3>init_bounded_number_vector</KEYWORD3>
+    <KEYWORD3>init_bounded_vector_vector</KEYWORD3>
+    <KEYWORD3>objective_function_value</KEYWORD3>
+    <KEYWORD3>likeprof_number</KEYWORD3>
+    <KEYWORD3>sdreport_number</KEYWORD3>
+    <KEYWORD3>sdreport_vector</KEYWORD3>
+    <KEYWORD3>random_effects_vector</KEYWORD3>
+
+    <KEYWORD4>LOCAL_CALCS</KEYWORD4>
+    <KEYWORD4>END_CALCS</KEYWORD4>
+
+
+    </KEYWORDS>
+
+  </RULES>
+</MODE>

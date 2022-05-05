@@ -1,0 +1,172 @@
+\documentclass[12pt]{beamer}
+\usepackage{color}
+
+\newcommand{\DD}[2]{\frac{\partial^2 #1}{\partial #2 ^2}}
+
+%\definecolor{section0}{rgb}{0,.5,.1} % Defines section colors!  (neat)
+%\definecolor{section1}{rgb}{0,.7,0}
+%\definecolor{section2}{rgb}{0,.5,.5}
+%\definecolor{section3}{rgb}{0,.5,.4}
+
+\definecolor{green1}{rgb}{0,.5,.1}
+\definecolor{cream1}{rgb}{.97,.97,.83}
+\definecolor{shitbrown}{rgb}{.2,.2,.05}
+
+	\setbeamercolor{boxcolor1}{fg=white,bg=green1}
+	\setbeamercolor{boxcolor2}{fg=black,bg=cream1}
+
+
+\newcommand{\Em}[1]{\emph{\color{shitbrown}{#1} }\color{black}}
+\newcommand{\bl}[1]{\color{blue}{#1 }\color{black}}
+\newcommand{\gr}[1]{\color{green1}{#1 }\color{black}}
+\newcommand{\rd}[1]{\color{red}{#1 }\color{black}}
+
+
+%\usepackage[graph,frame,arrow,tips,matrix]{xy}
+%\setbeamertemplate{items}[ball] 
+%\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\definecolor{emphasis}{rgb}{0,.5,.1}
+%\usepackage[english]{babel}
+%\usepackage[latin1]{inputenc}
+%\usepackage{times}
+%\usepackage[T1]{fontenc}
+%\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps}
+%\usefonttheme{structurebold}
+\setbeamertemplate{items}[ball] 
+\mode<presentation>
+  \setbeamercovered{transparent}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps}
+
+
+\usetheme{Singapore}
+  
+  
+ 
+\title{Blabla Beamer}
+\author{Eli ``the four trick pony'' Gurarie}
+\institute{Quantitative Ecology and Resource Management\\
+University of Washington - Seattle}
+\date{\today}
+
+
+ 
+\begin{document}
+
+\section{Title}
+
+\frame{
+	\tableofcontents[part=1]
+		\maketitle
+}
+
+
+\section{Outline}
+\frame{
+			\begin{itemize}
+				\item{Outline}
+				\item{Titles and Pauses}
+				\item{Silly colors}
+				\item{BeamerBox}
+			\end{itemize}
+}
+
+
+
+\section{Trick Number 1}
+\frame{
+\frametitle{Titles and Pauses}
+			\begin{itemize}
+				\item{Outline} \pause
+				\item{Titles and Pauses} \pause
+				\item{Silly colors} \pause
+				\item{BeamerBox} \pause
+			\end{itemize}
+			
+			
+	\Large{Note all the pauses!}
+}
+
+
+
+
+
+\section{Trick Number 2}
+\frame{
+\frametitle{Colors}
+
+(Look at the definitions in the preamble!)
+
+			\begin{itemize}
+				\item{\Em{Outline}} \pause
+				\item{\bl{Titles and Pauses}} \pause
+				\item{\gr{Silly colors}} \pause
+				\item{\rd{BeamerBox}} \pause
+			\end{itemize}
+			
+$\DD{x}{t}$
+\vspace{.2in}
+	\Large{Note all the pauses!}
+}
+
+
+\section{Trick Number 3}
+\frame{
+\frametitle{The Amazing beamerbox}
+
+\begin{center}
+
+		\setbeamercolor{boxcolor1}{fg=white,bg=green1}
+		\setbeamercolor{boxcolor2}{fg=black,bg=cream1}
+	
+		\begin{beamerboxesrounded}[upper=boxcolor1,lower=boxcolor2,shadow=true]{Outline}
+		\pause
+			\begin{enumerate}
+				\item{Outline} \pause
+				\item{Titles and Pauses} \pause
+				\item{Silly colors} \pause
+				\item{BeamerBox} \pause
+			\end{enumerate}
+		\end{beamerboxesrounded}
+		
+\end{center}
+}
+
+
+\section{Trick Number 4}
+\frame{
+\frametitle{Columns}
+
+		\begin{columns}
+		\column{0.6\textwidth} % set width of first column
+			\begin{center}
+				\includegraphics[width=\textwidth]{ElectroFishing.png}\\
+				\includegraphics[width=1.7in]{BlueHeadChub.jpg}
+			\end{center}		
+			
+		\column{0.55\textwidth} % set width of second column
+		\begin{beamerboxesrounded}[upper=boxcolor1,lower=boxcolor2,shadow=true]{} %needs a blank for no title on beamerbox
+			\begin{itemize}
+				\item Durant Creek, North Carolina;
+				\item Several small Cyprinids, esp.~bluehead chub (\emph{Nocomis leptocephalus});
+				\item 1000 fish captured and individually marked at one location;
+				\item Monthly sampling at locations up and downstream
+			\end{itemize}
+		\end{beamerboxesrounded}
+	\end{columns}
+	
+}
+
+
+
+\section{Bonus Trick}
+% it appears that the specification of the background image needs to come before the begining of the frame in which it is used
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{LotsOfFish.pdf}}
+
+\frame{
+\frametitle{The Background Picture}		
+	\rd{\Huge{Lots And Lots of \Em{Fish}!}}
+}
+
+
+\end{document}
+

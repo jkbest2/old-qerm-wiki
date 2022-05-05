@@ -1,0 +1,265 @@
+\documentclass[12pt,mathserif]{beamer}
+\usepackage{color}
+
+\definecolor{titleblue}{rgb}{0.2,0.2,0.7}
+\newcommand{\bl}[1]{\color{titleblue}{#1 }\color{black}}
+\newcommand{\gr}[1]{\color{green1}{#1 }\color{black}}
+\newcommand{\rd}[1]{\color{red}{#1 }\color{black}}
+\newcommand{\bk}[1]{\color{black}{#1 }\color{black}}
+\newcommand{\wh}[1]{\color{white}{#1 }\color{black}}
+
+\setbeamertemplate{navigation symbols}{} %no nav symbols
+\usepackage{textcomp} % this package has arrows (see comprehensive LaTeX symbol list)
+\usepackage[NoDocJS]{pdfanim}
+\PDFAnimLoad[height=3in]{fishanim}{anim1/fishanim}{19}
+
+\title{How to make informative figures, \\ purty pictures, and waste time with \\ free and open source software}
+\author{Ian Taylor}
+\institute{Quantitative Ecology and Resource Management\\
+University of Washington}
+\date{May 7, 2008}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\frame{
+  \tableofcontents[part=1]
+    \maketitle
+}
+
+\begin{frame}[fragile]
+\begin{center}\includegraphics[width=3in]{flowchart.pdf}\end{center}
+\end{frame}
+
+% \section{\LaTeX \textrightarrow inkscape \textrightarrow R}
+\begin{frame}[fragile]
+{\LaTeX packages {Ti\emph{k}Z} \& PGF}
+\hspace{2in}\includegraphics[width=1.5in]{flowchart.pdf}
+\scriptsize
+\vspace{-.3in}
+\begin{verbatim}
+\begin{tikzpicture}[auto,bend left]
+  \node (R)     at   (0:1)  {\includegraphics[width=.2in]{Rlogo.jpg}};
+  \node (latex) at (120:1)  {\LaTeX};
+  \node [text width=1cm](ink) at (240:1){Inkscape
+                          \includegraphics[width=.2in]{inkscape.logo.pdf}};
+
+  \path (R)     edge[very thick,<->] (Inkscape)
+        (ink)   edge[very thick,<->] (latex)
+        (latex) edge[very thick,<->] (R);
+\end{tikzpicture}
+\end{verbatim}
+\end{frame}
+
+\begin{frame}
+{Inkscape}
+\includegraphics[width=1in]{ink.pdf}
+\begin{itemize}
+\item Inkscape is a vector graphics editor application.
+\item ``Vector graphics is the use of geometrical primitives such as points, lines, curves, and shapes or polygon(s), which are all based upon mathematical equations, to represent images in computer graphics.''\footnote{\url{http://en.wikipedia.org/wiki/Vector_graphics}}
+\item Two key features I'm aware of so far:
+\begin{itemize}
+\item edit PDF
+\item trace bitmap.\\
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+% {Inkscape: edit PDF to adjust plot from R}
+{\includegraphics[height=.2in]{Rlogo.jpg} \textrightarrow \includegraphics[height=.2in]{ink2.pdf} \textrightarrow \bk{\textrm{\LaTeX}} \hfill \hfill \hfill \bl{edit PDF}}
+\begin{center}\includegraphics[height=6in]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/boxSensDeplNew.pdf}
+\end{center}\end{frame}
+
+\begin{frame}
+{\includegraphics[height=.2in]{Rlogo.jpg} \textrightarrow \includegraphics[height=.2in]{ink2.pdf} \textrightarrow \bk{\textrm{\LaTeX}} \hfill \hfill \hfill \bl{edit PDF}}
+\begin{center}\includegraphics[height=6in]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/boxSensDeplNewFixed.pdf}
+\end{center}\end{frame}
+
+
+\begin{frame}
+{\includegraphics[height=.2in]{ink2.pdf} \textrightarrow \bk{\textrm{\LaTeX}} \hfill \hfill \hfill \bl{trace bitmap, add text}}
+\vspace{-.2in}\begin{center}\includegraphics[height=3.1in]{eli1.png}
+\end{center}\end{frame}
+
+
+\begin{frame}
+{\includegraphics[height=.2in]{ink2.pdf} \textrightarrow \bk{\textrm{\LaTeX}} \hfill \hfill \hfill \bl{trace bitmap, add text}}
+\begin{center}\includegraphics[height=3in]{eli7.pdf}
+\end{center}\end{frame}
+
+
+\begin{frame}
+{\includegraphics[height=.2in]{ink2.pdf} \textrightarrow \includegraphics[height=.2in]{Rlogo.jpg} \hfill \hfill \hfill \bl{trace bitmap, export}}
+\begin{center}\includegraphics[height=3in]{eli8.pdf}
+\end{center}\end{frame}
+
+
+\begin{frame}
+{\includegraphics[height=.2in]{ink2.pdf} \textrightarrow \includegraphics[height=.2in]{Rlogo.jpg} \hfill \hfill \hfill \bl{trace bitmap, export}}
+\vspace{-0.5in}\begin{center}\includegraphics[height=3in]{eli9.pdf}
+\pause
+\end{center}
+\vspace{-0.8in} ``Vector graphics is the use of geometrical primitives such as points, lines, curves, and shapes or \rd{polygon(s), which are all based upon mathematical equations,} to represent images in computer graphics.''
+\end{frame}
+
+
+\begin{frame}[fragile]
+\tiny
+\begin{verbatim}
+%LaTeX with PSTricks extensions
+%%Creator: inkscape 0.46
+%%Please note this file requires PSTricks extensions
+%\psset{xunit=.5pt,yunit=.5pt,runit=.5pt}
+\begin{pspicture}(200,150)
+{
+  \newrgbcolor{curcolor}{0.20784314 0.24705882 0.81176472}
+  \pscustom[linestyle=none,fillstyle=solid,fillcolor=curcolor]
+  {
+    \newpath
+    \moveto(62.481523,45.57681)
+    \curveto(58.004483,52.025789)(53.961043,54.497499)(49.314352,53.625779)
+    \curveto(45.893402,52.984009)(42.555682,55.26854)(44.389722,56.99648)
+    \curveto(44.888912,57.46679)(51.594992,58.38924)(59.292123,59.04637)
+    \curveto(66.989253,59.70349)(73.636733,60.45735)(74.064303,60.7216)
+    \curveto(74.491873,60.98585)(76.565533,63.53184)(78.672443,66.37934)
+    \curveto(80.779343,69.22684)(84.447673,73.44041)(86.824283,75.74284)
+    \lineto(91.145383,79.92908)
+    \lineto(87.858773,82.99922)
+    \curveto(84.764683,85.88954)(84.612583,86.34723)(85.262193,90.81299)
+    \curveto(85.641703,93.42198)(86.525463,96.14864)(87.226113,96.87223)
+    \curveto(87.971723,97.64226)(91.145193,98.26432)(94.878463,98.37223)
+    \lineto(101.25692,98.55661)
+    \lineto(102.39403,95.10098)
+    \curveto(103.80439,90.81498)(105.30864,90.23153)(107.61264,93.07685)
+    \curveto(109.3492,95.2214)(110.90552,95.93584)(123.29734,100.27701)
+    \curveto(126.59734,101.43308)(130.64734,103.38913)(132.29734,104.62379)
+    \curveto(136.41234,107.70295)(147.05384,108.47965)(147.60432,105.74101)
+    %...six lines cut out...
+    \curveto(101.09076,54.99221)(99.030263,54.62606)(86.797343,54.117669)
+    \lineto(73.297343,53.556609)
+    \lineto(72.126123,49.55661)
+    \curveto(71.481953,47.35661)(70.685873,44.31911)(70.357073,42.80661)
+    \curveto(69.424843,38.5184)(66.721533,39.46928)(62.481523,45.57681)
+    \closepath
+  }
+}
+\end{pspicture}
+\end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\tiny
+\begin{verbatim}
+
+
+
+
+
+
+
+# R code
+fish = c(
+    62.481523,45.57681,
+    58.004483,52.025789,53.961043,54.497499,49.314352,53.625779,
+    45.893402,52.984009,42.555682,55.26854,44.389722,56.99648,
+    44.888912,57.46679,51.594992,58.38924,59.292123,59.04637,
+    66.989253,59.70349,73.636733,60.45735,74.064303,60.7216,
+    74.491873,60.98585,76.565533,63.53184,78.672443,66.37934,
+    80.779343,69.22684,84.447673,73.44041,86.824283,75.74284,
+    91.145383,79.92908,
+    87.858773,82.99922,
+    84.764683,85.88954,84.612583,86.34723,85.262193,90.81299,
+    85.641703,93.42198,86.525463,96.14864,87.226113,96.87223,
+    87.971723,97.64226,91.145193,98.26432,94.878463,98.37223,
+    101.25692,98.55661,
+    102.39403,95.10098,
+    103.80439,90.81498,105.30864,90.23153,107.61264,93.07685,
+    109.3492,95.2214,110.90552,95.93584,123.29734,100.27701,
+    126.59734,101.43308,130.64734,103.38913,132.29734,104.62379,
+    136.41234,107.70295,147.05384,108.47965,147.60432,105.74101,
+    #...six lines cut out...
+    101.09076,54.99221,99.030263,54.62606,86.797343,54.117669,
+    73.297343,53.556609,
+    72.126123,49.55661,
+    71.481953,47.35661,70.685873,44.31911,70.357073,42.80661,
+    69.424843,38.5184,66.721533,39.46928,62.481523,45.57681)
+
+fish = matrix(fish,length(fish)/2,2,byrow=T)
+\end{verbatim}
+\end{frame}
+
+
+\begin{frame}
+{\includegraphics[height=.2in]{ink2.pdf} \textrightarrow \includegraphics[height=.2in]{Rlogo.jpg} \hfill \hfill \hfill \bl{trace bitmap, export}}
+\begin{center}\includegraphics[height=3in]{eli9.pdf}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+{\includegraphics[height=.2in]{ink2.pdf} \textrightarrow \includegraphics[height=.2in]{Rlogo.jpg} \hfill \hfill \hfill \bl{trace bitmap, export}}
+\begin{center}\includegraphics[height=3in]{fish1.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+{\includegraphics[height=.2in]{ink2.pdf} \textrightarrow \includegraphics[height=.2in]{Rlogo.jpg} \hfill \hfill \hfill \bl{trace bitmap, export}}
+
+{\large Rotation matrices:}\footnote{\url{http://en.wikipedia.org/wiki/Rotation_matrix}}
+
+In matrix theory, a rotation matrix\ldots is a real special orthogonal matrix. The name refers to the fact that an $n \times n$ rotation matrix corresponds to a geometric rotation about a fixed origin in an n-dimensional Euclidean space\ldots.
+\[Q_{2 \times 2} = \begin{bmatrix}\cos \theta & -\sin \theta \\ \sin \theta & \cos \theta\end{bmatrix},\]
+\end{frame}
+
+\begin{frame}
+{\includegraphics[height=.2in]{ink2.pdf} \textrightarrow \includegraphics[height=.2in]{Rlogo.jpg} \hfill \hfill \hfill \bl{trace bitmap, export}}
+\begin{center}
+\PDFAnimation{fishanim}
+\end{center}
+\end{frame}
+
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{fish2.pdf}}
+% \begin{frame}[plain]
+
+\begin{frame}
+{\includegraphics[height=.2in]{ink2.pdf} \textrightarrow \includegraphics[height=.2in]{Rlogo.jpg} \hfill \hfill \hfill \bl{trace bitmap, export}}
+\begin{center}
+
+\end{center}
+\end{frame}
+\setbeamertemplate{background canvas}{} %return to blank canvas
+
+
+\begin{frame}
+{\includegraphics[height=.4in]{ubuntu_logo.png}}
+\begin{columns}
+\column{.3\textwidth}
+{Currently most popular desktop linux distribution. \\ \ \\ All open-source software extremely easy to install.}
+\column{.7\textwidth}
+\includegraphics[width=\textwidth]{Screenshot-3.png}
+\end{columns}
+\begin{columns}
+\column{.2\textwidth}
+\includegraphics[width=\textwidth]{knuth.jpg}
+\column{.7\textwidth}
+``I currently use Ubuntu Linux''\\ Donald Knuth (creater of \TeX), \\ April 25, 2008
+\end{columns}
+\end{frame}
+
+\begin{frame}
+{Books of Edward Tufte}
+One-day courses in Seattle July 17 \& 18, 2008,\\ \$200 with student ID (includes copies of 4 books): \\ \url{http://www.edwardtufte.com/}.
+
+\includegraphics[width=.23\textwidth]{cover_vdqi.png}
+\includegraphics[width=.23\textwidth]{cover_ei.png}
+\includegraphics[width=.23\textwidth]{cover_visex.png}
+\hspace{.1in}
+\includegraphics[width=.25\textwidth]{cover_be.png}
+
+\end{frame}
+
+
+\end{document}

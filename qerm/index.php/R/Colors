@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>R/Colors - QERM Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qerm/opensearch_desc.php" title="QERM Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.cbr.washington.edu/qerm/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="QERM Wiki Atom feed" href="/qerm/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/qerm/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared&amp;only=styles&amp;skin=monobook&amp;*" />
+<link rel="stylesheet" href="/qerm/skins/monobook/main.css?301" media="screen" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE50Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE55Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/qerm/skins/monobook/IE60Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/qerm/skins/monobook/IE70Fixes.css?301" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-R_Colors skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">R/Colors</h1>
+	<div id="bodyContent">
+		<div id="siteSub">From QERM Wiki</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Colors"><span class="tocnumber">1</span> <span class="toctext">Colors</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Color_Palettes"><span class="tocnumber">2</span> <span class="toctext">Color Palettes</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Transparency"><span class="tocnumber">3</span> <span class="toctext">Transparency</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#See_Also"><span class="tocnumber">4</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Colors">Colors</span></h2>
+<p>Colors in R can be defined by name (<b>blue</b>, <b>black</b>, <b>darkgoldenrod</b>, <b>cornsilk</b>, etc.), according to <a href="http://en.wikipedia.org/wiki/RGB" class="extiw" title="wikipedia:RGB">RGB</a> values, according to HSL and HCL values (variously, permutations of <a href="http://en.wikipedia.org/wiki/hue" class="extiw" title="wikipedia:hue">hue</a>, <a href="http://en.wikipedia.org/wiki/saturation_(color)" class="extiw" title="wikipedia:saturation (color)">saturation</a>, <a href="http://en.wikipedia.org/wiki/Munsell_color_system#Chroma" class="extiw" title="wikipedia:Munsell color system">chroma</a> and <a href="http://en.wikipedia.org/wiki/luminescence" class="extiw" title="wikipedia:luminescence">luminescence</a>, see: <a href="http://en.wikipedia.org/wiki/HSL_and_HSV" class="extiw" title="wikipedia:HSL and HSV">Wikipedia:HSL and HSV</a> and <a href="http://en.wikipedia.org/wiki/Munsell_color_system" class="extiw" title="wikipedia:Munsell color system">Wikipedia:Munsell color system</a> for more information).  Most of these values are freely definable either as decimal values between 0 to 1 or hexadecimal values between 0 and F.  
+</p><p>See the <b>colors</b> command for a list of built in colros.
+</p><p>See <b>rgb</b>, <b>hsv</b> and <b>hcl</b> commands for more on defining custom colors. 
+</p><p>Here are a few links to handy R color charts:
+</p>
+<dl><dd> <a href="http://research.stowers-institute.org/efg/R/Color/Chart/" class="external free" rel="nofollow">http://research.stowers-institute.org/efg/R/Color/Chart/</a>
+</dd><dd> <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf" class="external free" rel="nofollow">http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf</a>
+</dd></dl>
+<h2> <span class="mw-headline" id="Color_Palettes">Color Palettes</span></h2>
+<p>See <b>heat.colors</b>, <b>topo.colors</b>, <b>cm.colors</b>, and <b>rainbow</b> for automatic generation of appealing color spectra.
+</p><p>See the <b>RColorBrewer</b> package for predefined palettes of configurable length that can be sequential, diverging, or qualitative.  You can play with the options at their <a href="http://colorbrewer2.org/" class="external text" rel="nofollow">website</a>, or here's a short example:
+</p>
+<pre># to change to default palette (the colors you get with col = 1, col = 2, etc.) to a sequnce of 9 colors using the Blue-Green color scheme:
+palette( brewer.pal( 9, "BuGn" ) )
+
+# to see all the color schemes using 4 colors:
+display.brewer.all( 4 )
+</pre>
+<p>For more sophisticated techniques, you can create your own color palette with the <b>colorRamp</b> and <b>colorRampPalette</b> functions. For instance the 'jet color' scheme used in Matlab can be created by:
+</p>
+<pre>jet.colors &lt;- 
+ colorRampPalette(c("#00007F","blue","#007FFF","cyan","#7FFF7F","yellow","#FF7F00","red","#7F0000"))  
+</pre>
+<h2> <span class="mw-headline" id="Transparency">Transparency</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="/qerm/index.php/File:AlphaRainbow.jpeg" class="image"><img alt="AlphaRainbow.jpeg" src="/qerm/sites/qerm/images/thumb/9/9b/AlphaRainbow.jpeg/300px-AlphaRainbow.jpeg" width="300" height="306" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/qerm/index.php/File:AlphaRainbow.jpeg" class="internal" title="Enlarge"><img src="/qerm/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div></div></div></div>
+<p>Many of the functions related to color allow the input of an alpha parameter determining transparency. This often allows an increase in the clarity of the data presented in a plot. The image at right was created using the simple commands:
+</p>
+<pre>x=seq(0,2*pi,length=10)
+par(mar=rep(0,4))
+plot(cos(x),sin(x),col=1,bg=rainbow(10,alpha=.5),pch=21,cex=25,xlim=c(-2,2),ylim=c(-2,2))
+</pre>
+<p><br />
+Unfortunately, many devices and file formats do not support transparency. Writing the image from R as a PDF is one of the best choices. The image above was created in the Rgui running in Windows and saved as a JPG. PNG files support transparency, but when save as a JPG, it is flattened. If you copy a plot with transparency from the Rgui as a Windows Metafile, you will get emptiness where there should be color.
+</p><p>The col2rgb function is a useful way to add transparency to color with familiar names:
+</p>
+<pre>(x &lt;- col2rgb('red')/255) # normally returns on the scale of 0-255, so rescaled
+#      [,1]
+#red      1
+#green    0
+#blue     0
+mycol &lt;- rgb(x[1,],x[2,],x[3,],alpha=.5)
+print(mycol)
+[1] "#FF000080"
+</pre>
+<h2> <span class="mw-headline" id="See_Also">See Also</span></h2>
+<p><a href="/qerm/index.php/R_tips" title="R tips">R tips</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 14/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb-qerm_:pcache:idhash:87-0!*!0!!en!2!edit=0 and timestamp 20220505034621 -->
+<div class="printfooter">
+Retrieved from "<a href="https://www.cbr.washington.edu/qerm/index.php/R/Colors">https://www.cbr.washington.edu/qerm/index.php/R/Colors</a>"</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/qerm/index.php/Special:Categories" title="Special:Categories">Category</a>: <span dir='ltr'><a href="/qerm/index.php/Category:R_tips" title="Category:R tips">R tips</a></span></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/qerm/index.php/R/Colors" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="/qerm/index.php?title=Talk:R/Colors&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="/qerm/index.php?title=R/Colors&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/qerm/index.php?title=R/Colors&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/qerm/index.php/User:10.19.28.84" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">10.19.28.84</a></li>
+				<li id="pt-anontalk"><a href="/qerm/index.php/User_talk:10.19.28.84" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+				<li id="pt-anonlogin"><a href="/qerm/index.php?title=Special:UserLogin&amp;returnto=R/Colors" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/qerm/sites/qerm/logo.gif);" href="/qerm/index.php/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/qerm/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="/qerm/index.php/QERM_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/qerm/index.php/QERM_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/qerm/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/qerm/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/qerm/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/qerm/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search QERM Wiki" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&#160;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/qerm/index.php/Special:WhatLinksHere/R/Colors" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/qerm/index.php/Special:RecentChangesLinked/R/Colors" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/qerm/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="/qerm/index.php?title=R/Colors&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/qerm/index.php?title=R/Colors&amp;oldid=2219" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/qerm/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="lastmod"> This page was last modified on 13 July 2010, at 20:09.</li>
+		<li id="viewcount">This page has been accessed 14,340 times.</li>
+		<li id="privacy"><a href="/qerm/index.php/QERM_Wiki:Privacy_policy" title="QERM Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/qerm/index.php/QERM_Wiki:About" title="QERM Wiki:About">About QERM Wiki</a></li>
+		<li id="disclaimer"><a href="/qerm/index.php/QERM_Wiki:General_disclaimer" title="QERM Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+<script src="/qerm/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "R/Colors", "wgTitle": "R/Colors", "wgAction": "view", "wgArticleId": 87, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 2219, "wgCategories": ["R tips"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script><!-- Served in 0.114 secs. --></body></html>

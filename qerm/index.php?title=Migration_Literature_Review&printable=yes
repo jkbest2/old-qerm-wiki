@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>Migration Literature Review - QERM Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qerm/opensearch_desc.php" title="QERM Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.cbr.washington.edu/qerm/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="QERM Wiki Atom feed" href="/qerm/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/qerm/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared&amp;only=styles&amp;printable=1&amp;skin=monobook&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Migration_Literature_Review skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">Migration Literature Review</h1>
+	<div id="bodyContent">
+		<div id="siteSub">From QERM Wiki</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Magnetic_Navigation"><span class="tocnumber">1</span> <span class="toctext">Magnetic Navigation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Navigation_.2F_Foraging_Behavior"><span class="tocnumber">2</span> <span class="toctext">Navigation / Foraging Behavior</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Migration_Models"><span class="tocnumber">3</span> <span class="toctext">Migration Models</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Temperature_.2F_salinity"><span class="tocnumber">4</span> <span class="toctext">Temperature / salinity</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Ocean_conditions"><span class="tocnumber">5</span> <span class="toctext">Ocean conditions</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Magnetic_Navigation">Magnetic Navigation</span></h2>
+<p>Johnsen &amp; Lohmann (2005) provide a good summary of magnetic field perception abilities in animals: there are 3 hypotheses for how magnetoreception works in animals, electromagnetic induction, magnetic field-dependent chemical reactions and biogenic magnetite, for none of which direct evidence exists.  The earth's magnetic field can provide 2 types of information: compass information, which allows an animal to maintain a particular heading (i.e. head north) and geographical position, which allows an animal to navigate complex routes or find home and could be based on inclination angle or field intensity or the animal learning the 'magnetic map' (local anomalies) in their location.  Electromagnetic induction is believed to be used by elasmobranch fish by means of detecting the Lorentz force of a charged particle moving though a magnetic field where the electric circuit is formed by the seawater as the conducting medium.  The induction mechanism can detect polarity, but is probably not sensitive enough to be used as a magnetic map.  The chemical magnetoreception mechanism relies on an electron transfer in a radical pair induced by light absorption.  It is believed to be used by birds, newts, and flies, in which changes in magnetic orientation have been observed in response to specific in wavelengths of light.  The chemical mechanism cannot detect polarity (merely the poleward direction rather than north or south) and cannot detect very small changes in field intensity necessary for a magnetic map.  The biogenic magnetite mechanism comes in 2 types: single-domain magnetite, which are permanently magnetized crystals and will rotate into alignment with the earth's magnetic field, and superparamagnetic magnetite, which are smaller crystals and not permanently magnetized so they won't rotate, but the crystal's magnetic axis tracks the ambient field's axis.  There is evidence of single-domain magnetite in fish noses, superparamagnetic magnetite in the upper beak of pigeons and other birds, and magnetite receptions in other animals such as turtles and mole rats.  Single-domain magnetite mechanisms could detect polarity, though superparamagnetic magnetite mechanisms could not, though both could detect small changes in intensity to function as a magnetic map sense.  Wiltschko &amp; Wiltschko (2005) cover the 3 hypothesized magnetoreception mechanisms as well and also discuss field inclination and/or intensity being used as a 'signpost' in navigation with examples of birds and turtles.  Gould (2008) turns to the evolution of magnetic sense stating with certain micro-aerobic bacteria containing chains of magnetite which serve to align them which the earth's magnetic field (and thus swim down away from the oxygen-laden surface).  He considers the diversity of map and compass systems, and suggests that the chemical mechanism has evolved at least twice as a (partial) replacement for a magnetite mechanism based on the discovery of a vestigial fixed-direction compass in robins.
+</p><p>Additionally, several papers discuss evidence of magnetic navigational capabilities.  Boles &amp; Lohmann (2003) show that spiny lobsters (<i>Panulirus argus</i>) move in a homeward direction after being displaced, deprived of visual and magnetic cues during displacement, and having their eyes covered.  When tested with magnetic fields replicating the locations ~400 km N and S of the testing site, the lobsters moved in the direction home would have been, had they been at these locations, showing a magnetic map sense.  Alerstam (2003) places the work of Boles &amp; Lohmann (2003) is a larger context with the history of considering animals using the earth's magnetic field for navigation on open future questions.  Similarly, Phillips et al. (2002) showed evidence of a magnetic map sense in newts (<i>Notophthalmus viridescens</i>) sensitive to small differences in the magnetic field; displaced newts navigated towards home when subjected to a magnetic inclination simulating -0.5° from home, and did not display a significant directional orientation when the magnetic field simulated that of their home pond.  Klimley et al. (2005) used telemetry to track bat rays (<i>Myliobatis californica</i>) to show the bat rays moved in a straight-line highly directional manner indicative of a compass or piloting sense.  Meyer et al. (2005) showed sharks (<i>Carcharhinus plumbeus</i> and <i>Sphyrna lewini</i>) could detect an earth-strength magnetic field using conditioning for a food reward.
+</p><p>See also Friedland et al. as discussed under Navigation / Foraging Behavior.
+</p>
+<h2> <span class="mw-headline" id="Navigation_.2F_Foraging_Behavior">Navigation / Foraging Behavior</span></h2>
+<p>Odling-Smee &amp; Braithwaite (2003) discuss how learning affects fish orientation.  Possible orientation mechanisms include landmarks (most evidence comes from lab studies which doesn't necessarily translate to the wild), compass orientation (including a sun-compass or a magnetic compass, but probably not polarized light), water movements (probably more applicable to fish that live near stationary objects or in rivers), inertial guidance &amp; internal clocks (i.e. paying attention to their own movements &amp; use their internal circadian clock to be at particular locations at particular times of day), and social cues (following other fish).  One interesting point is the importance of the fish's ecological environment in what is learned  (i.e. landmark use of shallow vs. open-water dwelling fish).  The paper includes a section on salmon, mostly focused on homing to find their natal river, but briefly mentioning ocean migration mechanisms of pheromone tracking and celestial and magnetic compasses.  Lohmann et al. (2008) address long-distance ocean migration (not confining themselves to fish) with respect the the navigational clues available, and discusses the advantages and disadvantages to various methods of studying ocean migration (lab experiments, ocean experiments, and telemetry data).  Salmon are known to possess magnetic compasses and perhaps also magnetic maps.  Magnetic anomalies might actually be used as landmarks, rather than being problematic for magnetic navigation (evidence from sharks and whales).  Salmon can use chemical/olfactory clues to find their natal river, including from estuary or coastal environments where the salmon can sample the differences between water is stratified in vertical layers; however, ocean navigation most likely involves non-olfactory mechanisms.  Other cues involve hydrodynamics such as wave direction and current.  Hatchling sea turtles use wave direction to orient offshore and salmon might use waves similarly, though there is currently no evidence of this, and could possibly also use wave direction in the open ocean due to seasonally consistent winds.  Currents are used by many animals in shallow water, but probably aren't useful for open ocean navigation.  Salmon might also be able to use skylight polarization patterns or a sun compass.  Finally, there are interesting similarities between sea turtle and salmon navigation (open ocean followed by natal homing at 2 different spatial scales with probably 2 different mechanisms), where open ocean navigation is better understood in sea turtles and natal homing better understood in salmon.
+</p><p>[also cognition]  Warburton (2003) discusses learning from a foraging rather than orientation perspective, looking at factors that affect learning and thus foraging success.  Memory windows seemed to vary based on the predictability of food availability with "significant interspecific and interpopulation differences correlated with ecology."  Performance can increase due to motivation or learning, example of coho (<i>Oncorhynchus kisutch</i>) increasing prey capture ability with experience.
+</p><p>Humston et al. (2004) created a spatiotemporally dynamic population model including heterogeneity of biotic and abiotic conditions.  They investigate 3 movement behaviors: random-walk, kinesis, and restricted-are search (gradient response).  They found restricted-area search very sensitive to initial conditions with grater variability among cohorts as fish tended to get stuck in local maxima and not move much (the model did not include prey depletion or density-dependence), and they recommend minimalistic movement models where there is no empirical evidence for complex behaviors at the appropriate spatiotemporal scale of the model.  In a different vein, Naug &amp; Arathi (2006) investigate decision rules used by honey bees (<i>Apis cerana</i>) to optimally forage in patches with multiple dynamic options.
+</p><p>Friedland et al. (2001) analyze temperature data from data storage tags to determine possible migration routes for chum salmon (<i>Oncorhynchus keta</i>) tagged in the Bering Sea migrating to Japan.  They found that fish tended to make more directed progress (as determined by crossing isotherms) during the day when they also exhibited mode diving behavior, while at night temperatures tended to remain constant with the fish presumably near the surface.  They found this supports a light-based orientation mechanism, such as a sun compass, with the daytime dives and ascents possibly related to finding/maintaining heading (maybe using polarization which would be robust to varying light conditions), though some form of magnetic navigation and/or thermal gradients may also be used in some way.
+</p><p>Interesting references (need to be added to JabRef):
+</p>
+<ul><li> Hansen LP, Jonsson N, Jonsson B (1993) Oceanic migration in homing Atlantic salmon. Anim Behav 45:927–941
+</li><li> Haugh CV, Walker MM (1998) Magnetic Discrimination Learning in Rainbow Trout (Oncorhynchus mykiss). J Navigation 51:35–45
+</li><li> Hiramatsu K, Ishida Y (1989) Random movement and orientation in pink salmon (Oncorhynchus gorbuscha) migrations. Can J Fish Aquat Sci 46:1062–1066
+</li><li> Nordtug T, Berg OK, Melo TB (1994) Directional light transmission in the pineal window of Atlantic salmon (Salmo salar L.) may be used for solar orientation. J Exp Zool 269: 403–412
+</li><li> Ogura M, Ishida Y (1995) Homing behavior and vertical movements of four species of Pacific salmon (Oncorhynchus spp.) in the central Bering Sea. Can J Fish Aquat Sci 52:532–540
+</li><li> Ogura M, Kato M, Arai N, Sasada T, Sakaki Y (1992) Magnetic particles in chum salmon (Onchorhynchus keta): extraction and transmission electron microscopy. Can J Zool 70:874–877
+</li><li> Quinn TP, Groot C (1984) Pacific salmon (Oncorhynchus) migrations: orientation versus random movement. Can J Fish Aquat Sci 41:1319–1324
+</li><li> Radchenko VI, Glebov II (1998) On vertical distribution of Pacific salmon in the Bering Sea, collected by trawling data. J Ichthyol 38:603–608
+</li><li> Saila SB, Shappy RA (1963) Random movement and orientation in salmon migration. J Cons Int Explor Mer 28: 153–166
+</li><li> Stepanov AS, Churmasoc AV, Cherkashin SA (1979) Migration direction finding by chum salmon according to the sun. Sov J Mar Biol 5:92–99
+</li><li> Ueno Y (1992) Deepwater migrations of chum salmon (Oncorhynchus keta) along the Pacific coast of northern Japan. Can J Fish Aquat Sci 49:2307–2312
+</li><li> Wada K, Ueno Y (1999) Homing behavior of chum salmon determined by an archival tag (NPAFC Doc. 425) Hokkaido National Fisheries Research Institute, Hokkaido
+</li></ul>
+<h2> <span class="mw-headline" id="Migration_Models"> Migration Models </span></h2>
+<p>Booker et al. (2008) model the trajectories of 15 Atlantic salmon (<i>Salmo salar</i>) with known release (west coast of Ireland) and recapture (at sea north of the British Isles) points.  The first part of the paper is devoted to validating the OCCAM model of ocean currents used with data from drifter buoys.  For the salmon model, they investigated 3 direction-finding mechanisms, random-walk, rheotaxis (aligning to the prevailing current), and thermotaxis (moving to the preferred temperature along the temperature gradient), all with a constant velocity.  They found that both rheotaxis and thermotaxis performed much better than random-walk, with rheotaxis more closely corresponding to recapture sites than thermotaxis.  They measured the difference between the observed and simulated data (100 trajectories for each salmon) in 3 ways: difference between observed and simulated recapture on actual date of recapture, minimum distance between recapture location and any point on the simulated trajectory, and number of days between observed recapture date and minimum distance date.  There were still discrepancies between modeled trajectories and recapture locations, which could also be explained by incorrectly estimating swimming speed or delays between tagging and the salmon entering the ocean.
+</p><p>Also, proposed migration routes for chum salmon migrating from the Bering Sea to Japan in Friedland et al. (2001) (discussed above under Navigation / Foraging Behavior).
+</p>
+<h2> <span class="mw-headline" id="Temperature_.2F_salinity">Temperature / salinity </span></h2>
+<p>Azumaya et al. (2007) determined temperature and salinity ranges for various Paciﬁc salmon species (see table 1 in paper) using data sets from Japanese and Russian research vessels where hydrographic	measurements were made simultaneously with fishing. In general, sockeye salmon has a smaller temperature and salinity range that other species, while chum, coho, and pink salmon had similar ranges.  Chinook salmon had a lower thermal limit &lt;1.6°C and an upper thermal limit similar to sockeye salmon.  Whether the geographic distribution of salmon is bounded by the thermal or halo-limit depends on the season.  The paper includes maps of acceptable thermal and halo-habitat for each species in summer and winter, and discusses salmon distribution in relation to the Subarctic Front (4°C isotherm at 100-m depth) and the Subarctic Boundary (34.0 psu at 0 m).  Additionally, acceptable habitat is limited vertically mostly by temperature in the western North Pacific and by salinity in the eastern North Pacific, which also has a larger depth of acceptable habitat.  
+</p><p>Previously, Welch et al. (1998) examined thermal boundaries of sockeye salmon distribution by month and region based on CPUE (they did not find a relationship between distribution and salinity or ocean nutrients) and found lower limits, but a similar seasonal trend and regional differences.  Data came from US, Canadaian, and Japanese surveys,  1956–1996.  They found that salmon distribution followed a step-function response to temperature with the drop-off occurring in a  2-3°C interval at the thermal limit (usually 1-2°C), which fit a pattern of starvation-avoidance.  They assert that the mechanism behind the observed step-function response to temperature is not growth maximization, but avoidance of temperatures where metabolic losses exceed gains from consumption (i.e. starvation), as salmon's basal metabolic rate increase with temperature.  Thus increasing thermal limits would be expected with increasing productivity.  Comment by Brian:  I don't buy the argument that the supposed step function is the result of the location of the zero-growth (starvation) point.  I ran some bioenergetics models and could not get the upper lethal (zero-growth) temperature to go lower than 9.7 degrees.  Welch et al. (1998) claim it is often near 7.  This is an oversimplified paper with overblown conclusions.
+</p><p>Azumaya and Ishida (2005) also examined chum salmon tagged in the Bering Sea with archival tags measuring internal and external temperature, pressure, and ambient light intensity, and found similar patterns of behavior.  In considering the reasons (including foraging, escaping predators, thermoregulation, and determining orientation headings) behind frequent vertical movements during the day when chum salmon dive through the thermocline to depths where food density is assumed to be higher, they find the most likely explanation that chum salmon dive to feed below the thermocline where the temperature is less optimal and ascend to warmer waters to thermoregulate.  The paper also provides information on vertical swimming speeds, which were higher during daytime, during ascent, and above the thermocline than the respective opposites.
+</p>
+<h2> <span class="mw-headline" id="Ocean_conditions"> Ocean conditions </span></h2>
+<p>Carmack (2007) recommends using the alpha/beta ocean distinction a a conceptual framework for understanding physical and biological processes.  Alpha oceans are found at subtropical latitudes and are characterized by being stratified by temperature, while beta oceans are found at subarctic latitudes and are instead stratified by salinity.  The boundary corresponds roughly to the 10° winter isotherm at about 44°N in the North Pacific.  Salmon are only found in beta oceans where temperatures are 6°-10° or colder, and it it hypothesized that they use another feature of beta oceans to aid in migration: "the system of contiguous buoyancy boundary currents along the coast of British Columbia and Alaska."  Though Welch et al. (1995, 1998) argue that physiological factors keep salmon in colder waters, Carmack supposes it could also be the importance of the "special suite of environmental cues-maintained by freshwater mixtures in and above the permanent haloclineseas" to navigation.  The paper also discusses nutrient availability in alpha and beta oceans.
+</p><p>McGowan et al. (1998) examines the effect of climate variation on North Pacific ecosystems on an interannual and interdecadal scale.  Daily sea-surface temperature (SST) are well correlated along the Pacific coast and don't show poleward propagation of warming predicted by coastally trapped Kelvin waves.  They also looked at SST correlated with SOI (Southern Oscillation Index) and found warm anomalies (El Niños) and cool anomalies (La Niñas) laster 6-12 months with approximately equal and opposite amplitudes.  The biological response to warming El Niños episodes was a northward shift of species an population declines (from zooplankton to kelp forests to fish to sea birds to seals). In 1976-77 a regime shift took place: " a deepening of the Aleutian Low, a drop in SST in the central Pacific, and a rise in SST in the California Current and the Gulf of Alaska."  The California Current temperature increased while salinity decreased (previously positively correlated).  In general a negative effect on California Current system and a mostly positive impact on Gulf Of ALaska (though less data there), and discussion of mechanisms.
+</p><p>Wells et al. (2008) correlate various measures of ocean conditions with Chinook salmon (<i>Oncorhynchus tshawytscha</i>) growth.  They used scale sample to measure growth and number of ocean winters from (i) ocean-type Situk River, Alaska; (ii) stream-type Taku River, Alaska; (iii) ocean-
+(1980–2003, N = 1427) and (iv) stream-type Skagit River, Washington; and (v) ocean-type Smith River, California, where stream-type spend at least one winter in freshwater before migrating to sea while ocean-type migrate to sea before their first winter.  They used 2 methods, path analysis and partial least squares regression, and found that, in general, Alaska fish do better with a strong Alaska current, California fish do better with a strong California Current (though not as well modeled), and Puget Sound fish do best when neither current dominates (also, stream-type fit transition zone conditions the first 2 years and Alaska conditions the 3rd year).
+</p><p>So many references, where to begin?
+</p>
+<ul><li> Beamish, R.J., McFarlane, G.A. and King, J.R. (2005) Migratory patterns of pelagic fishes and possible linkages between open ocean and coastal ecosystems off the Pacific coast of North America. Deep-Sea Res. Part 2 52:739–755.
+</li><li> Prey distribution (Juvenile-focused?):
+<ul><li>Brodeur, R.D., Pearcy, W.G. and Ralston, S. (2003) Abundance and distribution patterns of nekton and micronekton in the northern California current transition zone. J. Oceanogr. 59:514–535.
+</li><li>Brodeur, R.D., Fisher, J.P., Teel, D.J., Emmett, R.L., Casillas, E. and Miller, T.W. (2004) Juvenile salmonid distribution, growth, condition, origin, and environmental and species associations in the Northern California Current. Fish. Bull. 102:25–46.
+</li></ul>
+</li><li> Hobday, A.J. and Boehlert, G.W. (2001) The role of coastal ocean variation in spatial and temporal patterns in survival and size of coho salmon (Oncorhynchus kisutch). Can. J. Fish. Aquat. Sci. 58:2021–2036.
+</li><li> Mueter, F.J., Ware, D.M. and Peterman, R.M. (2002) Spatial correlation patterns in coastal environmental variables and survival rates of salmon in the north-east Pacific Ocean. Fish. Oceanogr. 11:205–218.
+</li><li> Sackmann, B., Mack, L., Logsdon, M. and Perry, M.J. (2004) Seasonal and inter-annual variability of SeaWiFS-derived chlorophyl a concentrations in waters off the Washington and Vancouver Island coasts, 1998-2002. Deep-Sea Res. Part 2 51:945–965.
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 18/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb-qerm_:pcache:idhash:223-0!*!0!!en!*!edit=0 and timestamp 20220504200050 -->
+<div class="printfooter">
+Retrieved from "<a href="https://www.cbr.washington.edu/qerm/index.php/Migration_Literature_Review">https://www.cbr.washington.edu/qerm/index.php/Migration_Literature_Review</a>"</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/qerm/index.php/Migration_Literature_Review" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="/qerm/index.php?title=Talk:Migration_Literature_Review&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="/qerm/index.php?title=Migration_Literature_Review&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/qerm/index.php?title=Migration_Literature_Review&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/qerm/index.php/User:10.19.28.84" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">10.19.28.84</a></li>
+				<li id="pt-anontalk"><a href="/qerm/index.php/User_talk:10.19.28.84" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+				<li id="pt-anonlogin"><a href="/qerm/index.php?title=Special:UserLogin&amp;returnto=Migration_Literature_Review&amp;returntoquery=printable%3Dyes" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/qerm/sites/qerm/logo.gif);" href="/qerm/index.php/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/qerm/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="/qerm/index.php/QERM_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/qerm/index.php/QERM_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/qerm/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/qerm/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/qerm/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/qerm/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search QERM Wiki" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&#160;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/qerm/index.php/Special:WhatLinksHere/Migration_Literature_Review" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/qerm/index.php/Special:RecentChangesLinked/Migration_Literature_Review" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/qerm/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-permalink"><a href="/qerm/index.php?title=Migration_Literature_Review&amp;oldid=1400" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/qerm/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="lastmod"> This page was last modified on 30 December 2008, at 19:16.</li>
+		<li id="viewcount">This page has been accessed 25,150 times.</li>
+		<li id="privacy"><a href="/qerm/index.php/QERM_Wiki:Privacy_policy" title="QERM Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/qerm/index.php/QERM_Wiki:About" title="QERM Wiki:About">About QERM Wiki</a></li>
+		<li id="disclaimer"><a href="/qerm/index.php/QERM_Wiki:General_disclaimer" title="QERM Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+<script src="/qerm/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Migration_Literature_Review", "wgTitle": "Migration Literature Review", "wgAction": "view", "wgArticleId": 223, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 1400, "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script><!-- Served in 0.116 secs. --></body></html>

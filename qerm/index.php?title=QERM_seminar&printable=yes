@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>QERM seminar - QERM Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qerm/opensearch_desc.php" title="QERM Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.cbr.washington.edu/qerm/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="QERM Wiki Atom feed" href="/qerm/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/qerm/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared&amp;only=styles&amp;printable=1&amp;skin=monobook&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-QERM_seminar skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">QERM seminar</h1>
+	<div id="bodyContent">
+		<div id="siteSub">From QERM Wiki</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<p><big>  QERM 597 Autumn 2010 Course Moderator: </big><big> <a href="http://www.fish.washington.edu/people/anderson/" class="external text" rel="nofollow">Jim Anderson</a> </big>
+</p><p><big> Time: Wednesdays, 3:30 – 4:50 p.m. </big>
+</p><p><big> Location: <a href="http://www.washington.edu/maps/?l=LOW" class="external text" rel="nofollow">Loew Hall 310</a>  </big>
+</p><p><big> HOW CLIMATE CHANGES ATTITUDE CHANGES CLIMATE</big>
+</p><p><br />
+We will explore the nature of Quantitative Ecology and Resource Management thorough a class practicum on climate change and its affects on public attitude. Climate change, besides increasing mean annual temperature, has the potential to alter the prevalence and severity of extremes such as heat waves, cold waves, storms, floods and droughts. We will survey potential climate impacts, characterize the statistical properties of one or more impact and develop a model to explore how impacts might alter public attitudes on climate change. 
+</p><p><br />
+The course will introduce the students to data analysis with the R statistical package and rudimentary theories in ecology and cognitive psychology. Over the quarter active discussions of issues and approaches are expected of the students. 
+</p><p><br />
+Students present short papers and presentation at the end of the quarter
+</p>
+<hr />
+<p><br />
+</p><p><br />
+<big> Suggested reading material</big>
+</p><p><a href="http://williamcalvin.com/" class="external text" rel="nofollow">Climate Fever by Bill Calvin</a>
+</p><p><a href="http://wiki.cbr.washington.edu/qerm/images/f/ff/Compendium2009.pdf" class="external text" rel="nofollow">Climate change Science Compendium 2009</a>
+</p><p><a href="http://www.nature.com/news/specials/planetaryboundaries/index.html" class="external text" rel="nofollow">Feature article in Planetary Boundaries</a> 
+</p><p><a href="http://wiki.cbr.washington.edu/qerm/images/a/a9/CALVINClimateFix.pdf" class="external text" rel="nofollow">William Calvin's Climate Fix</a>
+</p><p><a href="http://www.youtube.com/watch?v=0lgzz-L7GFg" class="external text" rel="nofollow">Unchained Goddess</a>
+</p><p><a href="http://topics.nytimes.com/top/news/science/topics/globalwarming/index.html?8qa&amp;scp=1-spot&amp;sq=&amp;st=nyt" class="external text" rel="nofollow">NY times Global Warming articles</a>
+</p><p><a href="http://nsidc.org/arcticseaicenews/" class="external text" rel="nofollow">Arctic Sea Ice News and Analysis</a>
+</p><p><a href="http://cses.washington.edu/cig/" class="external text" rel="nofollow">UW Climates Impact Group</a>
+</p><p><a href="http://water.usgs.gov/education.html" class="external text" rel="nofollow">USGS Water Resource Information</a>
+</p><p><a href="http://www.ipcc.ch/" class="external text" rel="nofollow">Intergovernmental Panel on Climate Change (IPCC)</a>
+</p><p><a href="http://wiki.cbr.washington.edu/qerm/images/4/4f/Battisti_2009_Science_Historical_warnings_of_future_food_insecurity.pdf" class="external text" rel="nofollow">Food insecurity</a>
+</p><p><a href="http://cses.washington.edu/db/pdf/wacciaexecsummary638.pdf" class="external text" rel="nofollow">executive summary of the Washington Climate Change Impacts Assessment</a>
+</p><p><a href="http://www.climatescience.gov/Library/sap/sap4-3/final-report/sap4-3-final-exec-summary.pdf" class="external text" rel="nofollow">Effects of climate change on agriculture, land use, water resources and biodiversity</a>
+</p><p><a href="http://www.climatescience.gov/Library/sap/sap4-3/final-report/Water_SAP_4.3_Letter.pdf" class="external text" rel="nofollow">The Effects of Climate Change on Water Resources in the United States</a>
+</p><p><a href="http://www.climatescience.gov/Library/sap/sap4-3/final-report/default.htm" class="external text" rel="nofollow">For additional resources see the full report</a>
+</p><p><a href="http://www.fao.org/docrep/010/a0701e/a0701e00.HTM" class="external text" rel="nofollow">Livestock's Long Shadow: environmental issues and options</a>
+</p><p><a href="http://www.sciencemag.org/cgi/reprint/323/5911/240.pdf" class="external text" rel="nofollow">Historical Warnings of Future Food Insecurity with Unprecedented Seasonal Heat</a> 
+</p><p><a href="http://wiki.cbr.washington.edu/qerm/images/a/a9/CALVINClimateFix.pdf" class="external text" rel="nofollow">William Calvin's Climate Fix</a> 
+</p><p><br />
+</p><p><big> class material </big>
+</p><p><b>September 29</b> <a href="http://wiki.cbr.washington.edu/qerm/images/3/3b/Class_1.doc" class="external autonumber" rel="nofollow">[1]</a> 
+</p><p><br />
+<b>October 6</b>
+</p><p>report on climate extremes <a href="http://www.climatescience.gov/Library/sap/sap3-3/final-report/" class="external autonumber" rel="nofollow">[2]</a>
+</p><p>Website for learning R courtesy of Chloe Bracis <a href="http://fish.washington.edu/classes/fish507/FISH507/Home.html" class="external autonumber" rel="nofollow">[3]</a>
+</p><p><br />
+<b>October 13</b>
+</p><p>Weber (2010) What shapes perceptions of climate change? Wiley Interdisciplinary Reviews: Climate Change 1(3): 332-342
+<a href="http://wiki.cbr.washington.edu/qerm/index.php/Image:Weber2010.pdf" class="external autonumber" rel="nofollow">[4]</a>
+</p><p>Dunlap,and McCright (2008) 
+A widening gap - Republican and Democratic views on climate change Environment: 50(5): 26-35.<a href="http://wiki.cbr.washington.edu/qerm/index.php/Image:Dunlap2008.pdf" class="external autonumber" rel="nofollow">[5]</a>
+</p><p><br />
+</p><p><b>October 27</b>
+</p><p>Script for Opinion model 
+<a href="http://wiki.cbr.washington.edu/qerm/images/9/9e/Script.oct19.R" class="external autonumber" rel="nofollow">[6]</a>
+</p><p>workspace for opinion model
+<a href="http://wiki.cbr.washington.edu/qerm/images/0/0e/Opinion.RData" class="external autonumber" rel="nofollow">[7]</a>
+</p><p>Suggestion:If you use the workspace you might want to change its directory from temp to 
+something easier to find.
+</p><p><br />
+</p><p><b>November 10</b>
+</p><p><a href="http://wiki.cbr.washington.edu/qerm/images/9/9f/ClimateModel-Cole.R" class="external text" rel="nofollow">Cole's Updated R Code</a>
+</p><p><a href="http://wiki.cbr.washington.edu/qerm/images/b/b8/ModelDescription.pdf" class="external text" rel="nofollow">Draft of model description</a>
+</p><p><br />
+Data sources
+</p><p>Raw temperature data metadata <a href="http://wiki.cbr.washington.edu/qerm/images/5/53/DataSource.pdf" class="external autonumber" rel="nofollow">[8]</a>
+</p><p>Annual temperature anomaly in text format <a href="http://wiki.cbr.washington.edu/qerm/images/0/06/Monthly.txt" class="external autonumber" rel="nofollow">[9]</a>
+</p><p>Monthly temperature anomaly in text format <a href="http://wiki.cbr.washington.edu/qerm/images/0/06/Monthly.txt" class="external autonumber" rel="nofollow">[10]</a>
+</p><p><br />
+<b>November 17</b>
+</p><p>The article below gives neurological basis for temporal scales in the model
+</p><p><br />
+Decision making, impulsivity and time perception Wittmann &amp; Paulus (2008) 
+<a href="http://wiki.cbr.washington.edu/qerm/images/0/00/Wittmann_2008_Trends-in-Cognitive-Sciences.pdf" class="external autonumber" rel="nofollow">[11]</a>
+</p><p><br />
+<b>December 1</b>
+</p><p>Updated notes for opinion model - now includes external influences on opinion formation <a href="http://wiki.cbr.washington.edu/qerm/images/3/36/Opinion.doc" class="external autonumber" rel="nofollow">[12]</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 1/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb-qerm_:pcache:idhash:432-0!*!0!!*!*!edit=0 and timestamp 20220505181025 -->
+<div class="printfooter">
+Retrieved from "<a href="https://www.cbr.washington.edu/qerm/index.php/QERM_seminar">https://www.cbr.washington.edu/qerm/index.php/QERM_seminar</a>"</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/qerm/index.php/Special:Categories" title="Special:Categories">Category</a>: <span dir='ltr'><a href="/qerm/index.php/Category:Courses" title="Category:Courses">Courses</a></span></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/qerm/index.php/QERM_seminar" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="/qerm/index.php?title=Talk:QERM_seminar&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="/qerm/index.php?title=QERM_seminar&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/qerm/index.php?title=QERM_seminar&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/qerm/index.php/User:10.19.28.84" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">10.19.28.84</a></li>
+				<li id="pt-anontalk"><a href="/qerm/index.php/User_talk:10.19.28.84" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+				<li id="pt-anonlogin"><a href="/qerm/index.php?title=Special:UserLogin&amp;returnto=QERM_seminar&amp;returntoquery=printable%3Dyes" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/qerm/sites/qerm/logo.gif);" href="/qerm/index.php/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/qerm/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="/qerm/index.php/QERM_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/qerm/index.php/QERM_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/qerm/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/qerm/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/qerm/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/qerm/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search QERM Wiki" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&#160;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/qerm/index.php/Special:WhatLinksHere/QERM_seminar" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/qerm/index.php/Special:RecentChangesLinked/QERM_seminar" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/qerm/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-permalink"><a href="/qerm/index.php?title=QERM_seminar&amp;oldid=2393" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/qerm/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="lastmod"> This page was last modified on 1 December 2010, at 17:31.</li>
+		<li id="viewcount">This page has been accessed 40,507 times.</li>
+		<li id="privacy"><a href="/qerm/index.php/QERM_Wiki:Privacy_policy" title="QERM Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/qerm/index.php/QERM_Wiki:About" title="QERM Wiki:About">About QERM Wiki</a></li>
+		<li id="disclaimer"><a href="/qerm/index.php/QERM_Wiki:General_disclaimer" title="QERM Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+<script src="/qerm/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "QERM_seminar", "wgTitle": "QERM seminar", "wgAction": "view", "wgArticleId": 432, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 2393, "wgCategories": ["Courses"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script><!-- Served in 0.096 secs. --></body></html>

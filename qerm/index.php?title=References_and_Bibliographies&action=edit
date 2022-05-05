@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>View source - QERM Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="next" href="https://www.cbr.washington.edu/qerm/index.php/References_and_Bibliographies" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qerm/opensearch_desc.php" title="QERM Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.cbr.washington.edu/qerm/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="QERM Wiki Atom feed" href="/qerm/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/qerm/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 8]><link rel="stylesheet" href="/qerm/skins/common/IE80Fixes.css?301" media="screen" /><![endif]-->
+<link rel="stylesheet" href="/qerm/skins/monobook/main.css?301" media="screen" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE50Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE55Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/qerm/skins/monobook/IE60Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/qerm/skins/monobook/IE70Fixes.css?301" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-References_and_Bibliographies skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">View source</h1>
+	<div id="bodyContent">
+		<div id="siteSub">From QERM Wiki</div>
+		<div id="contentSub">for <a href="/qerm/index.php/References_and_Bibliographies" title="References and Bibliographies">References and Bibliographies</a></div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in the group: <a href="/qerm/index.php?title=QERM_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="QERM Wiki:Users (page does not exist)">Users</a>.
+</p>
+</div>
+<p>You can view and copy the source of this page:
+</p><textarea id="wpTextbox1" name="wpTextbox1" cols="80" rows="25" readonly="">==BibTeX==
+There is a tool called [[Wikipedia: BibTeX | BibTeX]] within [[LaTeX]] that formats lists of references and generates all the appropriate references within a document when called.  The bibliography itself is in a text file with a .bib extension.  A &lt;code>.bib&lt;/code> file might contain the following entry:
+  @BOOK{Lotka1924,
+  title = {Elements of Physical Biology},
+  publisher = {Williams and Wilkins},
+  year = {1924},
+  author = {Lotka, A.J.},
+  address = {Baltimore}
+ }
+or, for a journal article:
+
+ @ARTICLE{Kareiva1983,
+  author = {Kareiva, P. M. and Shigesada, N.},
+  title = {Analyzing insect movement as a correlated random walk},
+  journal = {Oecologia},
+  year = {1983},
+  volume = {56},
+  pages = {234-238},
+  url = {http://www.springerlink.com/content/m525270k7647u074/fulltext.pdf}
+ }
+
+The first line is a reference key which can be used in the LaTeX body in a variety of ways.  For example, using the '''natbib''' package, &lt;code> \citep{Kareiva1983} &lt;/code> will output '''(Kareiva and Shigesada, 1983)''', while &lt;code> \citet{Kareiva1983} &lt;/code> will output '''Kareiva and Shigesada (1983)'''.  See more examples [http://www.civil.iitb.ac.in/tvm/2-res/2905-natBibUsage/natbibusage/natbibusage.html here]. And see a better overview explanation [http://www.essex.ac.uk/linguistics/clmt/latex4ling/biblios/ here].  
+
+===Table of Contents===
+If you are using &lt;code>\tableofcontents&lt;/code> and want your References/Bibligraphy section to appear in the table of contents, add &lt;code>\addcontentsline{toc}{chapter}{References}&lt;/code> just before the bibliography command.  Or, to make it appear as a numbered section, add the following just before the bibliography command:
+&lt;pre>
+\clearpage
+\section{References}
+\renewcommand*{\refname}{}
+&lt;/pre>
+
+==JabRef==
+
+Far and away the best tool for creating &lt;code>.bib&lt;/code> files is [http://jabref.sourceforge.net/ JabRef], which has tons of great neat and simple features.  It can, however, consume considerable resources from a machine (especially if the machine is clunky and old). JabRef uses BibTeX as its native format, which means that changes can be made directly to the .bib file as well as within JabRef.
+
+==Subsetting .bib files==
+
+For daily use, there seems to be no reason not to put all references into the same increasingly giant .bib file, which gets called from any .tex file that you compile. This way there's never any doubt about which file is most current, or where to look for a given reference. However, those [http://www.ccrnp.ncifcrf.gov/~toms/latex.html#tex-latex_publishers enlightened journals] which accept LaTeX submissions may not want to receive such a giant file (indeed, the contents might be embarassing if you're ashamed of your love of ''Yertle the Turtle and Other Stories''). To solve this problem, you can temporarily replace your .bst file with [http://ctan.binkerton.com/biblio/bibtex/utils/bibtools/subset.bst subset.bst], which will create a new .bib file when you compile, with will contain only those references which were used in the .tex file that you compiled.
+
+==makebst==
+
+Do you not like any of the available reference styles, or need to create your own to match a particular journal?  '''makebst''' helps you create a .bst file.  Here's how to use it:
+# Run the command &lt;code> latex makebst &lt;/code> in the directory you want to create .bst the file (i.e. where your tex file is)
+# Follow the directions to enter the output file name and describe reference formatting
+# In your tex file, set the bibliography style to your new file you just created: &lt;code> \bibliographystyle{myStyle} &lt;/code> 
+# Compile
+
+Also, '''makebst''' also creates a .dbj file that you can tweak instead of going through all the questions again.  After you make changes, simply run &lt;code> latex myStyle.dbj &lt;/code> to recreate the .bst file.
+
+==EndNote and other reference software==
+
+EndNote and other programs offer the option of exporting their records in the BibTeX format (see the [http://libraries.mit.edu/help/endnote/endnotelatexfaq.html Using EndNote with LaTeX/BibTeX FAQ] at MIT for more information on this). However, changes to the resulting file will not be recognized by EndNote without importing them back in.
+
+==The Great Zotero Debate==
+
+[[User: Tommy|Tommy]] writes: 
+:I came across Zotero (http://www.zotero.org/), a Firefox plugin that acts as a Reference manager.  I was able to import my .bib file and then use a plug-in for Word 2007 that allows you to insert citations and then generate a bibliography.  Anyways, I was more writing to give a plug-in for Zotero.  It has all the great features of JabRef (note taking, file linking, editing, etc.), but imports citations much faster.  Since it runs from Firefox it automatically knows if you're at a site (http://www.zotero.org/translators/) that exports citations and you can do so by the click of a button in the browser.  I find this much faster than saving the .enw,.ris, etc. file, switching over to JabRef, importing the file, and then editing if necessary.  It can all be done from Firefox.  Give it a shot! 
+
+However, [[User: Ian|Ian]] recalls having written:
+:Zotero is lame. I'm always confused about what it will grab from a given website. Even after watching 2 instructional videos and playing with it for 20 minutes, I have no idea how it's supposed to make my life better. I have Zozero inspiration to spend more time learning about it. Someday maybe a Zotero expert will show me the ropes and I'll be all impressed, but until then, I give up on the thing. 
+
+The Qermipedia has yet to come up with a consistent position on recommending Zotero. 
+
+[[Category: LaTeX tips]]</textarea><div class='templatesUsed'>
+
+</div>
+<p id="mw-returnto">Return to <a href="/qerm/index.php/References_and_Bibliographies" title="References and Bibliographies">References and Bibliographies</a>.</p>
+<div class="printfooter">
+Retrieved from "<a href="https://www.cbr.washington.edu/qerm/index.php/References_and_Bibliographies">https://www.cbr.washington.edu/qerm/index.php/References_and_Bibliographies</a>"</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/qerm/index.php/References_and_Bibliographies" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="/qerm/index.php?title=Talk:References_and_Bibliographies&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource" class="selected"><a href="/qerm/index.php?title=References_and_Bibliographies&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/qerm/index.php?title=References_and_Bibliographies&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/qerm/index.php/User:10.19.28.84" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">10.19.28.84</a></li>
+				<li id="pt-anontalk"><a href="/qerm/index.php/User_talk:10.19.28.84" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+				<li id="pt-anonlogin"><a href="/qerm/index.php?title=Special:UserLogin&amp;returnto=References_and_Bibliographies&amp;returntoquery=action%3Dedit" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/qerm/sites/qerm/logo.gif);" href="/qerm/index.php/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/qerm/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="/qerm/index.php/QERM_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/qerm/index.php/QERM_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/qerm/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/qerm/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/qerm/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/qerm/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search QERM Wiki" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&#160;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/qerm/index.php/Special:WhatLinksHere/References_and_Bibliographies" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/qerm/index.php/Special:RecentChangesLinked/References_and_Bibliographies" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/qerm/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/qerm/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="privacy"><a href="/qerm/index.php/QERM_Wiki:Privacy_policy" title="QERM Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/qerm/index.php/QERM_Wiki:About" title="QERM Wiki:About">About QERM Wiki</a></li>
+		<li id="disclaimer"><a href="/qerm/index.php/QERM_Wiki:General_disclaimer" title="QERM Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+<script src="/qerm/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "References_and_Bibliographies", "wgTitle": "References and Bibliographies", "wgAction": "edit", "wgArticleId": 273, "wgIsArticle": false, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 1997, "wgCategories": [], "wgBreakFrames": true, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.legacy.edit", "mediawiki.action.edit", "mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script><!-- Served in 0.095 secs. --></body></html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>Optimization - QERM Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qerm/opensearch_desc.php" title="QERM Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.cbr.washington.edu/qerm/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="QERM Wiki Atom feed" href="/qerm/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/qerm/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared&amp;only=styles&amp;skin=monobook&amp;*" />
+<link rel="stylesheet" href="/qerm/skins/monobook/main.css?301" media="screen" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE50Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE55Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/qerm/skins/monobook/IE60Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/qerm/skins/monobook/IE70Fixes.css?301" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Optimization skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">Optimization</h1>
+	<div id="bodyContent">
+		<div id="siteSub">From QERM Wiki</div>
+		<div id="contentSub">
+				<div id="mw-revision-info">Revision as of 23:39, 17 June 2010 by <a href="/qerm/index.php/User:Eileen" title="User:Eileen" class="mw-userlink">Eileen</a>  <span class="mw-usertoollinks">(<a href="/qerm/index.php/User_talk:Eileen" title="User talk:Eileen">Talk</a> | <a href="/qerm/index.php/Special:Contributions/Eileen" title="Special:Contributions/Eileen">contribs</a>)</span></div>
+
+				<div id="mw-revision-nav">(<a href="/qerm/index.php?title=Optimization&amp;diff=prev&amp;oldid=2200" title="Optimization">diff</a>) <a href="/qerm/index.php?title=Optimization&amp;direction=prev&amp;oldid=2200" title="Optimization">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div>
+			</div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Evolutionary_Algorithms"><span class="tocnumber">1</span> <span class="toctext">Evolutionary Algorithms</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Linear_Programming"><span class="tocnumber">2</span> <span class="toctext">Linear Programming</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#CPLEX"><span class="tocnumber">2.1</span> <span class="toctext">CPLEX</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#See_Also"><span class="tocnumber">3</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Evolutionary_Algorithms">Evolutionary Algorithms</span></h2>
+<p>Evolutionary algorithms are an optimization method based on biological evolution.  This included genetic algorithms, differential evolution, particle swarm optimization, and more.
+</p><p>Here is a table of some of the free libraries I found in my search.  There is currently a Java bias in the list.
+</p>
+<table border="1">
+<tr>
+<th> Library </th>
+<th> Description </th>
+<th> Language </th>
+<th> Notes
+</th></tr>
+<tr>
+<td> <a href="http://www.ra.cs.uni-tuebingen.de/software/EvA2/" class="external text" rel="nofollow">EvA2</a> </td>
+<td> Comprehensive heuristic optimization framework with emphasis on Evolutionary Algorithms, including simulated annealing, genetic algorithms, particle swarm optimization, cluster-based niching, and supports multi-objective optimization and finding multiple solutions </td>
+<td> Java </td>
+<td> Includes GUI and API, recommended
+</td></tr>
+<tr>
+<td> <a href="http://jgap.sourceforge.net/" class="external text" rel="nofollow">JGAP</a> </td>
+<td> Genetic Algorithms and Genetic Programming framework </td>
+<td> Java </td>
+<td> Lots of documentation, but I had trouble getting good results with it, also has clunky API
+</td></tr>
+<tr>
+<td> <a href="http://jcell.gforge.uni.lu/" class="external text" rel="nofollow">JCell</a> </td>
+<td> Framework for working mainly with cellular genetic algorithms (cGAs), but also it has implemented steady-state GAs, generational GAs, and distributed GAs </td>
+<td> Java </td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="http://jmetal.sourceforge.net/index.html" class="external text" rel="nofollow">jMetal</a> </td>
+<td> Metaheuristic Algorithms in Java: aimed at the development, experimentation, and study of metaheuristics for solving multi-objective optimization problems, includes many algorithms </td>
+<td> Java </td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="http://opt4j.sourceforge.net/documentation.html" class="external text" rel="nofollow">Opt4J</a> </td>
+<td> Framework currently includes a multi-objective Evolutionary Algorithm, a multi-objective Differential Evolution, a multi-objective Particle Swarm Optimizer, and a single-objective Simulated Annealing </td>
+<td> Java </td>
+<td>
+</td></tr>
+</table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Linear_Programming">Linear Programming</span></h2>
+<p>There are many commercial packages, but here is a free option:
+</p>
+<ul><li> <a href="http://lpsolve.sourceforge.net" class="external text" rel="nofollow">lp_solve</a>: Mixed Integer Linear Programming (MILP) solver
+</li><li> Probably more?
+</li></ul>
+<h3> <span class="mw-headline" id="CPLEX">CPLEX</span></h3>
+<p>CPLEX is a commercial package that has a free (limited) student license.  Limitation regards the number of decision variables allowed (500 max).
+</p>
+<ul><li> CPLEX Instructions
+</li></ul>
+<ol><li> Set up folders to contain problems, solutions, and log files as desired, an example is provided below
+</li><li> Construct your problem as a text file (.cpx), with objective, constraints, and variable definitions - see format below
+</li><li> Create a batchfile to place in the same folder as cplex.exe on your computer - see format below
+</li><li> Open the command prompt and type "cmd" to open the DOS command window (excuse my lack of correct terminology)
+</li><li> Navigate to the director containing cplex.exe (e.g. "cd C:\Program Files\ILOG\CPLEX121\x64_win64")
+</li><li> Type "cplex&lt;batchfilename.txt" and press enter (no quotes)
+</li><li> You are done!  Look in C:\YourFolder\Solutions to find your results.
+</li></ol>
+<ul><li> Changing CPLEX parameters
+</li></ul>
+<ol><li> Open the command prompt and type "cmd" to open the DOS command window
+</li><li> Navigate to the director containing cplex.exe (e.g. "cd C:\Program Files\ILOG\CPLEX121\x64_win64")
+</li><li> Type "cplex.exe"
+</li><li> At the CPLEX command prompt type "help"
+</li><li> To see options for output details, for example, follow the following string of commands:
+<ol><li> set
+</li><li> output
+</li><li> writelevel: {0 = auto; 1 = all values; 2 = discrete values; 3 = non-zero values; 4 = non-zero discrete values}
+</li></ol>
+</li><li> You may select one of these options for a single problem run, or you may put the sequence <tt>set output writelevel 3 </tt> in your batchfile.
+</li><li> You can also run CPLEX from the cplex command prompt by following these steps and selecting appropriate commands (try starting with read, rather than set).
+</li></ol>
+<ul><li> Sample file setup:
+</li></ul>
+<dl><dd> C:\Program Files\ILOG\CPLEX121\x64_win64\
+<dl><dd> - cplex.exe             &lt;should already be in this folder&gt;
+</dd><dd> - batchfilename.txt
+</dd></dl>
+</dd><dd> C:\YourFolder\Problems\
+<dl><dd> - problemformulation1.cpx
+</dd><dd> - problemformulation2.cpx
+</dd></dl>
+</dd><dd> C:\YourFolder\Solutions\
+</dd><dd> C:\YourFolder\Logs\
+</dd></dl>
+<ul><li> Sample problem file format (note that lines may be no longer than 360 characters): <a href="/qerm/sites/qerm/images/8/82/PROBLEMMax_Habitat_Quality5M.cpx" class="internal" title="PROBLEMMax Habitat Quality5M.cpx"> Problem Format</a>
+</li><li> Sample batch file format (save as .txt):
+</li></ul>
+<pre>
+set mip tolerances mipgap 0
+set threads 2
+set workmem 1000
+set timelimit 86400
+set mip strategy file 2
+set emphasis mip 0
+set output writelevel 3
+
+
+set logfile C:\YourFolder\Logs\Max_Habitat_Quality5M.log
+read C:\YourFolder\Problems\Max_Habitat_Quality5M.cpx lp
+mipopt
+change problem fixed
+Primopt
+write C:\YourFolder\Solutions\Max_Habitat_Quality5M.cpx sol
+
+set logfile C:\YourFolder\Logs\Max_Habitat_Quality6M.log
+read C:\YourFolder\Problems\Max_Habitat_Quality6M.cpx lp
+mipopt
+change problem fixed
+Primopt
+write C:\YourFolder\Solutions\Max_Habitat_Quality6M.cpx sol
+</pre>
+<table border="1" cellspacing="0" cellpadding="5" align="left">
+<tr>
+<th>CPLEX command </th>
+<th> Interpretation
+</th></tr>
+<tr>
+<td> <tt> set mip tolerances mipgap 0 </tt></td>
+<td> sets tolerance level to 0, i.e. CPLEX must find exact optimal solution
+</td></tr>
+<tr>
+<td> <tt> set threads 2 </tt> </td>
+<td> set to number of processors on computer – splits work so that CPLEX runs faster
+</td></tr>
+<tr>
+<td> <tt> set workmem 1000</tt> </td>
+<td> not sure, probably just sets amount of memory CPLEX will use
+</td></tr>
+<tr>
+<td> <tt> set timelimit 86400 </tt> </td>
+<td> sets time limit, in seconds that CPLEX is allowed to run for.  CPLEX will return the best solution it has found by the end of the run time, or return none if problem is infeasible.
+</td></tr>
+<tr>
+<td> <tt> set mip strategy file 2 </tt> </td>
+<td> not sure
+</td></tr>
+<tr>
+<td> <tt> set emphasis mip 0 </tt> </td>
+<td> not sure
+</td></tr>
+<tr>
+<td> <tt> set output writelevel 3 </tt> </td>
+<td> sets amount of detail for output file.  Level 3 returns only variables with non-zero values in optimal solution.  Omit line, or set to 0 to receive all output.
+</td></tr></table>
+<h2> <span class="mw-headline" id="See_Also">See Also</span></h2>
+<p><a href="/qerm/index.php/R/Optimizers" title="R/Optimizers">R/Optimizers</a>
+</p><p><a href="/qerm/index.php/AD_Model_Builder" title="AD Model Builder">AD Model Builder</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 23/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb-qerm_:pcache:idhash:399-0!*!0!!en!*!edit=0 and timestamp 20220505150054 -->
+<div class="printfooter">
+Retrieved from "<a href="https://www.cbr.washington.edu/qerm/index.php/Optimization">https://www.cbr.washington.edu/qerm/index.php/Optimization</a>"</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/qerm/index.php/Optimization" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="/qerm/index.php?title=Talk:Optimization&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="/qerm/index.php?title=Optimization&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/qerm/index.php?title=Optimization&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/qerm/index.php/User:10.19.28.84" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">10.19.28.84</a></li>
+				<li id="pt-anontalk"><a href="/qerm/index.php/User_talk:10.19.28.84" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+				<li id="pt-anonlogin"><a href="/qerm/index.php?title=Special:UserLogin&amp;returnto=Optimization&amp;returntoquery=oldid%3D2200" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/qerm/sites/qerm/logo.gif);" href="/qerm/index.php/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/qerm/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="/qerm/index.php/QERM_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/qerm/index.php/QERM_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/qerm/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/qerm/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/qerm/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/qerm/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search QERM Wiki" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&#160;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/qerm/index.php/Special:WhatLinksHere/Optimization" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/qerm/index.php/Special:RecentChangesLinked/Optimization" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/qerm/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="/qerm/index.php?title=Optimization&amp;oldid=2200&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/qerm/index.php?title=Optimization&amp;oldid=2200" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/qerm/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="privacy"><a href="/qerm/index.php/QERM_Wiki:Privacy_policy" title="QERM Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/qerm/index.php/QERM_Wiki:About" title="QERM Wiki:About">About QERM Wiki</a></li>
+		<li id="disclaimer"><a href="/qerm/index.php/QERM_Wiki:General_disclaimer" title="QERM Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+<script src="/qerm/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Optimization", "wgTitle": "Optimization", "wgAction": "view", "wgArticleId": 399, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 2200, "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script><!-- Served in 0.133 secs. --></body></html>

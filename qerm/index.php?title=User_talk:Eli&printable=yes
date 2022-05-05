@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>User talk:Eli - QERM Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qerm/opensearch_desc.php" title="QERM Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.cbr.washington.edu/qerm/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="QERM Wiki Atom feed" href="/qerm/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/qerm/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared&amp;only=styles&amp;printable=1&amp;skin=monobook&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+</head>
+<body class="mediawiki ltr ns-3 ns-talk page-User_talk_Eli skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">User talk:Eli</h1>
+	<div id="bodyContent">
+		<div id="siteSub">From QERM Wiki</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Formatting_Questions_for_the_Master"><span class="tocnumber">1</span> <span class="toctext">Formatting Questions for the Master</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Update_now_that_you.27re_in_Finland.3F"><span class="tocnumber">2</span> <span class="toctext">Update now that you're in Finland?</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Ants"><span class="tocnumber">3</span> <span class="toctext">Ants</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Big_Shoutout_to_my_Holmes"><span class="tocnumber">4</span> <span class="toctext">Big Shoutout to my Holmes</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Attendance_article"><span class="tocnumber">5</span> <span class="toctext">Attendance article</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Windows_Commands"><span class="tocnumber">6</span> <span class="toctext">Windows Commands</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#BCPA.2Fno_email_amongst_the_wolves"><span class="tocnumber">7</span> <span class="toctext">BCPA/no email amongst the wolves</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#uploading_large_files"><span class="tocnumber">8</span> <span class="toctext">uploading large files</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Formatting_Questions_for_the_Master">Formatting Questions for the Master</span></h2>
+<p>Help me, O Master Wiki-man. Here are two issues that trouble me.
+First, the template system is great, but what if there's no template for a file. For instance, I can write
+</p>
+<pre>{{Rcode | ADMB.xml | ADMB.xml}}</pre>
+<p>to get this nice link:
+<img src="https://www.cbr.washington.edu/qerm/sites/qerm/images/6/69/Rlogo.jpg" alt="Rlogo.jpg" /> <a href="/qerm/sites/qerm/images/8/83/ADMB.xml" class="internal" title="ADMB.xml"> ADMB.xml</a>
+</p><p>But it's not Rcode, so what's the generic equivalent? And how can I write a link without putting the whole URL which makes it look like an external file?
+</p>
+<pre> [http://wiki.cbr.washington.edu/qerm/images/8/83/ADMB.xml ADMB.xml]</pre>
+<p><a href="http://wiki.cbr.washington.edu/qerm/images/8/83/ADMB.xml" class="external text" rel="nofollow">ADMB.xml</a>
+</p><p><br />
+</p>
+<dl><dd> the double braces are call up what's known as a "template".  To see how a template works, look at the link <a href="/qerm/index.php/Template:Rcode" title="Template:Rcode">Template: Rcode</a>.  It is very simple.  So simple in fact that I am about to make an Ian template... hold on.
+</dd></dl>
+<dl><dd> ok, does this work: <img src="https://www.cbr.washington.edu/qerm/sites/qerm/images/c/c7/MiniIan.jpg" alt="MiniIan.jpg" /> <a href="/qerm/sites/qerm/images/1/1c/Ian_Taylor_FinalDissertation.pdf" class="internal" title="Ian Taylor FinalDissertation.pdf"> Read me!</a>
+</dd></dl>
+<dl><dd> ok, it kind of does.  Congratulations!  You've been templatisized!  (click on edit on the <a href="/qerm/index.php/Template:Ian" title="Template:Ian">Template: Ian</a> link and you will see: <pre>{{SERVER}}/qerm/images/c/c7/MiniIan.jpg [[media:{{{1}}}|{{{2}}}]]</pre>
+</dd><dd> why the "server" and "media" are in there I don't know.  it's something Chloe and i (but i think mostly Chloe) figured out a a while ago.  Though, now that I actually think about it, the "media" is probably exactly what you want ... just like this: <a href="/qerm/sites/qerm/images/8/83/ADMB.xml" class="internal" title="ADMB.xml"> ADMB.xml</a>.  Yes, it worked!  Is that right? It was done like this: <pre>[[media: ADMB.xml| ADMB.xml]]</pre>.
+</dd></dl>
+<p>Here's the second question: what's up with the font sizes for the math on this page I just created: <a href="/qerm/index.php/AD_Model_Builder/Cheat_sheet" title="AD Model Builder/Cheat sheet">AD_Model_Builder/Cheat_sheet</a> (note especially in the middle of the page where they get big for a little while. I want them all big like that.
+</p>
+<dl><dd> I don't know!  That's an issue with the big grown-up Wikipedia too.  I think it has something to do with the combination of characters you put in.  More complicated things are always big and latex-y, whereas simpler things look like regular text.  Maybe Hans knows?  Maybe someone can poke him in Phoenix?  
+</dd></dl>
+<p>Forgive my impertinence in asking these humble questions, O Master. I have tried and failed to find the information elsewhere, so you are my only hope. If you can find time amidst your countless coffee breaks to bestow upon me an answer, I will be deeply grateful
+</p><p>Your humble servant,
+-<a href="/qerm/index.php/User:Ian" title="User:Ian">Ian</a> 16:23, 1 December 2008 (PST)
+</p>
+<dl><dd> Forgive the lack of substance in my feeble attempts to address these profound and insightful queries most respected colleague ... and now let us all toss off the shackles of humility and do what scientists are supposed to do, which is always pretend like they know what they're talking about.  Best wishes! - <a href="/qerm/index.php/User:Eli" title="User:Eli">Eli</a> 14:50, 2 December 2008 (PST)
+</dd></dl>
+<dl><dd><dl><dd> Excellent advice, Sir! On a separate issue of wanting wiki help, I've just sent you an email. If the UW email doesn't get to you these days, let me know where to send it instead. -<a href="/qerm/index.php/User:Ian" title="User:Ian">Ian</a> 00:24, 3 December 2008 (PST)
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd> OK, I understand the math issue better now. See <a href="http://wiki.cbr.washington.edu/qerm/index.php/Talk:AD_Model_Builder/Cheat_sheet" class="external free" rel="nofollow">http://wiki.cbr.washington.edu/qerm/index.php/Talk:AD_Model_Builder/Cheat_sheet</a> -<a href="/qerm/index.php/User:Ian" title="User:Ian">Ian</a> 15:31, 3 December 2008 (PST).
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<h2> <span class="mw-headline" id="Update_now_that_you.27re_in_Finland.3F">Update now that you're in Finland?</span></h2>
+<p>I notice a few out of date points on your user page, Dr. Gurarie.
+</p>
+<dl><dd> Excellent improvements! Thank you. -<a href="/qerm/index.php/User:Ian" title="User:Ian">Ian</a> 10:33, 17 November 2008 (PST)
+</dd></dl>
+<dl><dd><dl><dd> F &amp; F, you bad ass! <a href="/qerm/index.php/User:Tommy" title="User:Tommy">Tommy</a> 16:14, 17 November 2008 (PST)
+</dd></dl>
+</dd></dl>
+<h2> <span class="mw-headline" id="Ants">Ants</span></h2>
+<p>Howdy, well done adding the data page.  Perhaps it would be wise to add descriptors and sources for the data added to the data page.  Great idea, however, and I will try to add some data shortly.  --<a href="/qerm/index.php/User:Hans_Nesse" title="User:Hans Nesse">Hans Nesse</a> 19:01, 16 April 2008 (PDT)
+</p>
+<dl><dd> It was Tommy's inspiration (acquired from you).  I was just showing him how to start a page like that in principle.  It's  a great idea, though.   Have you checked out the <a href="/qerm/index.php/R_tips" title="R tips">R tips</a> by the way?  More importantly, have you contributed to them lately?  - <a href="/qerm/index.php/User:Eli" title="User:Eli">Eli</a> 11:52, 17 April 2008 (PDT)
+</dd></dl>
+<dl><dd><dl><dd> Eli, thank you for inspiring me to contribute to the <a href="/qerm/index.php/R_tips" title="R tips">R tips</a>. Someday I'll add my own tips instead of just editing yours. By the way, where is this famed "data page"? I see no links. Also, someone remind me how to add the date like you two did in the comments above. - <a href="/qerm/index.php/User:Ian" title="User:Ian">Ian</a>
+</dd></dl>
+</dd></dl>
+<p>There's some new data up on the data page, check it out. Ian, four tildes will insert your username and date.   - <a href="/qerm/index.php/User:Tommy" title="User:Tommy">Tommy</a> 10:11, 18 April 2008 (PDT)
+</p><p>Fine impressions of Finland page, but did you get the job, or decide whether you want the job? Maybe this isn't the stuff of public proclamation. <a href="/qerm/index.php/User:Ian" title="User:Ian">Ian</a> 12:28, 30 April 2008 (PDT)
+</p>
+<h2> <span class="mw-headline" id="Big_Shoutout_to_my_Holmes"> Big Shoutout to my Holmes </span></h2>
+<p>YO ELI&#160;! Thanks for the <a href="/qerm/index.php/R/Correlated_Random_Walk" title="R/Correlated Random Walk"> correlated random walk code</a>.  It's dope.
+<a href="/qerm/index.php/User:Tommy" title="User:Tommy">Tommy</a> 10:46, 2 May 2008 (PDT)
+</p>
+<h2> <span class="mw-headline" id="Attendance_article"> Attendance article </span></h2>
+<p>Boy those figures in your attendance article kick butt! Oooooh, the beautiful colors, so nice!
+</p><p>I think the caption "Figure 4: Visit durations (log scale) against age of pup. Red lines are 95% confidence intervals." could use expansion and is confusing because plot is not on log scale, only linear fit. Maybe better to say something like "Age of pups and their visit length. Black line shows linear model fit to log(visit length) ~ age. Red lines show 95% confidence intervals." If you had an equation in the text, you could refer to it, but you don't, which is OK.
+</p><p>I might have comments on the rest of the paper, but so far I've only looked at the pretty pictures.
+</p><p>-<a href="/qerm/index.php/User:Ian" title="User:Ian">Ian</a> 11:17, 12 May 2008 (PDT)
+</p>
+<h2> <span class="mw-headline" id="Windows_Commands"> Windows Commands </span></h2>
+<p>Oh, my precious precious clicks will be saved! Thank you. 
+</p><p>-<a href="/qerm/index.php/User:Ian" title="User:Ian">Ian</a> 09:37, 9 September 2010 (PDT)
+</p>
+<h2> <span class="mw-headline" id="BCPA.2Fno_email_amongst_the_wolves"> BCPA/no email amongst the wolves </span></h2>
+<p>Mitä kuuluu?
+It is strange that Google doesn't see the BCPA page at all. What I do see is some warnings at the top which suggest that the page may have some errors that could theoretically cause it to get dropped from the search results. The error I see is stuff like this:
+</p>
+<pre>Warning: wfMkdirParents: failed to mkdir "/var/httpd/wiki/mediawiki_1_17_0/sites/qerm/images/thumb/5/5c/ThisIsASimp2.jpg" mode 511 in /var/httpd/wiki/mediawiki_1_17_0/includes/GlobalFunctions.php on line 232
+</pre>
+<p>Sadly, the need to catch up on many many emails piled up after a week of vacation camping in the San Juans must take precedence over reading the article itself. I will attempt to get back to it soon.
+-<a href="/qerm/index.php/User:Ian" title="User:Ian">Ian</a> 10:28, 1 August 2011 (PDT)
+</p>
+<dl><dd> on visiting the page again, I got no errors--strange indeed.
+</dd></dl>
+<h2> <span class="mw-headline" id="uploading_large_files"> uploading large files </span></h2>
+<p>I couldn't find the file for my 2008 dissertation defense, so I went to the QERM wiki to find it. Sadly, I discovered that I had put it on a now-defunct staff.washington.edu page because I had trouble uploading a 13MB file to the QERM wiki. Luckily, I found a backup folder that contained the file, but am left with a wish to get the thing uploaded to the QERM wiki.
+The wiki says there's a 100MB limit, but once again I was not able to upload the 13MB file. You seem to be the <a href="http://wiki.cbr.washington.edu/qerm/index.php?title=Special:ListFiles&amp;sort=img_size&amp;limit=50&amp;desc=1" class="external text" rel="nofollow">current record holder</a> for file size at 10.01MB. Any suggestions on how to upload a big file? The upload page just thinks for a few seconds and then resets itself with no change made.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 84/1000000
+Post-expand include size: 284/2097152 bytes
+Template argument size: 62/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb-qerm_:pcache:idhash:97-0!*!0!!en!*!edit=0 and timestamp 20220505181204 -->
+<div class="printfooter">
+Retrieved from "<a href="https://www.cbr.washington.edu/qerm/index.php/User_talk:Eli">https://www.cbr.washington.edu/qerm/index.php/User_talk:Eli</a>"</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-user"><a href="/qerm/index.php/User:Eli" title="View the user page [c]" accesskey="c">User page</a></li>
+				 <li id="ca-talk" class="selected"><a href="/qerm/index.php/User_talk:Eli" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="/qerm/index.php?title=User_talk:Eli&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/qerm/index.php?title=User_talk:Eli&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/qerm/index.php/User:10.19.28.84" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">10.19.28.84</a></li>
+				<li id="pt-anontalk"><a href="/qerm/index.php/User_talk:10.19.28.84" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+				<li id="pt-anonlogin"><a href="/qerm/index.php?title=Special:UserLogin&amp;returnto=User_talk:Eli&amp;returntoquery=printable%3Dyes" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/qerm/sites/qerm/logo.gif);" href="/qerm/index.php/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/qerm/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="/qerm/index.php/QERM_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/qerm/index.php/QERM_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/qerm/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/qerm/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/qerm/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/qerm/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search QERM Wiki" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&#160;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/qerm/index.php/Special:WhatLinksHere/User_talk:Eli" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/qerm/index.php/Special:RecentChangesLinked/User_talk:Eli" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-contributions"><a href="/qerm/index.php/Special:Contributions/Eli" title="View the list of contributions of this user">User contributions</a></li>
+<li id="t-log"><a href="/qerm/index.php?title=Special:Log&amp;user=Eli">Logs</a></li>
+<li id="t-specialpages"><a href="/qerm/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-permalink"><a href="/qerm/index.php?title=User_talk:Eli&amp;oldid=2712" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/qerm/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="lastmod"> This page was last modified on 29 September 2011, at 19:48.</li>
+		<li id="viewcount">This page has been accessed 18,943 times.</li>
+		<li id="privacy"><a href="/qerm/index.php/QERM_Wiki:Privacy_policy" title="QERM Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/qerm/index.php/QERM_Wiki:About" title="QERM Wiki:About">About QERM Wiki</a></li>
+		<li id="disclaimer"><a href="/qerm/index.php/QERM_Wiki:General_disclaimer" title="QERM Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+<script src="/qerm/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=monobook&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "User_talk", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 3, "wgPageName": "User_talk:Eli", "wgTitle": "Eli", "wgAction": "view", "wgArticleId": 97, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 2712, "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script><!-- Served in 0.105 secs. --></body></html>

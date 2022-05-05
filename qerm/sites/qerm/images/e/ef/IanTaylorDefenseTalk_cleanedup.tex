@@ -1,0 +1,886 @@
+\documentclass[12pt,mathserif]{beamer}
+\usepackage{color}
+%\usepackage{multimedia}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{movie15}
+
+\usepackage[orientation=landscape,size=custom,width=16,height=9,scale=0.5,debug]{beamerposter}
+% \usepackage[orientation=landscape,size=custom,width=171,height=96,scale=1.0,debug]{beamerposter}
+
+\setbeamertemplate{navigation symbols}{} %no nav symbols
+
+\hypersetup{
+    pdfpagetransition=Glitter,
+    pdftitle={Ian's talk Spring 2007},
+    pdfsubject={},
+    pdfauthor={Ian},
+    pdfkeywords={dogfish},
+    pdfpagemode=None,
+%    plainpages=false,
+    pdfstartview=Fit,
+%    breaklinks=true,
+%    colorlinks=false,
+%    pdfhighlight=/N,
+    % define colors, even if not used
+%    linkcolor=blue,
+%    citecolor=blue,
+%    urlcolor=blue,
+%    citebordercolor=1 1 1,
+%    filebordercolor=1 1 1,
+%    linkbordercolor=1 1 1,
+%    menubordercolor=1 1 1,
+%    pagebordercolor=1 1 1,
+%    urlbordercolor=1 1 1,
+%    pdfborder=1 1 1
+  }
+% load the pdfanim style, should be done after hyperref
+% NOT JUST ``SHOULD BE DONE'', IN FACT HYPERREF NEEDS TO BE THERE OR IT WON'T WORK
+% \usepackage[NoDocJS]{pdfanim}
+% \usepackage{pdfanim} %requires file to be opened via open file dialogue in Acrobat Reader
+% \PDFAnimLoad[remember,width=4in]{animap}{/home/ian/dogshare/dissertation/defense_talk/animap/animapB}{72}
+
+
+
+
+%\usecolortheme{seahorse}
+%\usecolortheme{rose}
+
+\definecolor{section0}{rgb}{0,.5,.1} % Defines section colors!  (neat)
+\definecolor{section1}{rgb}{0,.7,0}
+\definecolor{section2}{rgb}{0,.5,.5}
+\definecolor{Population dynamics model}{rgb}{0,.5,.4}
+
+\definecolor{USC }{rgb}{1.0, 0.65,   0}
+\definecolor{PS  }{rgb}{1.0,    0,   0}
+\definecolor{SG  }{rgb}{0.8,    0, 0.8}
+\definecolor{WCVI}{rgb}{0.0,    0, 0.8}
+\definecolor{NBC }{rgb}{0.0,  0.8,   0}
+\definecolor{titleblue}{rgb}{0.2,0.2,0.7}
+% orange    #FFA500 255 165 0
+% red       #FF0000 255 0   0
+% magenta3  #CD00CD 205 0   205
+% blue      #0000FF 0   0   255
+% green3    #00CD00 0   205 0
+
+\definecolor{green1}{rgb}{0,.5,.1}
+\definecolor{cream1}{rgb}{.97,.97,.83}
+\definecolor{shitbrown}{rgb}{.2,.2,.05}
+
+	\setbeamercolor{boxcolor1}{fg=white,bg=green1}
+	\setbeamercolor{boxcolor2}{fg=black,bg=cream1}
+
+
+\newcommand{\Em}[1]{\emph{\color{shitbrown}{#1} }\color{black}}
+\newcommand{\bl}[1]{\color{titleblue}{#1 }\color{black}}
+\newcommand{\gr}[1]{\color{green1}{#1 }\color{black}}
+\newcommand{\rd}[1]{\color{red}{#1 }\color{black}}
+\newcommand{\bk}[1]{\color{black}{#1 }\color{black}}
+\newcommand{\wh}[1]{\color{white}{#1 }\color{black}}
+
+\newcommand{\USC }[1]{\color{USC }{#1 }\color{black}}
+\newcommand{\PS  }[1]{\color{PS  }{#1 }\color{black}}
+\newcommand{\SG  }[1]{\color{SG  }{#1 }\color{black}}
+\newcommand{\WCVI}[1]{\color{WCVI}{#1 }\color{black}}
+\newcommand{\NBC }[1]{\color{NBC }{#1 }\color{black}}
+
+
+%\usepackage[graph,frame,arrow,tips,matrix]{xy}
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+%\definecolor{emphasis}{rgb}{0,.5,.1}
+%\usepackage[english]{babel}
+%\usepackage[latin1]{inputenc}
+%\usepackage{times}
+%\usepackage[T1]{fontenc}
+%\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps}
+%\usefonttheme{structurebold}
+
+\setbeamertemplate{items}[ball]
+\mode<presentation>
+  \setbeamercovered{transparent}
+\usepackage{pgf}
+
+
+\usetheme{Singapore}
+
+
+
+\title{Population dynamics of spiny dogfish\\ in the Northeast Pacific}
+\author{Ian Taylor}
+\institute{Ph.D. Final Examination\\
+Quantitative Ecology and Resource Management\\
+University of Washington}
+\date{April 10, 2008}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\frame{
+	\tableofcontents[part=1]
+		\maketitle
+}
+
+%%%%%%
+%%%%% #####################################################################
+%%%%
+\section{Background}
+%\subsection{}
+
+
+\begin{frame}
+% \frametitle{Outline \movie[externalviewer]{}{MudSharkIntro-2channel-8bit-mulaw.au}}
+\frametitle{Outline}
+\tableofcontents%[pausesections]
+% \sound[inlinesound, autostart, samplingrate=44100, channels=2, bitspersample=8, encoding=muLaw]{}{MudSharkIntro-2channel-8bit-mulaw.au}
+% \hyperlinksound[inlinesound, autostart, samplingrate=44100, channels=2, bitspersample=8, encoding=muLaw]{}{MudSharkIntro-2channel-8bit-mulaw.au}
+% \hyperlinksound{}{MudSharkIntro-2channel-8bit-mulaw.au}
+\end{frame}
+
+% \begin{frame}
+% \frametitle{Outline}
+% \begin{columns}
+% 	\column{0.2\textwidth} % set width of first column
+% 	\column{0.6\textwidth} % set width of second column
+%   \tableofcontents
+%   \column{0.2\textwidth} % set width of second column
+% \end{columns}
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Outline}
+%\frame{
+%			\begin{itemize}
+%				\item{Movement patterns (chapter 2)}
+%				\item{Demographic patterns (chapter 3)}
+%				\item{Population dynamics model (chapter 4)}
+%			\end{itemize}
+%}
+
+%http://maps.google.com/?ie=UTF8&ll=47.338823,-128.364258&spn=17.009754,48.164063&t=p&z=5
+%http://maps.google.com/?ie=UTF8&ll=47.338823,-128.364258&spn=17.009754,48.164063&t=p&z=5&pw=2
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{dogfish_backlight_MikeUrban_cropped.jpg}}
+\begin{frame}[plain]
+
+  \frametitle{}
+  % \begin{itemize}[<->]
+
+  % \begin{itemize}
+  % \bf{\PS{\item[]Spiny dogfish (a.k.a. spurdog, cape shark, or rock salmon, \textit{Squalus acanthias})   }}
+  % \bf{\PS{\item[]small, long-lived, bottom dwelling, omnivorous                                           }}
+  % \bf{\PS{\item[]found in temperatue waters of all ocean basins                                           }}
+  % \end{itemize}
+
+% \sound[inlinesound, autostart, samplingrate=44100, channels=2, bitspersample=8, encoding=muLaw]{}{MudSharkMiddle-2channel-8bit-mulaw.au}
+\end{frame}
+\setbeamertemplate{background canvas}{} %return to blank canvas
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Spiny dogfish}
+  \bl{(a.k.a. spurdog, cape shark, rock salmon, mud shark, or \textit{Squalus acanthias})}
+\includegraphics[width=\textwidth]{/home/ian/pictures/dogfish_images/rangemap.jpg}
+\end{frame}
+\setbeamertemplate{background canvas}{} %return to blank canvas
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{/home/ian/pictures/dogfish_images/skidegate1880.jpg}}
+\begin{frame}[plain]
+	\frametitle{\normalsize\PS{\hspace{1in}Skidegate, Queen Charlotte Islands, 1880}}
+\end{frame}
+\setbeamertemplate{background canvas}{} %return to blank canvas
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{/home/ian/pictures/dogfish_images/RobertDavidsonDogfishPretendingToBeHumanWide.jpg}}
+\begin{frame}[plain]
+	\frametitle{}
+  \normalsize\PS{``Dogfish pretending to be human''\\ by Robert Davidson}\vspace{2in}
+\end{frame}
+\setbeamertemplate{background canvas}{} %return to blank canvas
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{/home/ian/pictures/dogfish_images/FisgardLighthouse2crop.jpg}}
+\begin{frame}[plain]
+	\frametitle{\normalsize\wh{Fisgard Lighthouse, Vancouver Island, built 1860, lit with dogfish oil}}
+\end{frame}
+\setbeamertemplate{background canvas}{} %return to blank canvas
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[plain]
+\frametitle{1940s: ``spectacular'' fishery for dogfish livers}
+
+\hspace{.2in}
+\includegraphics[height=2.3in]{/home/ian/pictures/dogfish_images/trawler1947.png}
+\hspace{.05in}
+\includegraphics[height=2.3in]{/home/ian/pictures/dogfish_images/1940sTrawlPhotoFromKetchen.png}
+
+% \framebox{      % just so you can see where the "picture" is
+  \begin{picture}(0,0)
+     \put(-30,-9){\includegraphics[width=6.12in]{/home/ian/dogshare/dissertation/ianphd/biology/figs/CatchPlotTalk.pdf}}
+  \end{picture}
+% }\par
+\end{frame}
+\setbeamertemplate{background canvas}{} %return to blank canvas
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{/home/ian/pictures/dogfish_images/PugetSoundVillain2.pdf}}
+\begin{frame}[plain]
+	\frametitle{}
+\end{frame}
+\setbeamertemplate{background canvas}{} %return to blank canvas
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Fujioka (1978) UW dissertation}
+\begin{picture}(0,0)
+     \put(0,0){\movie[externalviewer]{}{MudSharkIntro-2channel-8bit-mulaw.au}}
+     \put(0,10){\movie[externalviewer]{}{MudSharkMiddle-2channel-8bit-mulaw.au}}
+\end{picture}
+
+\vspace{-.1in}\includegraphics[width=1.05\textwidth]{/home/ian/pictures/dogfish_images/FujiokaPg1.png}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{1975--today: Food}
+\begin{center}
+\begin{columns}
+	\column{0.45\textwidth} % set width of first column
+  \includegraphics[width=.9\textwidth]{/home/ian/pictures/dogfish_images/schillerlocken.jpg}
+	\column{0.55\textwidth} % set width of second column
+  \includegraphics[width=\textwidth]{/home/ian/pictures/dogfish_images/fishchips.jpg}
+\end{columns}
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Dogfish in trouble}
+  % \begin{center}
+  % \hspace{-1in}\vspace{-1.5in}\fbox{ \includegraphics[width=.7\textwidth]{The_thrill_of_decline_and_the_agony_of_recovery.pdf} }%\\
+  \begin{picture}(0,0)
+     \put(170,-90){\fbox{ \includegraphics[width=3in]{The_thrill_of_decline_and_the_agony_of_recovery.pdf} }}
+     \put(0,-100){\includegraphics[width=2in]{/home/ian/pictures/dogfish_images/IUCN2.pdf} }
+     \put(0,0){\includegraphics[width=2in]{cites-banner.jpg} }
+
+  \end{picture}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Questions}
+\begin{columns}
+	\column{0.15\textwidth} % set width of first column
+
+	\column{0.7\textwidth} % set width of second column
+
+  \large{
+  What was the impact of the 1940s fishery on dogfish in the NE Pacific? \\
+
+  \bigskip
+  What is the current status of dogfish in the NE Pacific? \\
+
+  \bigskip
+  What new tools can be developed for understanding population dynamics of sharks and the impacts of shark fisheries in general? \\ 
+
+  \vspace{1in}}
+  \column{0.15\textwidth} % set width of first column
+\end{columns}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{}
+\begin{center}
+\begin{columns}
+	\column{0.1\textwidth} % set width of first column
+
+	\column{0.8\textwidth} % set width of second column
+    \includegraphics[trim=3in 0in 0in .5in, clip=true, width=\textwidth]{/home/ian/letterhead/ian_letterhead_red_center.png}
+    % \begin{itemize}
+      \scriptsize{
+      % Nicci, Joel, Cindy, maybe Rustin
+      \textbf{Silva, A.   } 2008. Population dynamics of the blue shark, \textit{Prionace glauca}, in the North Atlantic Ocean. Ph.D. Dissertation, School of Aquatic and Fishery Sciences                                                                               \\
+
+      \smallskip
+      \textbf{Rice, J.    } 2007. A study of \PS{spiny dogfish} (\textit{Squalus acanthias}) in the Gulf of Alaska. Master's Thesis, Quantitative Ecology and Resource Management.                                                                                       \\
+
+      \smallskip
+      \textbf{Vega, N.    } 2006. Biogeography of the \PS{spiny dogfish} (\textit{Squalus acanthias}) over a latitudinal gradient in the NE Pacific. Master's Thesis, Quantitative Ecology and Resource Management.                                                      \\
+
+      \smallskip
+      \textbf{Menon, M.   } 2004. Spatial-temporal modeling of Pacific sleeper shark (\textit{Somniosus pacificus}) and \PS{spiny dogfish} (\textit{Squalus acanthias}) bycatch in the northeast Pacific Ocean. Master's Thesis, School of Aquatic and Fishery Sciences. \\
+
+      \smallskip
+      \textbf{Tribuzio, C.} 2004. An introduction of the reproductive physiology of two North Pacific shark species: \PS{spiny dogfish} (\textit{Squalus acanthias}) and salmon shark (\textit{Lamna ditropis}). Master's Thesis, School of Aquatic and Fishery Sciences \\
+
+      \smallskip
+      \textbf{Director, R.} 2001. The \PS{spiny dogfish} fishery of Puget Sound and the Pacific Northwest coast: management options and recommendations. Masters Thesis, School of Marine Affairs.                                                                       \\
+      }
+      % \end{itemize}
+  \column{0.1\textwidth} % set width of first column
+\end{columns}
+\end{center}
+\end{frame}
+
+%%%%%%
+%%%%% ################################ Reproductive Value #####################################
+%%%%
+% \setbeamercolor{normal text}{bg=red}
+\setbeamertemplate{background canvas}{bg=red}
+\section{Reproductive Value}
+%\subsection{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{background canvas}{\includegraphics[height=\paperheight, width=\paperwidth]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/blackSquare.pdf}}
+\begin{frame}[plain]
+\begin{center}
+\WCVI{\Huge{Reproductive Value}}
+\includegraphics[width=\textwidth]{/home/ian/pictures/dogfish_images/dogfish_art/bluedog.pdf}
+\end{center}
+\end{frame}
+\setbeamertemplate{background canvas}{} %return to blank canvas
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Problem}
+\large{
+The long lifespan and late age of maturity of many sharks allow harvests of different segments of the population: pups, juveniles, and adults. \\
+
+\bigskip
+How can we best quantify the impacts of these different harvests? \\ 
+}
+
+\bigskip
+\hspace{.5in}\includegraphics[width=.8\textwidth]{GallucciTaylorErziniTitle.png}
+
+% \vspace{1in}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Reproductive value}
+Reproductive value, $v_{x}$, defined by R.A. Fisher in 1930, \\
+	% $v_x  = \sum\limits_{i \ge x} {\lambda ^{ - (i - x)} f_i \frac{{l_i }}{{l_x }}}$, \\
+\[v_x  = \sum\limits_{i \ge x} {\lambda ^{ - (i - x)} f_i \frac{{l_i }}{{l_x }}},\] \\
+where \\
+$f_i$ = fecundity at age $i$,\\
+$l_i$ = probability of surviving from birth to to age $i$, and\\
+$\lambda$ = annual population increase.\\
+
+\bigskip
+\textbf{\PS{Relative measure of expected future offspring for any given age}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Reproductive value}
+\begin{center} \includegraphics[height=2.2in]{/home/ian/dogshare/dissertation/defense_talk/RVfigure.pdf}\\
+\end{center}
+
+\vspace{-.1in}
+\hrule
+\vspace{.05in}
+\scriptsize{
+Human values from Bowles, S. and Posel D. 2005, Genetic relatedness predicts South African migrant workers' remittances to their families, \textit{Nature} 434:380--383\\ 
+Dogfish values from data on Puget Sound dogfish}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Reproductive potential}
+Define reproductive potential of the population as \\
+\[P = \sum\limits_{x=0}^{N_{ages}} v_x N_x, \]
+and reproductive potential removed by harvest,
+\[P_h = \sum\limits_{x=0}^{N_{ages}} v_x H_x {N_x}, \]
+Let $\Phi = P_h / P$ be the fraction of the population's reproductive potential harvested annually.\\
+
+\vspace{.25in}
+\hrule
+\vspace{.05in}
+\footnotesize{
+$v_x$ is reproductive value of age $x$, $N_x$ is numbers at age $x$, and \\ $H_x$ is fraction of numbers at age $x$ removed annually.}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{}
+\vspace{.2in}
+\textbf{Theorem: }(Taylor, Gallucci) The asymptotic annual growth of a
+harvested population $\lambda'$ decreases linearly with $\Phi$, the fraction of the
+population's reproductive potential harvested annually,
+\[\lambda' = \lambda (1 - \Phi).\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center} \includegraphics[height=2in]{/home/ian/dogshare/dissertation/ianphd/CJFASpaper/figs/fig3.pdf}
+\end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Reproductive value conclusions}
+% \begin{itemize}
+Reproductive value and reproductive potential are the appropriate measures of the impact of removing different ages from the population.
+
+\bigskip
+Theorem built on assumptions of Leslie matrix model, but results still hold in presence of variability.
+\vspace{1.2in}
+% \end{itemize}
+}
+
+%%%%%%
+%%%%% ###################### Demography ###############################################
+%%%%
+\section{Demography}
+%\subsection{}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \frame{\frametitle{}
+% \begin{center}
+% \Huge{Demography}
+% \end{center}
+% }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{background canvas}{\includegraphics[height=\paperheight, width=\paperwidth]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/blackSquare.pdf}}
+\begin{frame}[plain]
+\begin{center}
+\NBC{\Huge{Demography}}
+\includegraphics[width=\textwidth]{/home/ian/pictures/dogfish_images/dogfish_art/greendog.pdf}
+\end{center}
+\end{frame}
+\setbeamertemplate{background canvas}{} %return to blank canvas
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Dogfish dorsal spines from 1942--43}
+\begin{center}
+\begin{columns}
+	\column{0.5\textwidth} % set width of first column
+  \includegraphics[width=\textwidth]{spines.png}
+	\column{0.5\textwidth} % set width of second column
+  % Held in the UW Fish Collection. \\
+  Aged using modern methods.\\
+
+  \bigskip
+  Similar data available from 2000s dogfish (Tribuzio, 2004).
+
+  \bigskip
+  Demographic parameters published for 1970s and 1980s (Ketchen, 1972; Sauders \& McFarlane, 1993).\\
+
+  \bigskip
+  \PS{Allows examination of fecundity, maturity, and growth from 1940s to 2000s.}
+\end{columns}
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Changes in fecundity}
+\begin{center} \includegraphics[height=3in]{/home/ian/dogshare/dissertation/ianphd/biology/figs/fecundityColor_lame.pdf}
+\end{center}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Changes in age and length at maturity}
+\begin{center} \includegraphics[height=3in]{/home/ian/dogshare/dissertation/ianphd/biology/figs/maturityColor_lame.pdf}
+\end{center}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Changes in growth}
+\begin{center} \includegraphics[height=3in]{/home/ian/dogshare/dissertation/ianphd/biology/figs/agelen50growthColor_lame.pdf}
+\end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\vspace{-.3in}\begin{columns}
+	\column{0.4\textwidth} % set width of first column
+  \begin{flushright}
+    \includegraphics[angle=0,height=1.1\textheight,width=2in]{change_comparison_plot_color_talk_vert.pdf}
+  \end{flushright}
+	\column{0.6\textwidth} % set width of second column
+  \Large{\bl{Climate or fishing?}}\\
+
+  \normalsize
+  \bigskip
+  Intermediate results from 1970s/1980s can be used to estimate timing of change
+
+  \bigskip
+  \wh{Greatest change occurred between 1940s and 1970s/1980s when temperature was stable}
+
+  \bigskip
+  \wh{Fishing most likely cause of change}
+
+\end{columns}
+
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\vspace{-.3in}\begin{columns}
+	\column{0.4\textwidth} % set width of first column
+  \begin{flushright}
+    \includegraphics[angle=0,height=1.1\textheight,width=2in]{change_comparison_plot_color_talk_vert_bold.pdf}
+  \end{flushright}
+	\column{0.6\textwidth} % set width of second column
+  \Large{\bl{Climate or fishing?}}\\
+
+  \normalsize
+  \bigskip
+  Intermediate results from 1970s/1980s can be used to estimate timing of change
+
+  \bigskip
+  Greatest change occurred between 1940s and 1970s/1980s when temperature was stable
+
+  \bigskip
+  \PS{Fishing} most likely cause of change
+
+\end{columns}
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Demography conclusions}
+
+\begin{columns}
+	\column{0.2\textwidth} % set width of first column
+
+	\column{0.6\textwidth} % set width of second column
+
+  Dogfish demography is remarkable.
+
+  \bigskip
+  Fecundity, maturity, and growth changed significantly between 1940s and 2000s.
+
+  \bigskip
+  Changes in density appear more likely as \\the cause than changes in climate.
+  \vspace{1.2in}
+  \column{0.1\textwidth} % set width of first column
+\end{columns}
+
+
+%%%%%%
+%%%%% ##################### Population Dynamics ################################################
+%%%%
+\section{Population Dynamics}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{background canvas}{\includegraphics[height=\paperheight, width=\paperwidth]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/blackSquare.pdf}}
+\begin{frame}[plain]
+\begin{center}
+\PS{\Huge{Population Dynamics}}
+\includegraphics[width=\textwidth]{/home/ian/pictures/dogfish_images/dogfish_art/reddog.pdf}
+\end{center}
+\end{frame}
+\setbeamertemplate{background canvas}{} %return to blank canvas
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Metapopulation model with 5 areas}
+\framesubtitle{Integrated model fit to data on abundance, length and age compositions, and tag recaptures}
+\begin{center}
+\includegraphics[width=.95\textwidth]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/eezmapColor.pdf}
+\end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{}
+\begin{center}
+\includegraphics[height=\textheight]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/CatchTagPlotColor.pdf}
+\end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Model structure}
+\framesubtitle{122 ages $\times$ 72 years $\times$ 5 areas =  43,920 bins for numbers at age}
+\begin{center}
+\vspace{-.2in}\includegraphics[height=2.8in]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/GridFigColor.pdf}
+\end{center}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Model flow}
+\begin{center}
+  \vspace{-.3in}\includegraphics[height=3.0in, trim=1.3in 4in 1.0in 1in, clip=true]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/flowchart/flowchart_expanded_fixed_color.pdf}
+\end{center}
+}
+
+\frame{\frametitle{Outputs from model}
+
+\begin{columns}
+	\column{0.2\textwidth} % set width of first column
+
+	\column{0.8\textwidth} % set width of second column
+
+  Estimates (with quantified uncertainty) for:\\
+  \begin{itemize}
+    \item equilibrium (1935) abundance in each area
+    \item current (2006) abundance in each area
+    \item what happened in between
+    \item movement rates between adjacent areas
+  \end{itemize}
+  Fit of model to observed values from:
+  \begin{itemize}
+    \item indices of abundance (CPUE)
+    \item age and length compositions
+    \item recaptures of tagged dogfish
+  \end{itemize}
+
+  % \vspace{1.0in}
+  % \column{0.1\textwidth} % set width of first column
+\end{columns}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{\hspace{.2in}Results summary}
+\begin{center}
+\vspace{-.9in}\includegraphics[height=3.3in]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/animap1935.pdf}
+\vspace{-.9in}\includegraphics[height=3.3in]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/animapEmpty.pdf}
+\end{center}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{\hspace{.2in}Results summary}
+\begin{center}
+\vspace{-.9in}\includegraphics[height=3.3in]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/animap1935.pdf}
+\vspace{-.9in}\includegraphics[height=3.3in]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/animap2006.pdf}
+\end{center}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Biomass trajectories}
+\begin{center}
+\vspace{-.5in}
+\includegraphics[height=.95\textheight, width=\textwidth]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/BiomassTrajectoriesHorizontalColor.pdf}
+\end{center}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Fit to indices of abundance}
+\begin{center}
+\vspace{-.1in}
+\includegraphics[height=.9\textheight]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/IndexFitsHorizontalColor.pdf}
+\end{center}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{\hspace{3.5in}Length and age\\ \hspace{3.4in}compositions}
+\vspace{-.6in}\includegraphics[height=\textheight]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/CompsColor.pdf}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{\hspace{3.5in}Tag \\ \hspace{3.8in}recaptures}
+\vspace{-.6in}\includegraphics[height=\textheight]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/tagproportionsSidewaysColorFixed.pdf}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Posterior distributions for initial biomass}
+\includegraphics[width=\textwidth]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/B0postColor.pdf}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{\hspace{.2in}Sensitivities}
+\begin{center}
+\vspace{-.7in}\includegraphics[height=3.0in]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/SensTraject.pdf}
+\vspace{-.7in}\includegraphics[height=3.0in]{/home/ian/dogshare/dissertation/ianphd/metapopulation/figs/SensTraject2.pdf}
+\end{center}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Population dynamics conclusions}
+% \begin{itemize}
+
+\begin{columns}
+	\column{0.15\textwidth} % set width of first column
+
+	\column{0.7\textwidth} % set width of second column
+
+  Metapopulation framework valuable in estimating dogfish abundance and movement rates
+
+  \bigskip
+  Coastal areas are tightly connected---less connectivity with Puget Sound and Strait of Georgia
+
+  \bigskip
+  Initial biomass estimates sensitive to assumptions
+
+  \bigskip
+  Biomass most likely above 40\% of initial level
+
+  \bigskip
+  Evidence for additional factors not included in model
+
+  \column{0.15\textwidth} % set width of first column
+\end{columns}
+
+}
+
+%%%%%%
+%%%%% ################################ Conclusions #####################################
+%%%%
+\section{Conclusions}
+%\subsection{}
+
+
+\frame{\frametitle{General conclusions}
+
+\begin{columns}
+	\column{0.15\textwidth} % set width of first column
+
+	\column{0.7\textwidth} % set width of second column
+
+  Dogfish are a worthy subject for study
+
+  \bigskip
+  Reproductive value and reproductive potential give insight into fishing impacts
+
+  \bigskip
+  Samples spanning long time-periods allow important demographic comparisons
+
+  \bigskip
+  Spatial metapopulation models are extremely valuable to understanding population dynamics
+
+  \column{0.15\textwidth} % set width of first column
+\end{columns}
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[shrink=20]
+\frametitle{Acknowledgements}
+  \begin{picture}(0,0)
+     \put(240,-270){\includegraphics[width=2in]{/home/ian/pictures/pupheads2.png}}
+  \end{picture}
+\footnotesize{
+  \begin{columns}
+    \column{0.27\textwidth} % set width of first column
+    \begin{itemize}
+      \USC{\item[] Committee}
+      \begin{itemize}
+        \item[] \underline{Vince Gallucci}
+        \item[] Andr\'e Punt
+        \item[] Rick Methot
+        \item[] Sandy McFarlane
+        \item[] Bob Gara
+      \end{itemize}
+
+      \PS{\item[] Faculty and staff}
+      \begin{itemize}
+        \item[] Loveday Conquest
+        \item[] Mark Kot
+        \item[] David Ford
+        \item[] Joanne Besch
+        \item[] Scott Schafer
+        \item[] April Wilkinson
+        \item[] Hyun Kyoung
+      \end{itemize}
+      % \vspace{1in}
+
+    \end{itemize}
+    \column{0.38\textwidth} % set width of 2nd column
+    \begin{itemize}
+
+      \SG{\item[] Agency folks: WDFW, NMFS, and DFO}
+      \begin{itemize}
+        \item[] Greg Lippert,
+                Theresa Tsou,
+                Greg Bargmann,
+                Ian Stewart,
+                Kevin Piner,
+                Mark Wilkins,
+                John Wallace,
+                Stacey Miller,
+                Vanessa Tuttle,
+                Jackie King,
+                Jeff Fargo
+                Bill Clark
+      \end{itemize}
+
+      \WCVI{\item[] Shark lab people}
+      \begin{itemize}
+        \item[] Alex,
+                Joel,
+                Hans,
+                Shannon,
+                Nicci,
+                Muktha,
+                Cindy,
+                Jason,
+                Pilar,
+                Brian,
+                Danny,
+                Ben,
+                Miguel
+      \end{itemize}
+          \NBC{\item[] Groups}
+      \begin{itemize}
+        \item[] NMFS for funding
+        \item[] UAW Local 4121
+        \item[] countless open source \\ developers
+      \end{itemize}
+    \end{itemize}
+      \column{0.45\textwidth} % set width of 2nd column
+    \begin{itemize}
+
+      \USC{\item[] Fellow grads}
+      \begin{itemize}
+        \item[]
+                Aditya,
+                Allan,
+                Bert,
+                Bob,
+                Carey,
+                Eli,
+                Dawn,
+                Derek,
+                Gavin,
+                Ian,
+                James,
+                Jason,
+                Jenn,
+                John,
+                Jon,
+                Jo,
+                Juan,
+                Julian,
+                Kevin,
+                Kristin,
+                Melissa,
+                Mike,
+                Nathan,
+                Nathalie,
+                Nicolas,
+                Rebecca,
+                Rishi,
+                Saang-Yoon,
+                Stephani,
+                Teresa,
+                Ting,
+                Trevor,
+                and many others
+      \end{itemize}
+    \PS{\item[] Friends and family}
+      \begin{itemize}
+        \item[] Calin,
+                Dan, Janet, Nat, Karissa,
+                Liz, Marsh,
+                Dave,
+                Katie,
+                Mario,
+                Mia,
+                Laela,
+                Travis,
+                Erin,
+                Erik,
+                Sonja,
+                Laura,
+                Robert,
+                Kate,
+		Deane,
+                Nora,
+                Spackle,
+                Hoover
+      \end{itemize}
+    \end{itemize}
+  \end{columns}
+  } % end \footnotesize
+
+\end{frame}
+
+
+\end{document}
+

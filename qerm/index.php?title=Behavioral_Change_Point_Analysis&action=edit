@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>View source - QERM Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="next" href="https://www.cbr.washington.edu/qerm/index.php/Behavioral_Change_Point_Analysis" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qerm/opensearch_desc.php" title="QERM Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.cbr.washington.edu/qerm/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="QERM Wiki Atom feed" href="/qerm/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/qerm/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 8]><link rel="stylesheet" href="/qerm/skins/common/IE80Fixes.css?301" media="screen" /><![endif]-->
+<link rel="stylesheet" href="/qerm/skins/monobook/main.css?301" media="screen" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE50Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE55Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/qerm/skins/monobook/IE60Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/qerm/skins/monobook/IE70Fixes.css?301" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Behavioral_Change_Point_Analysis skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">View source</h1>
+	<div id="bodyContent">
+		<div id="siteSub">From QERM Wiki</div>
+		<div id="contentSub">for <a href="/qerm/index.php/Behavioral_Change_Point_Analysis" title="Behavioral Change Point Analysis">Behavioral Change Point Analysis</a></div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in the group: <a href="/qerm/index.php?title=QERM_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="QERM Wiki:Users (page does not exist)">Users</a>.
+</p>
+</div>
+<p>You can view and copy the source of this page:
+</p><textarea id="wpTextbox1" name="wpTextbox1" cols="80" rows="25" readonly="">'''[[IMPORTANT UPDATE:]] As of October 26, 2013, The 'bcpa' package is available on CRAN [http://cran.r-project.org/web/packages/bcpa/index.html here]''' [[User:Eli|Eli]] 02:08, 26 October 2013 (PDT)
+
+[[image: FurSealBCPA.png | right | 300 px]]
+
+
+The '''Behavioral Change Point Analysis''' ('''BCPA''') is a method of identifying hidden shifts in the underlying parameters of a time series, developed specifically to be applied to animal movement data which is irregularly sampled.  
+
+The original paper on which it is based is: [http://onlinelibrary.wiley.com/doi/10.1111/j.1461-0248.2009.01293.x/full E. Gurarie, R. Andrews and K. Laidre  A novel method for identifying behavioural changes in animal movement data (2009) ''Ecology Letters'' 12:5 395-408].  Most of the material is also present in Chapter 5 of my {{pdf | GurarieDissertationFinalDraft.pdf | PhD dissertation}} (click to access). 
+
+I have received numerous requests for the R code behind the BCPA, so (after sending out more or less the same email with the same attachments several dozen times) have decided that it might be more efficient to post the code and a sample work flow of using the BCPA on this wiki.  My apologies in advance for poor annotation. 
+
+Please feel free to ask questions or comment on the discussion page of the wiki-page (if you are logged on) or via email at: ''eliezg (at) uw.edu''.  
+
+[[User:Eli|Eli]] 03:27, 19 July 2011 (PDT)
+
+== Brief Introduction ==
+
+[[image:BCPA_RhoLikelihood.png | left| 200 px | thumb | Likelihood of autocorrelation parameter for randomly subsampled process ]]
+[[image:BCPA_MLCPLikelihood.png | right| 200 px | thumb | Identifying MLCP from likelihood profile.]]
+
+Briefly, there are several hierarchically layered parts to the method.  For location and time data &lt;math>\{Z, T\}&lt;/math>, the analysis is performed on velocity (estimated as &lt;math> {V = \Delta Z / \Delta T} &lt;/math> components &lt;math> V \cos(\theta) &lt;/math> and &lt;math> V \sin(\theta) &lt;/math>.  These components are (importantly) assumed to be observations from a continuous time, Gaussian process, (i.e. an [[Wikipedia: Ornstein-Uhlenbeck process|Ornstein-Uhlenbeck process]]), with mean &lt;math>\mu(t)&lt;/math>, variance &lt;math> \sigma^2(t) &lt;/math> and autocorrelation &lt;math>\rho(t)&lt;/math>.  The values of these parameters are assumed to change gradually or abruptly. The purpose of the BCPA is to identify the locations where changes are abrupt (assumed to correspond to discrete changes in an animal's behavior). 
+
+The distribution function of this process is given by:
+:: &lt;math> f(X_i|X_{i-1}) = {1\over  \sigma\sqrt{2 \pi (1-\rho^{2\tau_i})}} \exp {\left( \frac{\left(X_i - \rho^{\tau_i} (X_{i-1}-\mu)\right)^2}{2\sigma^2 (1 - \rho^{2\tau_i})}  \right)} &lt;/math>
+
+* First, we identifying a likelihood function for &lt;math> \rho &lt;/math>, given estimates of  &lt;math> \mu = \overline{V_i} &lt;/math> and  &lt;math>\sigma^2 = S_V^2 &lt;/math>, in a behaviorally homogenous region using the distribution function above:
+:: &lt;math> L(\rho|{X},{T}) = \prod_{i=1}^n f(X_i|X_{i-1},\tau_i,\rho) &lt;/math>
+
+* Second, we identify a "most likely change point" (MLCP) in a time series where the behavior may have changed by taking the product of the likelihoods of the estimates to the left and to the right of all possible change points in a time series.  We identify which of the parameters (if any) have changed by comparing the [[Wikipedia: Bayesian Information Criterion | BIC]] of eight possible models: M0 - no changes in any parameter, M1 - change in &lt;math>\mu&lt;/math> only, M2 - change in &lt;math>\sigma&lt;/math> only, M3 - change in &lt;math>\rho&lt;/math> only ... etc ... M7 - chance in all three parameters.  
+
+* Third, we sweep the MLCP changepoint across a complete data set, recording at every point what the parameter values are to the left and right of all MLCP's under the model with the highest BIC, and record the paraemters. 
+
+* Fourth, we somehow present this mass of analysis.  
+
+I present here the code for all these steps, as they were applied in the original paper, and apply them to a simulated dataset.  Naturally, implementation of this type of analysis should be specific to the relevant application.
+
+== Code pieces ==
+
+=== Likelihood of &lt;math> \rho &lt;/math> parameter ===
+
+''Usage'':  GetRho(x, t)
+
+''Description'': This function works first by estimating the mean and standard deviation directly from x, using these to standardize the time series, and then optimizes for the likelihood of the value of rho. The equation for the likelihood is given above (and in equations 10 and 11 in the BCPA paper).
+
+''Value'': Returns a vector with two values (again - not a list or dataframe for greater speed). The first value is "rho" estimate, the second is the log likelihood of the estimate.
+
+''Arguments''
+*x 	Values of time series.
+*t 	Times of measurements associated with x.
+
+&lt;pre> 
+GetRho &lt;- function (x, t) 
+{
+    getL &lt;- function(rho) {
+        dt &lt;- diff(t)
+        s &lt;- sd(x)
+        mu &lt;- mean(x)
+        n &lt;- length(x)
+        x.plus &lt;- x[-1]
+        x.minus &lt;- x[-length(x)]
+        Likelihood &lt;- dnorm(x.plus, mean = mu + (rho^dt) * (x.minus - 
+            mu), sd = s * sqrt(1 - rho^(2 * dt)))
+        logL &lt;- sum(log(Likelihood))
+        if (!is.finite(logL)) 
+            logL &lt;- -10^10
+        return(-logL)
+    }
+    o &lt;- optimize(getL, lower = 0, upper = 1, tol = 1e-04)
+    return(c(o$minimum, o$objective))
+}
+&lt;/pre>
+
+=== Total likelihood within a behaviorally homogenous section ===
+
+''Usage'': GetLL(x, t, mu, s, rho)
+
+''Description'': Returns log-likelihood of a given parameter set for a gappy time series.
+
+''Value'': Returns value of the log likelihood
+
+''Arguments'':
+*x 	Time series data.
+*t 	Times at which data is obtained
+*mu 	Mean estimate
+*s 	Sigma (standard deviation) estimate (>0)
+*rho 	Rho estimate (between 0 and 1)
+
+&lt;pre>
+GetLL &lt;- function (x, t, mu, s, rho) 
+{
+    dt &lt;- diff(t)
+    n &lt;- length(x)
+    x.plus &lt;- x[-1]
+    x.minus &lt;- x[-length(x)]
+    Likelihood &lt;- dnorm(x.plus, mean = mu + (rho^dt) * (x.minus - 
+        mu), sd = s * sqrt(1 - rho^(2 * dt)))
+    LL &lt;- -sum(log(Likelihood))
+    return(LL)
+}
+&lt;/pre>
+
+=== Likelihood of single change point ===
+
+''Usage'': GetDoubleL(x, t, tbreak) 
+
+''Description'':  Takes a time series with values "x" obtained at time "t" and a time break "tbreak" and returns the estimates of "mu", "sigma" and "rho" as well as the negative log-likelihood of those estimates (given the data) both before and after the break.
+
+''Value'':  Returns a labeled matrix (more efficient than a data frame) with columns: "mu", "sigma", "rho" and "LL" corresponding to the estimates and 2 rows for each side of the break point. 
+
+''Arguments'':
+* x 	Values of time series.
+* t 	Times of measurements associated with x.
+* tbreak 	Breakpoint (in terms of the INDEX within "t" and "x", not actual time value).
+&lt;pre>
+GetDoubleL &lt;- function(x,t,tbreak)
+  {  
+    x1 &lt;- x[1:tbreak]  
+    x2 &lt;- x[tbreak:length(x)]
+    
+    t1 &lt;- t[1:tbreak]
+    t2 &lt;- t[tbreak:length(t)]
+
+    o1&lt;-GetRho(x1,t1)
+    o2&lt;-GetRho(x2,t2)
+    
+    mu1 &lt;- mean(x1)
+    sigma1 &lt;- sd(x1)
+    rho1 &lt;- o1[1]
+    
+    mu2 &lt;- mean(x2)
+    sigma2 &lt;- sd(x2)
+    rho2 &lt;- o2[1]
+  
+    LL1 &lt;- -o1[2]
+    LL2 &lt;- -o2[2]
+
+    m &lt;- matrix(c(mu1,mu2,sigma1,sigma2,rho1,rho2,LL1,LL2),2,4)
+    colnames(m) &lt;- c("mu","sigma","rho","LL")
+    
+    return(m)
+  }
+&lt;/pre> 
+
+=== Sweeping breaks ===
+
+''Usage'': SweepBreaks(x, t, range=0.6)
+
+''Description'': Finds a single change point within a time series.
+
+''Arguments'': 
+* x 	Values of time series.
+* t 	Times of measurements associated with x.
+* range 	Range of possible breaks. Default (0.6) runs approximately from 1/5th to 4/5ths of the total length of the time series.
+
+''Value'': Returns a matrix (not a data.frame for greater speed) with column headings: "breaks","tbreaks","mu1","sigma1","rho1","LL1","mu2","sigma2","rho2","LL2","LL". This is calculated for every possible break - which extends from 0.2l to 0.8l (where l is the length of the time series). The output of this function feeds WindowSweep.
+
+&lt;pre>
+SweepBreaks &lt;- function(x,t,range=0.6)
+    {
+      n&lt;-length(t)
+      start &lt;- (1-range)/2
+      breaks&lt;-round((start*n):((1-start)*n))
+      Ls&lt;-breaks*0
+      
+      l&lt;-length(breaks)
+      
+      BreakParams &lt;- matrix(NA,l,8)
+      #BreakParams &lt;- data.frame(mu1=NA,s1=NA,rho1=NA,LL1=NA,mu2=NA,s2=NA,rho2=NA,LL2=NA)
+      
+      for(i in 1:l)
+      {
+        myDoubleL &lt;- GetDoubleL(x,t,breaks[i])
+        BreakParams[i,] &lt;- c(myDoubleL[1,],myDoubleL[2,])
+      }
+      
+      # remember: LL1 and LL2 are columns 4 and 8
+      BreakMatrix&lt;- cbind(breaks,t[breaks], BreakParams, 
+      BreakParams[,4]+BreakParams[,8])
+      
+      colnames(BreakMatrix) &lt;- c("breaks","tbreaks","mu1","sigma1","rho1","LL1","mu2","sigma2","rho2","LL2","LL")
+      
+      return(BreakMatrix[2:nrow(BreakMatrix),])
+    }
+&lt;/pre>
+
+=== Choosing a model ===
+
+There are eight model functions, named M0 to M7, with redundant code which I have placed here: [[BCPA/Model Specification]].  Each of these function take data "x", at times "t", and breakpoint "tbreak" and return a named dataframe of parameters, log-likelihoods and BIC values: "data.frame(LL,bic,mu1,s1,rho1,mu2,s2,rho2)"
+
+The ouput of all the models is obtained using this function, which returns a data.frame including columns: "Model", followed by the estimate output of each model function M0-M7 (i.e. data.frame(LL,bic,mu1,s1,rho1,mu2,s2,rho2)):
+&lt;pre> 
+GetModels &lt;- function(x,t,tbreak,K=2)
+{
+  for(i in 0:7)
+  {
+    f&lt;-get(paste("M",i,sep=""))
+    myr&lt;-data.frame(Model=i,f(x,t,tbreak,K))
+    ifelse(i==0,
+      r&lt;-myr,
+      r&lt;-rbind(r,myr))
+  }
+  return(r)
+}
+&lt;/pre>
+
+=== Window sweeping ===
+
+This is the key function which sweeps the analysis above using windows of size "windowsize", stepping by "windowstep" and selecting the best model according to BIC and recording the estimated parameters. 
+
+The "K" is the coefficient in front of the likelihood in the BIC, which we allow to be tweaked.  Note that: &lt;math> \mathrm{BIC} = {-2 \cdot \ln{L} + k \ln(n) } &lt;/math>, where little ''k'' is the number of parameters.  Thus, according to the definition of BIC, ''K'' should be equal to 2.  However, if it is lower then the penalty of more complex models is greater, so it can be used to tweak the sensitivity of the analysis.
+
+Note also that is "plotme" is "TRUE", a plot will appear showing the sweeping window and the selected MLCP.  Along with letting you know what the algorithm is up to, it is also (I think) rather pleasantly hypnotic to watch the change points jump around.  
+
+Finally, this function returns what I call a "window sweep" object, which is basically a data.frame that includes the MLCP for each window location with all the parameter estimates, likelihoods, bic values, and selected models. 
+
+&lt;pre>
+WindowSweep &lt;- function (x, t, windowsize = 50, windowstep = 1, sine = 0, K = 2, plotme = TRUE) 
+{
+    low &lt;- seq(1, (length(t) - windowsize), windowstep)
+    hi &lt;- low + windowsize
+    for (i in 1:length(low)) {
+        myx &lt;- x[low[i]:hi[i]]
+        myt &lt;- t[low[i]:hi[i]]
+        bp &lt;- SweepBreaks(myx, myt)
+        myestimate &lt;- bp[bp[, 11] == max(bp[, 11]), ]
+        breakpoint &lt;- myestimate[1]
+        tbreak &lt;- myestimate[2]
+        ifelse(sine, 
+                allmodels &lt;- GetModelsSin(myx, myt, breakpoint, K), 
+                allmodels &lt;- GetModels(myx, myt, breakpoint, K))
+        mymodel &lt;- allmodels[allmodels$bic == min(allmodels$bic),]
+        mymodel &lt;- data.frame(mymodel, Break = tbreak)
+        ifelse(i == 1, 
+               estimates &lt;- mymodel, 
+               estimates &lt;- rbind(estimates, mymodel))
+        if (plotme) {
+            plot.ts(t, x, type = "l", col = "grey")
+            lines(t, x, type = "l")
+            lines(myt, myx, col = "green")
+            abline(v = tbreak)
+            print(estimates[i, ])
+        }
+    }
+    return(data.frame(estimates))
+}
+&lt;/pre>
+
+=== Partitioning parameters ===
+
+Finally, the output of the windowsweep function (which we call "ws"), is converted to parameter estimates over the entire complex timeseries using the following function:
+
+''Usage'': PartitionParameters(ws, t, windowsize = 50, windowstep = 1)
+
+''Description'': Estimation of all parameters as a rolling average of the window-sweep output.
+
+''Arguments'': 
+* ws 	Output of WindowSweep
+* t 	Time values of time-series measurements.
+* windowsize 	Window size
+* windowstep 	Increment of window step
+
+''Value'':  Returns a data frame with columns "mu.hat", "s.hat" and "rho.hat" for each location in the time-series (i.e., all of the time series minus the first and last range of windowsize/2).
+&lt;pre>
+PartitionParameters &lt;- function(ws,t,windowsize=50,windowstep=1)
+{
+  n.col&lt;-length(t)
+	n.row&lt;-dim(ws)[1]
+
+	mu.M &lt;- matrix(NA,n.row,n.col)
+	s.M &lt;- matrix(NA,n.row,n.col)
+	rho.M &lt;- matrix(NA,n.row,n.col)
+
+	for(i in 1:n.row)
+	{
+		myws&lt;-ws[i,]
+		dts &lt;- abs(t-myws$Break)
+		tbreak &lt;- match(min(dts),dts)
+
+		max &lt;- min(n.col,i+windowsize)
+
+		mu.M[i,i:tbreak] &lt;- myws$mu1
+		mu.M[i,(tbreak+1):max] &lt;- myws$mu2
+		s.M[i,i:tbreak] &lt;- myws$s1
+		s.M[i,(tbreak+1):max] &lt;- myws$s2
+		rho.M[i,i:tbreak] &lt;- myws$rho1
+		rho.M[i,(tbreak+1):max] &lt;- myws$rho2
+	}
+
+	adjust &lt;- colSums(!is.na(mu.M))
+
+
+	mu.hat&lt;-colSums(mu.M,na.rm=1)/adjust
+	s.hat&lt;-colSums(s.M,na.rm=1)/adjust
+	rho.hat&lt;-colSums(rho.M,na.rm=1)/adjust
+
+	return(data.frame(mu.hat,s.hat,rho.hat))
+}
+&lt;/pre>
+
+== Sample work flow ==
+
+[[Image: SimpTrajectory2.png | 300 px| right ]]
+
+Here is a simulated movement track from a continuous auto-correlated process of total duration 60 time units with four behavioral phases that switch at times T=10, 20 and 50 from, variously, higher or lower velocity and longer or shorter characteristic time scale of autocorrelation.  The original data was simulated with time intervals of 0.01 (leading to a complete track with 6000 data points).  I randomly sampled 200 points from the "true" movement track, such that the intervals between locations are random with mean interval 0.3 units.  The track is illustrated at right, and the data are available here: {{Data | Simp.csv | Simp.csv}} (for those of you curious about what a "Simp" is ... I think it might be a Simulated Chimp, something like [http://avadiv.ru/catalog/avatars/pic1/pic_1062/robot-obezyana.jpg this]).  While some periods of more or less intensive movement are clear, it is difficult to easily pick out the change points in this data set.  So we apply the BCPA.  
+
+Load the data
+&lt;pre>
+  Simp &lt;- read.csv("http://wiki.cbr.washington.edu/qerm/sites/qerm/images/a/a1/Simp.csv")
+&lt;/pre>
+
+Here is what the beginning of the file looks like:
+&lt;pre>
+   "T",   "X",    "Y"
+  0.18, 23.74,  -9.06
+  0.22, 26.74, -11.32
+  0.74, 13.25,   2.94
+  0.88, 28.46,  26.63
+  1.4 , 96.77, 121.78
+  ...
+&lt;/pre>
+
+X, Y, and T are the essential ingredients of any movement analysis!
+
+In order to extract the estimated velocity and turning angle vectors, we are going to convert the X and Y to [[Wiki: complex numbers | complex numbers]].  Why?  Because it is ''extremely'' convenient to work with complex numbers when analyzing movement data. Hopefully this will be made clear as we proceed:
+
+&lt;pre>
+  Z &lt;- Simp$X + 1i*Simp$Y
+# note that this command is equivalent to:
+  Z &lt;- complex(re=Simp$X, im=Simp$Y)
+&lt;/pre>
+
+Very briefly, complex numbers contain two compenents (the "real" and "imaginary" component, which is multiplied by &lt;math> i = \sqrt{-1}&lt;/math>).  A single complex number can therefore represent a point on a surface, or a vector with magnitude and direction.  The real and imaginary parts of a complex number are obtained with "Re(Z)" and "Im(Z)".  More special: the magnitude of a complex number is (called the "Modulus") is obtained via: "Mod(Z)", and the direction (referred to as the "Argument") is called via: "Arg(Z)".  The ability to immediately access lengths and angles of 2D vectors, and to manipulate vectors (add, substract, rotate, etc.) is very powerful.  Thankfully, R is very comfortable with complex numbers.  For example:
+
+&lt;pre>
+  plot(Z)
+&lt;/pre>
+
+works just as well as 
+
+&lt;pre>
+  plot(Simp$X, Simp$Y)
+&lt;/pre>
+
+but more compactly.
+
+Anyways, the step vectors, step lengths, absolute orientations, turning angles and velocities are obtained quickly via:
+&lt;pre>
+# step vectors
+ dZ &lt;- diff(Z)
+# orientation of each step
+ Phi &lt;- Arg(dZ)
+# turning angles
+ Theta &lt;- diff(Phi)
+&lt;/pre>
+
+Note that there one fewer turning angles than absolute orientations.  That is because we do not know the initial orientation of the trajectory.  
+
+&lt;pre>
+# step lengths
+ S &lt;- Mod(dZ)
+# time intervals 
+ dT &lt;- diff(Simp$T)
+# Magnitude of linear velocity between points 
+  V &lt;- S/dT
+# We don't have the turning angle for the first velocity measurement, so we throw it out. 
+  V &lt;- V[-1]
+&lt;/pre>
+
+Now we can create the Gaussian time series we want to analyze:
+
+&lt;pre>
+  VC &lt;- V*cos(Theta)
+  VS &lt;- V*sin(Theta)
+&lt;/pre>
+  
+Finally, we want a time stamp for each velocity element.  This is the average of the times associated with the locations before and after a step.  Thus:
+&lt;pre>
+  T &lt;- (Simp$T[-1] + Simp$T[-nrow(Simp)])/2
+  T &lt;- T[-1]
+&lt;/pre>
+Again, we eliminate the first step because it is not associated with a known turning angle. 
+
+Once all the functions above are loaded (e.g. copy/paste all the code from here: [[BCPA/All BCPA Functions]], an analysis run is simply:
+&lt;pre>
+  vc.sweep &lt;- WindowSweep(VC, T, windowsize = 50, windowstep = 1)
+  vc.output &lt;- PartitionParameters(vc.sweep, T, windowsize=50, windowstep = 1)
+&lt;/pre>
+
+The first function performs the windowsweep and returns all the possible breakpoints and their respective "model" (M0-M7) based on BIC, and the second function uses that output to produce estimates of the parameter values across the time series.
+
+I wrote up a plotting function that draws the model output of a complete BCPA here: [[BCPA/PlotBCPA | PlotBCPA]].  None of the "M0" changepoints are drawn.  There is an additional "threshold" parameter that is the number of times that a change points must be identified before it is deemed "significant" (or worth drawing).  This is basically just another filtering tweak for the complex output.  Thus:
+
+&lt;pre>
+  PlotBCPA(T, VC, vc.sweep, vc.output, threshold=10)
+&lt;/pre>
+
+Yields this plot:
+
+[[Image:SimpBCPAOutput2.png | 600 px | center]]
+
+
+We see that the change points at 10, 30 and 50 were identified very robustly, and that there is an additional spurious change point identified around T=20.  Though if we had chosen a threshold of "20" it would have disappeared (but that is, of course, a very cheaty thing to do considering we knew from the beginning where/when the true change points where located).  Also, if we had set the "K" in the WindowSweep function to some lower number (e.g. 1 or 0.5), the analysis would have been far more conservative at choosing complex models for the changepoints.
+
+Finally, the function here: [[BCPA/PathPlot]], applied as follows: 
+&lt;pre>
+  PathPlot(T, Z, vc.sweep, vc.output, threshold = 10)
+&lt;/pre>
+
+yields a plot that looks like this:
+
+[[Image:SimpPathWithBCPA2.png| 300 px | center]]
+
+In this plot, the colors reflect the value of the &lt;math> \hat\rho &lt;/math> and the width of the line is proportional to the estimated persistence velocity &lt;math> \hat\mu &lt;/math>.  The red "X"s are located where the "notable" change points occur.  
+
+
+All around, it seems the BCPA performed fairly well for modelling the Simp's movements.
+
+==Some concluding thoughts==
+[[Image:ThisIsASimp2.jpg | 100 px | thumb| right | This is a Simp.]]
+
+Clearly, there are a few degrees of freedom to fiddle with. Also, the output of the analysis is rather complex. More than anything, the BCPA allows an analyst to have a visual summary for the complexities of a behaviorally dynamic dataset.  Because this is perhaps its main purpose, I feel a little funny about the several less mathematically rigorous, hand-wavy steps.  There is room for the implementer to extract 
+
+There are several ways the BCPA could be improved.  The model selection could be adjusted. For example, one colleague suggested using the breaks that lead to the largest change in BIC compared to the null-model, and using the dBIC to pick out which of the changes are most significant, rather than the number of times the breakpoint is selected.  I've also noticed that the likelihood profile of a single changepoint within a window can be rather rough. In practice, a smoothing spline of the likelihood often gives more precise results, though I've never heard of anyone smoothing a likelihood to find its maximum.  Finally, what I personally consider to be the most significant drawback of the BCPA as implemented here is that the parameter values themselves are somewhat difficult to interpret.  The most satisfying development would be to estimate meaningful parameters, for example the mean true velocity and characteristic time scale of auto-correlation, directly from the data. This is the focus of ongoing research. 
+
+Anyways, thanks to anyone who visits this page, and best of luck with implementation!  And please send all comments, questions, critiques, possible improvements, or (heaven forbid) identification of errors via e-mail to: '''eliezg (at) uw.edu'''.
+[[Category: BCPA]]</textarea><div class='templatesUsed'>
+<div class="mw-templatesUsedExplanation"><p>Templates used on this page:
+</p></div><ul>
+<li><a href="/qerm/index.php/Template:Data" title="Template:Data">Template:Data</a> (<a href="/qerm/index.php?title=Template:Data&amp;action=edit" title="Template:Data">view source</a>) </li><li><a href="/qerm/index.php/Template:Pdf" title="Template:Pdf">Template:Pdf</a> (<a href="/qerm/index.php?title=Template:Pdf&amp;action=edit" title="Template:Pdf">view source</a>) </li></ul>
+</div>
+<p id="mw-returnto">Return to <a href="/qerm/index.php/Behavioral_Change_Point_Analysis" title="Behavioral Change Point Analysis">Behavioral Change Point Analysis</a>.</p>
+<div class="printfooter">
+Retrieved from "<a href="https://www.cbr.washington.edu/qerm/index.php/Behavioral_Change_Point_Analysis">https://www.cbr.washington.edu/qerm/index.php/Behavioral_Change_Point_Analysis</a>"</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/qerm/index.php/Behavioral_Change_Point_Analysis" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="/qerm/index.php?title=Talk:Behavioral_Change_Point_Analysis&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource" class="selected"><a href="/qerm/index.php?title=Behavioral_Change_Point_Analysis&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/qerm/index.php?title=Behavioral_Change_Point_Analysis&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/qerm/index.php/User:10.19.28.84" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">10.19.28.84</a></li>
+				<li id="pt-anontalk"><a href="/qerm/index.php/User_talk:10.19.28.84" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+				<li id="pt-anonlogin"><a href="/qerm/index.php?title=Special:UserLogin&amp;returnto=Behavioral_Change_Point_Analysis&amp;returntoquery=action%3Dedit" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/qerm/sites/qerm/logo.gif);" href="/qerm/index.php/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/qerm/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="/qerm/index.php/QERM_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/qerm/index.php/QERM_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/qerm/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/qerm/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/qerm/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/qerm/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search QERM Wiki" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&#160;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/qerm/index.php/Special:WhatLinksHere/Behavioral_Change_Point_Analysis" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/qerm/index.php/Special:RecentChangesLinked/Behavioral_Change_Point_Analysis" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/qerm/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/qerm/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="privacy"><a href="/qerm/index.php/QERM_Wiki:Privacy_policy" title="QERM Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/qerm/index.php/QERM_Wiki:About" title="QERM Wiki:About">About QERM Wiki</a></li>
+		<li id="disclaimer"><a href="/qerm/index.php/QERM_Wiki:General_disclaimer" title="QERM Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+<script src="/qerm/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Behavioral_Change_Point_Analysis", "wgTitle": "Behavioral Change Point Analysis", "wgAction": "edit", "wgArticleId": 674, "wgIsArticle": false, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 2877, "wgCategories": [], "wgBreakFrames": true, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.legacy.edit", "mediawiki.action.edit", "mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script><!-- Served in 0.128 secs. --></body></html>

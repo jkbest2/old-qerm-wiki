@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>LaTeX tips - QERM Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qerm/opensearch_desc.php" title="QERM Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.cbr.washington.edu/qerm/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="QERM Wiki Atom feed" href="/qerm/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/qerm/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared&amp;only=styles&amp;skin=monobook&amp;*" />
+<link rel="stylesheet" href="/qerm/skins/monobook/main.css?301" media="screen" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE50Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE55Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/qerm/skins/monobook/IE60Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/qerm/skins/monobook/IE70Fixes.css?301" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-LaTeX_tips skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">LaTeX tips</h1>
+	<div id="bodyContent">
+		<div id="siteSub">From QERM Wiki</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<div class="floatright"><a href="/qerm/index.php/File:LaTeX_logo_huge.png" class="image"><img alt="LaTeX logo huge.png" src="/qerm/sites/qerm/images/1/17/LaTeX_logo_huge.png" width="300" height="114" /></a></div>
+<p>This will be a repository of tips for using <a href="http://en.wikipedia.org/wiki/LaTeX" class="extiw" title="wikipedia:LaTeX">LaTeX</a>.  To add a tip, just create a link below, for example: <a href="/qerm/index.php?title=R/Separating_the_Red_Sea&amp;action=edit&amp;redlink=1" class="new" title="R/Separating the Red Sea (page does not exist)"> Separating the Red Sea</a> and save the page.  The link will be red.  Just click on the red link and you will automatically be editing the page.  Nothing like a blank canvas to share your hard-gleaned wisdom!
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Recommendations_for_downloads"><span class="tocnumber">1</span> <span class="toctext">Recommendations for downloads</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#General_setup"><span class="tocnumber">2</span> <span class="toctext">General setup</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Tips_and_Tricks"><span class="tocnumber">3</span> <span class="toctext">Tips and Tricks</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Bibliography_Management"><span class="tocnumber">4</span> <span class="toctext">Bibliography Management</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Converting_from_other_formats"><span class="tocnumber">5</span> <span class="toctext">Converting from other formats</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Converting_to_other_formats"><span class="tocnumber">6</span> <span class="toctext">Converting to other formats</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Converting_to_Word"><span class="tocnumber">6.1</span> <span class="toctext">Converting to Word</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#latex2rtf"><span class="tocnumber">6.2</span> <span class="toctext">latex2rtf</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#GrindEQ"><span class="tocnumber">6.3</span> <span class="toctext">GrindEQ</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Adobe_Acrobat_Pro"><span class="tocnumber">6.4</span> <span class="toctext">Adobe Acrobat Pro</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Open_Office"><span class="tocnumber">6.5</span> <span class="toctext">Open Office</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Compatibility_with_R"><span class="tocnumber">7</span> <span class="toctext">Compatibility with R</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Useful_Links"><span class="tocnumber">8</span> <span class="toctext">Useful Links</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Word_Count"><span class="tocnumber">9</span> <span class="toctext">Word Count</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Additional_Pages"><span class="tocnumber">10</span> <span class="toctext">Additional Pages</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Recommendations_for_downloads">Recommendations for downloads</span></h2>
+<ul><li> Standard Windows LaTeX compiler <a href="http://miktex.org/" class="external text" rel="nofollow">Miktex</a> 
+</li><li> Standard Windows editor <a href="http://www.toolscenter.org/" class="external text" rel="nofollow">TeXnicCenter</a>
+</li><li> Standard Mac editor <a href="http://www.uoregon.edu/~koch/texshop/" class="external text" rel="nofollow">TeXShop</a>
+</li><li> Standard Mac compiler <a href="http://www.tug.org/mactex/" class="external text" rel="nofollow">MacTeX</a>
+</li><li> General purpose editor <a href="https://www.sublimetext.com/3/" class="external text" rel="nofollow">SublimeText3</a> which combined with the package LaTeXTools and the PDF viewer <a href="https://skim-app.sourceforge.io/" class="external text" rel="nofollow">Skim</a> (Mac) or <a href="https://www.sumatrapdfreader.org/free-pdf-reader.html/" class="external text" rel="nofollow">Sumatra</a> (Windows) can be used as a lightweight TeX editor
+</li><li> A Linux Integrated LaTeX Enivronment <a href="http://kile.sourceforge.net/" class="external text" rel="nofollow">Kile</a>
+</li><li> For any Linux/Unix system, simply use your favourite Unix editor to type the mylatex.tex file. <a href="http://www.rpi.edu/dept/arc/web/docs/QuickStudies/quick20/quick20.html" class="external text" rel="nofollow">Here</a> is a basic list of Unix commands. To check your spellings, you can say
+</li></ul>
+<p><tt> ispell mylatex.tex </tt> (.tex extension may be omitted)
+A better program for spell-checking on linux is Aspell.
+Replace <tt> ispell </tt> above with <tt> aspell </tt>. 
+</p><p>Emacs also provides a great environment for LaTeX. While using Emacs, install <a href="http://www.gnu.org/software/auctex/" class="external text" rel="nofollow">AucTeX</a> for best results.
+</p>
+<ul><li> Using (La)TeX with Gmail <a href="http://alexeev.org/gmailtex.html" class="external text" rel="nofollow">GmailTeX</a>. Remember to use the F8 key to compose/read received messages and change the text formatting from "Rich Text" to "Plain Text" while composing messages.
+</li></ul>
+<h2> <span class="mw-headline" id="General_setup">General setup</span></h2>
+<ul><li> Compiling the LaTeX using pdfTeX allows the creation of pdf files as the final product and the inclusion of graphics created as pdf files from some other source. For many people this is more convenient than using postscript files which may be the default for LaTeX compilers and editors. pdfTeX works nicely with images produced as pdf files (see <a href="/qerm/index.php/R/General_Information_on_Plotting" title="R/General Information on Plotting">R/General Information on Plotting</a>).
+</li></ul>
+<h2> <span class="mw-headline" id="Tips_and_Tricks">Tips and Tricks</span></h2>
+<ul><li> <a href="https://www.math.hmc.edu/computing/support/tex/latex-hints.pdf/" class="external text" rel="nofollow">General tips and tricks</a>
+</li><li> Chapter 3 of this <a href="https://www.math.hmc.edu/seniorthesis/guidelines/handbook/hmc-math-thesis-handbook.pdf/" class="external text" rel="nofollow">math thesis handbook</a> contains tips for TeXing a large file such as a thesis
+</li><li> The LaTeX preamble is basically all the commands between your <code>\documentclass{class}</code> call and your <code>\begin{document}</code> call. Preamble's are often either largely empty, resulting in a boring document, or very obtuse. Pre-constructed preamble files provide a useful way to define the same commands and load the same packages in multiple files, thereby allowing you to make all your documents the same kind of pretty. An example of a preamble is given <a href="https://github.com/cokasaki/latex-tools/" class="external text" rel="nofollow">here</a>. To load a preamble file simple place at the beginning of your document:
+</li></ul>
+<pre> \documentclass{class}
+ \input{mypreamble.tex}
+ \begin{document}
+</pre>
+<ul><li> When using Sublime Text (and numerous other text editors) <a href="http://docs.sublimetext.info/en/latest/extensibility/snippets.html/" class="external text" rel="nofollow">snippet</a> files increase efficiency. Snippets basically allow you to type part of a command, press <code>TAB</code>, and have the whole command automagically appear. For example, an alternative to having just one preamble file might be a snippet that triggers on "doc" or "pres." You type just a few characters, hit <code>TAB</code> and suddenly your file is populated with the basic framework you need to make a document or presentation. Some examples of snippets that are useful in LaTeX are given <a href="https://github.com/cokasaki/latex-snippets" class="external text" rel="nofollow">here</a>. A handy way to sync your snippets from computer to computer is to make a folder <code>my_snippets</code> in Dropbox, and place a <a href="https://www.howtogeek.com/297721/how-to-create-and-use-symbolic-links-aka-symlinks-on-a-mac/" class="external text" rel="nofollow">symlink</a> to this folder in your Sublime Text Packages/User folder
+</li><li> LaTeX uses something called a texmf tree to search through files when compiling. If you have common files that you want it to always be able to access, no matter where your document is located, place them in your texmf tree. For example, this would be a convenient place for preamble files. A handy way to sync your texmf tree from computer to computer is to make a folder <code>texmf</code> in Dropbox, and place a <a href="https://www.howtogeek.com/297721/how-to-create-and-use-symbolic-links-aka-symlinks-on-a-mac/" class="external text" rel="nofollow">symlink</a> to this folder in your Sublime Text Packages/User folder. Alternatively you can <a href="https://tex.stackexchange.com/questions/145196/create-a-local-texmf-tree-in-mactex/" class="external text" rel="nofollow">add its location</a> to your <code>TEXMFHOME</code> variable. On a Mac this can be accomplished from Terminal
+</li></ul>
+<pre> sudo tlmgr conf texmf TEXMFHOME "&lt;insert old texmf tree path here&gt;:&lt;insert new texmf tree path here&gt;"
+</pre>
+<h2> <span class="mw-headline" id="Bibliography_Management">Bibliography Management</span></h2>
+<p>Typically we have a .bib file in the same 
+directory as the .tex file. 
+At end of your file add the following commands
+</p><p><tt>
+\bibliographystyle{plain}
+\bibliography{bibfile}
+</tt>
+</p><p>Then run
+<tt>
+latex myfile
+</tt>
+</p><p>on your <tt> tex </tt> file
+and 
+<tt>
+bibtex myfile
+</tt>
+twice. 
+Repeat 
+<tt> latex </tt> and your file should have your references.
+</p><p>If you want to include references from your database
+that are not cited in the 
+<tt>.tex </tt> file add
+<tt>
+\nocite{*}
+</tt>
+above the two lines.
+</p><p>For chapter by chapter references,
+add
+<tt>
+\usepackage{chapterbib}
+</tt>
+to your preamble.
+Presumably you have a root file
+with 
+<tt>
+\include{}
+</tt>
+for each of your chapters. Then run
+latex
+on your root file,
+but run 
+<tt> bibtex </tt> on each of your included files.
+</p><p>Sometimes you need to modify the bibliography style file, say to meet the formatting requirements for a journal. <a href="http://chenfuture.wordpress.com/2007/09/24/diy-your-bibtex-style-file/" class="external text" rel="nofollow">Here</a> is a nice set of instructions.
+</p>
+<h2> <span class="mw-headline" id="Converting_from_other_formats">Converting from other formats</span></h2>
+<p>There are a variety of tools for converting to LaTeX from other formats, many of which are described <a href="http://www.tug.org/utilities/texconv/pctotex.html" class="external text" rel="nofollow">here</a>.
+For equations, the only software that QERMunists have found to be truly great is GrindEQ's <a href="http://www.grindeq.com/index.php?p=word2latex" class="external text" rel="nofollow">Word2LaTeX</a>. Unfortunately, that one costs $129, but they have a "fully functional evaluation/download version", so as long as you fully embrace LaTeX after converting your files, then you could get by with just the free trial.
+</p><p>MathType (unfortunately no longer free!, <a href="http://www.washington.edu/uware/mathtype" class="external text" rel="nofollow">$57 or 30-day trial</a> that might be enough to move all the way to LaTeX), will nicely convert individual equations written in Equation Editor or MathType to LaTeX. Within MathType, use the menu for Preferences &gt; Translators, and select "Translation to other language" and pick the default, "TeX -- LaTeX 2.09 and later". Now highlight any equation in the MathType window and paste into a text file. The pasted text should appear as text in LaTeX syntax.
+</p><p>Anyone have any success converting using Open Office, or even seeing MathType-produced equations in Open Office?
+</p>
+<h2> <span class="mw-headline" id="Converting_to_other_formats">Converting to other formats</span></h2>
+<h3> <span class="mw-headline" id="Converting_to_Word">Converting to Word</span></h3>
+<p>Sometimes your adviser won't want to receive a PDF, wanting the convenient track-changes functionality in Word. The <a href="http://www.pdftoword.com/#Nitro" class="external text" rel="nofollow">PDF to Word converter</a> works pretty well, and is free to use online or you can download a 14-day trial. It converts your equations to images and, while the fonts may be different, the result accompanied by the original PDF should satisfy your adviser. Unfortunately, after the 14-day trial the full product is over $100, so I've moved to the official Adobe ExportPDF, which you can subscribe to for a year for $20... it seems to do a better job on text but messes up PDF figures in unpredictable ways.
+</p><p>I've also used <a href="http://www.zamzar.com/#Nitro" class="external text" rel="nofollow">Zamzar</a>, an onine file converter where you upload your file, select the output you'd like, and give it your email address, and the site emails you a link to download your converted document. You can choose to convert a pdf to .doc, .docx, and many others. Figures within your pdf do not come through very well, but the equations usually do, and it's certainly a way to solicit edits and feedback from an advisor or collaborator who wants to use Word.
+</p>
+<h3> <span class="mw-headline" id="latex2rtf">latex2rtf</span></h3>
+<p><a href="http://latex2rtf.sourceforge.net/" class="external text" rel="nofollow">latex2rtf</a> converts .tex documents to .rtf, which can be opened in <a href="http://www.openoffice.org/" class="external text" rel="nofollow">Open Office</a> or Word and saved as a .doc. Get it <a href="http://sourceforge.net/project/showfiles.php?group_id=22654" class="external text" rel="nofollow">here</a> (windows) or your favorite package manager (linux/mac).  Usage is as simple as
+<tt> latex2rtf myfile</tt> 
+where myfile has extension .tex and has already been compiled. There are switches to control how equations are handled (see the <a href="http://latex2rtf.sourceforge.net/latex2rtf_1_9_19.html#Using-LaTeX2RTF" class="external text" rel="nofollow">documentation</a> for more details), and some examples are -M3 (convert both inline and displayed equations to RTF), -M12 (convert both inline and displayed equations to bitmaps), and -M32 (insert the raw latex equation delimited by &lt;&lt;: and&#160;:&gt;&gt;).  If you choose to  insert the raw latex equation and you have MathType, you can convert equations to MathType equations by cutting/pasting the latex into the MathType window, or with MathType 6.5 for windows, highlight the latex equation in Word and click the TeX toggle command on the toolbar. Latex2rtf supports bibliographies.
+</p><p><b>latex2rtf for dummies (aka eileen) on a <i>Mac</i></b>
+</p>
+<ul><li> If you know how to install things with Unix commands, you are not a dummy.
+</li><li> Otherwise, (and this doesn't necessarily mean you're a dummy), get a package installer (i-installer or FinkCommander); <a href="http://latex2rtf.sourceforge.net/latex2rtf_1_9_19.html#Macintosh" class="external text" rel="nofollow">make your choice here</a>.
+</li><li> Use these to find latex2rtf.  i-installer was already on my computer, and filled in the blanks as far as many of the prerequisite packages. e.g. I think I needed ImageMagick and FreeType2 to start.
+</li><li> Also find and install package netpbm.  I found this with FinkCommander, but not with i-installer.  This will make more of your error messages disappear.
+</li><li> Next use Terminal, available already on your Mac.  It's very similar to the windows command prompt.  Type:
+</li></ul>
+<pre>latex mypaper
+bibtex mypaper # if you use bibtex
+latex2rtf mypaper
+</pre>
+<p>These are the same commands as above, more details available <a href="http://en.wikibooks.org/wiki/LaTeX/Export_To_Other_Formats#Convert_to_RTF" class="external text" rel="nofollow">here</a>.
+</p>
+<ul><li> Terminal details I don't want to look up again and you may find helpful:
+<ul><li> "pwd" returns current directory.
+</li><li> "cd /Users/yourname/YourFolder/" changes the current directory to the folder YourFolder on your hard drive.
+</li><li> "cd /Volumes/Cruzer/MyFolder/" changes the current directory to the folder MyFolder on a thumb drive that calls itself Cruzer.
+</li><li> To run latex2rtf on a .tex file, use the "cd" command to put yourself in the right directory, then follow the steps above.
+</li><li> Error messages will be shown in Terminal, and generally correspond either to programs or packages not installed, or to LaTeX functions not recognized.  Check the documentation link above to see if your referenced function has any hope of being found by latex2rtf or if it will simply be ignored.
+</li><li> To find if there are hidden files on your computer, e.g. in /usr/local/bin/, which may be referenced by some of the source code, type "open -a finder /usr/local/bin/".  I ran into a few error messages that led me to believe I was missing files either in this folder or in /usr/bin/.  Use i-installer or FinkCommander to find any more necessary packages.
+</li></ul>
+</li><li>Finally, when you have run latex2rtf and you want to see the results, make sure to open your newly created .rtf file in Word.   None of the bitmaps or rtf math conversions will show up if you let the default program (TextEdit on my computer) open the file.
+</li></ul>
+<h3> <span class="mw-headline" id="GrindEQ">GrindEQ</span></h3>
+<p><a href="http://www.grindeq.com/index.php?p=latex2word" class="external text" rel="nofollow">GrindEQ LaTeX-to-Word</a> is a windows-only product that converts .tex to .doc.  It costs €49 but the evaluation version comes with 10 launches.
+</p>
+<h3> <span class="mw-headline" id="Adobe_Acrobat_Pro">Adobe Acrobat Pro</span></h3>
+<p>Acrobat Pro will export .pdf files to Word.  It does alright with the text portions, but the equation conversion is pretty awful. Unfortunately, some of the converted documents hang Word, YMMV.
+</p>
+<h3> <span class="mw-headline" id="Open_Office">Open Office</span></h3>
+<p><a href="http://www.openoffice.org/" class="external text" rel="nofollow">Open Office 3</a> can import .pdf files and then save them as Word files. Equations look OK, but seem to be a collection of images, rather than any editable equation format.
+</p>
+<h2> <span class="mw-headline" id="Compatibility_with_R"> Compatibility with R </span></h2>
+<p>Sweave is a great way to embed R output in LaTeX. <img src="https://www.cbr.washington.edu/qerm/sites/qerm/images/8/81/Pdf10.png" alt="Pdf10.png" /> <a href="/qerm/sites/qerm/images/c/c1/SweaveSeminaR.pdf" class="internal" title="SweaveSeminaR.pdf"> Here</a>  is a GREAT example, and perhaps everything you need to start. 
+</p><p><a href="http://cran.r-project.org/web/packages/xtable/index.html" class="external text" rel="nofollow">xtable</a> is a nice R function (thanks <a href="/qerm/index.php/User:Eli" title="User:Eli">EliG</a>) to produce latex style tables in R
+</p>
+<h2> <span class="mw-headline" id="Useful_Links">Useful Links</span></h2>
+<ul><li> Great resource to get started and have questions answered: <a href="http://en.wikibooks.org/wiki/LaTeX" class="external text" rel="nofollow">LaTeX WikiBook</a>
+</li></ul>
+<ul><li> A quick cheat sheet of all the things you forget. <a href="http://stdout.org/~winston/latex/latexsheet.pdf" class="external text" rel="nofollow">Cheat Sheet</a>
+</li></ul>
+<ul><li> Good reference on figures, captions, positioning and other headaches: <a href="ftp://ftp.tex.ac.uk/tex-archive/info/epslatex.pdf" class="external text" rel="nofollow">Importing Graphics in LaTeX</a>
+</li></ul>
+<ul><li> Every symbol you could ever imagine: <a href="http://www.math.utoronto.ca/mathit/symbols-letter.pdf" class="external text" rel="nofollow">The Comprehensive LaTeX Symbol List</a>
+</li></ul>
+<h2> <span class="mw-headline" id="Word_Count">Word Count</span></h2>
+<p>You can count words after compiling to pdf with the following command. More details <a href="http://markelikalderon.com/2006/11/04/latex-word-count-and-textmate/" class="external text" rel="nofollow">here</a>.
+</p>
+<pre>ps2ascii mydocument.pdf | wc -w
+</pre>
+<h2> <span class="mw-headline" id="Additional_Pages">Additional Pages</span></h2>
+<p>Topics include:
+</p>
+<ul><li> <a href="/qerm/index.php/LaTeX/Thesis" title="LaTeX/Thesis"> Theses and Dissertations</a>
+</li><li> <a href="/qerm/index.php/LaTeX/Colors" title="LaTeX/Colors"> Colors</a>
+</li><li> <a href="/qerm/index.php/LaTeX/Beamer" title="LaTeX/Beamer"> Using Beamer</a>
+</li><li> <a href="/qerm/index.php/LaTeX/Creating_Customized_Packages" title="LaTeX/Creating Customized Packages"> Creating Customized Packages</a> 
+</li><li> <a href="/qerm/index.php/Inkscape_tips" title="Inkscape tips"> Using Inkscape to add LaTeX text to plots created in R</a>
+</li><li> <a href="/qerm/index.php/References_and_Bibliographies" title="References and Bibliographies">References and Bibliographies</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 68/1000000
+Post-expand include size: 133/2097152 bytes
+Template argument size: 23/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb-qerm_:pcache:idhash:109-0!*!0!!en!2!edit=0 and timestamp 20220504212548 -->
+<div class="printfooter">
+Retrieved from "<a href="https://www.cbr.washington.edu/qerm/index.php/LaTeX_tips">https://www.cbr.washington.edu/qerm/index.php/LaTeX_tips</a>"</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/qerm/index.php/Special:Categories" title="Special:Categories">Category</a>: <span dir='ltr'><a href="/qerm/index.php/Category:LaTeX_tips" title="Category:LaTeX tips">LaTeX tips</a></span></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/qerm/index.php/LaTeX_tips" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk"><a href="/qerm/index.php/Talk:LaTeX_tips" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="/qerm/index.php?title=LaTeX_tips&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/qerm/index.php?title=LaTeX_tips&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/qerm/index.php?title=Special:UserLogin&amp;returnto=LaTeX_tips" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/qerm/sites/qerm/logo.gif);" href="/qerm/index.php/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/qerm/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="/qerm/index.php/QERM_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/qerm/index.php/QERM_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/qerm/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/qerm/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/qerm/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/qerm/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search QERM Wiki" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&#160;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/qerm/index.php/Special:WhatLinksHere/LaTeX_tips" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/qerm/index.php/Special:RecentChangesLinked/LaTeX_tips" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/qerm/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="/qerm/index.php?title=LaTeX_tips&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/qerm/index.php?title=LaTeX_tips&amp;oldid=3110" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/qerm/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="lastmod"> This page was last modified on 12 December 2018, at 21:39.</li>
+		<li id="viewcount">This page has been accessed 96,543 times.</li>
+		<li id="privacy"><a href="/qerm/index.php/QERM_Wiki:Privacy_policy" title="QERM Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/qerm/index.php/QERM_Wiki:About" title="QERM Wiki:About">About QERM Wiki</a></li>
+		<li id="disclaimer"><a href="/qerm/index.php/QERM_Wiki:General_disclaimer" title="QERM Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+<script src="/qerm/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "LaTeX_tips", "wgTitle": "LaTeX tips", "wgAction": "view", "wgArticleId": 109, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 3110, "wgCategories": ["LaTeX tips"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script><!-- Served in 0.113 secs. --></body></html>

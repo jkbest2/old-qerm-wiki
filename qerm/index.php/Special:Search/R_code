@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>Search results for "R code" - QERM Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qerm/opensearch_desc.php" title="QERM Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.cbr.washington.edu/qerm/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="QERM Wiki Atom feed" href="/qerm/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/qerm/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared&amp;only=styles&amp;skin=monobook&amp;*" />
+<link rel="stylesheet" href="/qerm/skins/monobook/main.css?301" media="screen" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE50Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE55Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/qerm/skins/monobook/IE60Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/qerm/skins/monobook/IE70Fixes.css?301" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+</head>
+<body class="mediawiki ltr ns--1 ns-special page-Special_Search_R_code skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">Search results</h1>
+	<div id="bodyContent">
+		<div id="siteSub">From QERM Wiki</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<form id="search" method="get" action="/qerm/index.php"><table id="mw-search-top-table" border="0" cellpadding="0" cellspacing="0"><tr><td>
+<input type="hidden" value="Special:Search" name="title" />
+<input type="hidden" value="0" name="redirs" />
+<input id="searchText" size="50" autofocus="" type="search" value="R code" name="search" />
+<input type="hidden" value="Search" name="fulltext" />
+<input type="submit" value="Search" />
+</td></tr></table><div class="mw-search-formheader"><div class="search-types"><ul><li class="current"><a href="/qerm/index.php?title=Special:Search&amp;search=R+code&amp;fulltext=Search&amp;ns0=1&amp;redirs=0" title="Search in (Main)" onmousedown="mwSearchHeaderClick(this);" onkeydown="mwSearchHeaderClick(this);">Content pages</a></li><li class="normal"><a href="/qerm/index.php?title=Special:Search&amp;search=R+code&amp;fulltext=Search&amp;ns6=1&amp;redirs=0" title="Search for files" onmousedown="mwSearchHeaderClick(this);" onkeydown="mwSearchHeaderClick(this);">Multimedia</a></li><li class="normal"><a href="/qerm/index.php?title=Special:Search&amp;search=R+code&amp;fulltext=Search&amp;ns4=1&amp;ns12=1&amp;redirs=0" title="Search in QERM Wiki, Help" onmousedown="mwSearchHeaderClick(this);" onkeydown="mwSearchHeaderClick(this);">Help and Project pages</a></li><li class="normal"><a href="/qerm/index.php?title=Special:Search&amp;search=R+code&amp;fulltext=Search&amp;ns0=1&amp;ns1=1&amp;ns2=1&amp;ns3=1&amp;ns4=1&amp;ns5=1&amp;ns6=1&amp;ns7=1&amp;ns8=1&amp;ns9=1&amp;ns10=1&amp;ns11=1&amp;ns12=1&amp;ns13=1&amp;ns14=1&amp;ns15=1&amp;redirs=0" title="Search all of content (including talk pages)" onmousedown="mwSearchHeaderClick(this);" onkeydown="mwSearchHeaderClick(this);">Everything</a></li><li class="normal"><a href="/qerm/index.php?title=Special:Search&amp;search=R+code&amp;fulltext=Search&amp;advanced=1&amp;ns0=1&amp;redirs=0" title="Search in custom namespaces" onmousedown="mwSearchHeaderClick(this);" onkeydown="mwSearchHeaderClick(this);">Advanced</a></li></ul></div><div class="results-info"><ul><li>Showing below <b>13</b> results starting with #<b>1</b>.</li></ul></div><div style="clear:both"></div></div><input type="hidden" value="1" name="ns0" /></form><div class='searchresults'><p class="mw-search-createlink">
+<b>Create the page "<a href="/qerm/index.php?title=R_code&amp;action=edit&amp;redlink=1" class="new" title="R code (page does not exist)">R code</a>" on this wiki!</b></p>
+<h2><span class="editsection">[<a href="/qerm/index.php?title=Special:Search/R_code&amp;action=edit&amp;section=1" title="Edit section: Page title matches">edit</a>]</span> <span class="mw-headline" id="Page_title_matches">Page title matches</span></h2>
+<ul class='mw-search-results'>
+<li><div class='mw-search-result-heading'><a href="/qerm/index.php/R/C_Code" title="R/C Code">R/C Code</a>  </div> <div class='searchresult'>Sometimes <span class='searchmatch'>R</span> users need to encounter C, for example, to maintain an <span class='searchmatch'>R</span> package, or to speed up existing functions. There are 2 options:
+* Write C <span class='searchmatch'>code</span> in a separate file, compile it, and call it from <span class='searchmatch'>R</span>
+</div>
+<div class='mw-search-result-data'>3 KB (476 words) - 21:00, 21 November 2012</div></li>
+</ul>
+<h2><span class="editsection">[<a href="/qerm/index.php?title=Special:Search/R_code&amp;action=edit&amp;section=1" title="Edit section: Page text matches">edit</a>]</span> <span class="mw-headline" id="Page_text_matches">Page text matches</span></h2>
+<ul class='mw-search-results'>
+<li><div class='mw-search-result-heading'><a href="/qerm/index.php/R_tips" title="R tips">R tips</a>  </div> <div class='searchresult'>...<span class='searchmatch'>r</span>-project.org/ <span class='searchmatch'>R</span>].  To add a tip, just create a link below, for example: [[<span class='searchmatch'>R</span>/Separating the Red Sea | Separating the Red Sea]] and save the page.  The l
+== QERM wiki pages about [http://www.<span class='searchmatch'>r</span>-project.org/ <span class='searchmatch'>R</span>] ==
+</div>
+<div class='mw-search-result-data'>4 KB (616 words) - 20:56, 16 November 2017</div></li>
+<li><div class='mw-search-result-heading'><a href="/qerm/index.php/LaTeX_tips" title="LaTeX tips">LaTeX tips</a>  </div> <div class='searchresult'>...a: LaTeX |LaTeX]].  To add a tip, just create a link below, for example: [[<span class='searchmatch'>R</span>/Separating the Red Sea | Separating the Red Sea]] and save the page.  The l
+... and editors. pdfTeX works nicely with images produced as pdf files (see [[<span class='searchmatch'>R</span>/General Information on Plotting]]).
+</div>
+<div class='mw-search-result-data'>14 KB (2,244 words) - 21:39, 12 December 2018</div></li>
+<li><div class='mw-search-result-heading'><a href="/qerm/index.php/Bathymetry_data" title="Bathymetry data">Bathymetry data</a>  </div> <div class='searchresult'>...-a-Grid&quot;] tool line is posted here: http://students.washington.edu/itaylor/<span class='searchmatch'>R</span>/#Maps .
+Copy and paste the <span class='searchmatch'>code</span> from here and you get the plot above. The maps and mapdata packages are use
+</div>
+<div class='mw-search-result-data'>3 KB (542 words) - 17:55, 17 August 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/qerm/index.php/Inkscape_tips" title="Inkscape tips">Inkscape tips</a>  </div> <div class='searchresult'>...<span class='searchmatch'>R</span> output to add LaTeX characters to plots, which can't be done directly in <span class='searchmatch'>R</span> at this time.
+...it to the desired location after it's been created. You can edit the LaTeX <span class='searchmatch'>code</span> by selecting the printed text and going back to Effects &gt; textext. Unfortun
+</div>
+<div class='mw-search-result-data'>2 KB (383 words) - 23:19, 17 August 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/qerm/index.php/R/Debugging" title="R/Debugging">R/Debugging</a>  </div> <div class='searchresult'>==  Interactive Debugging in <span class='searchmatch'>R</span> ==
+...good programming practice and patience are keys to solving these problems, <span class='searchmatch'>R</span> also has some other tools that can be used to make the debugging process, w
+</div>
+<div class='mw-search-result-data'>2 KB (271 words) - 22:57, 25 October 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/qerm/index.php/R/Editors" title="R/Editors">R/Editors</a>  </div> <div class='searchresult'>...is wiki have used and perhaps make notes about how to get them to work for <span class='searchmatch'>R</span>.
+...re is the ability to quickly setup a GUI via the manipulate package. See [[<span class='searchmatch'>R</span>/Interactive Plots]].
+</div>
+<div class='mw-search-result-data'>2 KB (399 words) - 17:15, 6 June 2012</div></li>
+<li><div class='mw-search-result-heading'><a href="/qerm/index.php/R/Contour_Plots" title="R/Contour Plots">R/Contour Plots</a>  </div> <div class='searchresult'>'''''Update: the &quot;.filled.contour&quot; function function in <span class='searchmatch'>R</span> 2.15 and beyond solves many of the problems described below.'''''
+...s, contour, and filled.contour. Examples of their use can be seen from the <span class='searchmatch'>code</span> below:
+</div>
+<div class='mw-search-result-data'>2 KB (416 words) - 17:13, 3 July 2012</div></li>
+<li><div class='mw-search-result-heading'><a href="/qerm/index.php/R/C_Code" title="R/C Code">R/C Code</a>  </div> <div class='searchresult'>Sometimes <span class='searchmatch'>R</span> users need to encounter C, for example, to maintain an <span class='searchmatch'>R</span> package, or to speed up existing functions. There are 2 options:
+* Write C <span class='searchmatch'>code</span> in a separate file, compile it, and call it from <span class='searchmatch'>R</span>
+</div>
+<div class='mw-search-result-data'>3 KB (476 words) - 21:00, 21 November 2012</div></li>
+<li><div class='mw-search-result-heading'><a href="/qerm/index.php/Software_Development_tips" title="Software Development tips">Software Development tips</a>  </div> <div class='searchresult'>== <span class='searchmatch'>Code</span> for Maintainability ==
+...ode.com/svn/trunk/google-<span class='searchmatch'>r</span>-style.html style guide] for <span class='searchmatch'>R</span> syntax written by <span class='searchmatch'>R</span> users who work at Google. 
+</div>
+<div class='mw-search-result-data'>1 KB (202 words) - 18:50, 2 March 2015</div></li>
+<li><div class='mw-search-result-heading'><a href="/qerm/index.php/Behavioral_Change_Point_Analysis" title="Behavioral Change Point Analysis">Behavioral Change Point Analysis</a>  </div> <div class='searchresult'>... of October 26, 2013, The 'bcpa' package is available on CRAN [http://cran.<span class='searchmatch'>r</span>-project.org/web/packages/bcpa/index.html here]''' [[User:Eli|Eli]] 02:08, 2
+...inelibrary.wiley.com/doi/10.1111/j.1461-0248.2009.01293.x/full E. Gurarie, <span class='searchmatch'>R</span>. Andrews and K. Laidre  A novel method for identifying behavioural changes 
+</div>
+<div class='mw-search-result-data'>21 KB (3,335 words) - 09:08, 26 October 2013</div></li>
+<li><div class='mw-search-result-heading'><a href="/qerm/index.php/R/Converting_Geographic_Coordinates_to_Kilometers" title="R/Converting Geographic Coordinates to Kilometers">R/Converting Geographic Coordinates to Kilometers</a>  </div> <div class='searchresult'>This is a little piece of <span class='searchmatch'>code</span> I always have to go look for in my computer for converting geographic coord
+[[Category: <span class='searchmatch'>R</span> tips]]
+</div>
+<div class='mw-search-result-data'>1 KB (181 words) - 22:06, 17 October 2012</div></li>
+<li><div class='mw-search-result-heading'><a href="/qerm/index.php/QERM_simulation_servers" title="QERM simulation servers">QERM simulation servers</a>  </div> <div class='searchresult'>...are particularly useful for running simulations, computationally-expensive <span class='searchmatch'>code</span>, and parallel processing. Each server comes with two 2.5GHz processors with
+*<span class='searchmatch'>R</span>
+</div>
+<div class='mw-search-result-data'>5 KB (823 words) - 21:16, 5 October 2016</div></li>
+</ul>
+</div><p class='mw-search-pager-bottom'>View (previous 20  |  next 20) (<a href="/qerm/index.php?title=Special:Search&amp;ns0=1&amp;redirs=0&amp;search=R+code&amp;limit=20&amp;offset=0" title="Show 20 results per page" class="mw-numlink">20</a> | <a href="/qerm/index.php?title=Special:Search&amp;ns0=1&amp;redirs=0&amp;search=R+code&amp;limit=50&amp;offset=0" title="Show 50 results per page" class="mw-numlink">50</a> | <a href="/qerm/index.php?title=Special:Search&amp;ns0=1&amp;redirs=0&amp;search=R+code&amp;limit=100&amp;offset=0" title="Show 100 results per page" class="mw-numlink">100</a> | <a href="/qerm/index.php?title=Special:Search&amp;ns0=1&amp;redirs=0&amp;search=R+code&amp;limit=250&amp;offset=0" title="Show 250 results per page" class="mw-numlink">250</a> | <a href="/qerm/index.php?title=Special:Search&amp;ns0=1&amp;redirs=0&amp;search=R+code&amp;limit=500&amp;offset=0" title="Show 500 results per page" class="mw-numlink">500</a>)</p>
+<div class="printfooter">
+Retrieved from "<a href="https://www.cbr.washington.edu/qerm/index.php/Special:Search/R_code">https://www.cbr.washington.edu/qerm/index.php/Special:Search/R_code</a>"</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-special" class="selected"><a href="/qerm/index.php/Special:Search/R_code" title="This is a special page, you cannot edit the page itself">Special page</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/qerm/index.php/User:10.19.28.84" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">10.19.28.84</a></li>
+				<li id="pt-anontalk"><a href="/qerm/index.php/User_talk:10.19.28.84" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+				<li id="pt-anonlogin"><a href="/qerm/index.php?title=Special:UserLogin&amp;returnto=Special:Search/R_code" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/qerm/sites/qerm/logo.gif);" href="/qerm/index.php/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/qerm/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="/qerm/index.php/QERM_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/qerm/index.php/QERM_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/qerm/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/qerm/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/qerm/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/qerm/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search QERM Wiki" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&#160;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+<li id="t-specialpages"><a href="/qerm/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/qerm/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="privacy"><a href="/qerm/index.php/QERM_Wiki:Privacy_policy" title="QERM Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/qerm/index.php/QERM_Wiki:About" title="QERM Wiki:About">About QERM Wiki</a></li>
+		<li id="disclaimer"><a href="/qerm/index.php/QERM_Wiki:General_disclaimer" title="QERM Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+<script src="/qerm/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "Special", "wgCanonicalSpecialPageName": "Search", "wgNamespaceNumber": -1, "wgPageName": "Special:Search", "wgTitle": "Search", "wgAction": "view", "wgArticleId": 0, "wgIsArticle": false, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 0, "wgCategories": [], "wgBreakFrames": false, "wgRestrictionCreate": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.legacy.search", "mediawiki.special.search", "mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script><!-- Served in 0.199 secs. --></body></html>

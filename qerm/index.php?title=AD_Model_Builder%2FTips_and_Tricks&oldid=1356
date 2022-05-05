@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<title>AD Model Builder/Tips and Tricks - QERM Wiki</title>
+<meta name="generator" content="MediaWiki 1.17.0" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/qerm/opensearch_desc.php" title="QERM Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://www.cbr.washington.edu/qerm/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="QERM Wiki Atom feed" href="/qerm/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/qerm/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared&amp;only=styles&amp;skin=monobook&amp;*" />
+<link rel="stylesheet" href="/qerm/skins/monobook/main.css?301" media="screen" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE50Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/qerm/skins/monobook/IE55Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/qerm/skins/monobook/IE60Fixes.css?301" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/qerm/skins/monobook/IE70Fixes.css?301" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-AD_Model_Builder_Tips_and_Tricks skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">AD Model Builder/Tips and Tricks</h1>
+	<div id="bodyContent">
+		<div id="siteSub">From QERM Wiki</div>
+		<div id="contentSub">
+				<div id="mw-revision-info">Revision as of 20:09, 2 December 2008 by <a href="/qerm/index.php/User:Ian" title="User:Ian" class="mw-userlink">Ian</a>  <span class="mw-usertoollinks">(<a href="/qerm/index.php/User_talk:Ian" title="User talk:Ian">Talk</a> | <a href="/qerm/index.php/Special:Contributions/Ian" title="Special:Contributions/Ian">contribs</a>)</span></div>
+
+				<div id="mw-revision-nav">(<a href="/qerm/index.php?title=AD_Model_Builder/Tips_and_Tricks&amp;diff=prev&amp;oldid=1356" title="AD Model Builder/Tips and Tricks">diff</a>) <a href="/qerm/index.php?title=AD_Model_Builder/Tips_and_Tricks&amp;direction=prev&amp;oldid=1356" title="AD Model Builder/Tips and Tricks">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div>
+			</div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#About_this_page"><span class="tocnumber">1</span> <span class="toctext">About this page</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Introduction"><span class="tocnumber">2</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Key_aspects_of_ADMB"><span class="tocnumber">3</span> <span class="toctext">Key aspects of ADMB</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#C.2B.2B_compilers"><span class="tocnumber">4</span> <span class="toctext">C++ compilers</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Modifying_your_path_command"><span class="tocnumber">5</span> <span class="toctext">Modifying your path command</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Setting_up_C.2B.2B"><span class="tocnumber">6</span> <span class="toctext">Setting up C++</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Setting_up_and_using_ADMB"><span class="tocnumber">7</span> <span class="toctext">Setting up and using ADMB</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Input_files"><span class="tocnumber">8</span> <span class="toctext">Input files</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Ensuring_that_models_are_differentiable"><span class="tocnumber">9</span> <span class="toctext">Ensuring that models are differentiable</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Creating_libraries"><span class="tocnumber">10</span> <span class="toctext">Creating libraries</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Debugging"><span class="tocnumber">11</span> <span class="toctext">Debugging</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Runtime_options"><span class="tocnumber">12</span> <span class="toctext">Runtime options</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#More_efficient_code"><span class="tocnumber">13</span> <span class="toctext">More efficient code</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Running_tpl2cpp.exe_from_within_MS_Visual_Studio"><span class="tocnumber">14</span> <span class="toctext">Running tpl2cpp.exe from within MS Visual Studio</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Here_are_a_few_other_tips_that_we_have_picked_up"><span class="tocnumber">15</span> <span class="toctext">Here are a few other tips that we have picked up</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Appendix_I"><span class="tocnumber">16</span> <span class="toctext">Appendix I</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Appendix_II"><span class="tocnumber">17</span> <span class="toctext">Appendix II</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Appendix_III"><span class="tocnumber">18</span> <span class="toctext">Appendix III</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="About_this_page">About this page</span></h2>
+<p>This wiki page was converted from the <a href="http://courses.washington.edu/fish507/ADMB%20living%20doc.doc" class="external text" rel="nofollow">Tricks, Tips and Ad Model Builder (a Living Document)</a>
+written by <a href="http://www.fish.washington.edu/people/punt/" class="external text" rel="nofollow">André Punt</a>. Conversion to wiki format is intended to breath more life into the document, but it may include formatting errors in the short term. 
+</p><p>Also, some of the information here may be outdated, so keep up to date with developments by the <a href="http://admb-project.org" class="external text" rel="nofollow">admb-project</a>.
+</p>
+<h2> <span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>AD Model Builder (henceforth ADMB) provides a powerful framework for the estimation of parameters (and their variances, co-variances) for (highly) non-linear models. As such, its use can speed up the process of model development markedly. Unfortunately, there are many "undocumented features" associated with ADMB that can hinder progress (and even cause major bugs). This document outlines the experience of several ADMB users and is meant to be a living document. If you have anything to add to this document, please draft suitable paragraphs and email them to Robin Thomson (robin.thomson@csiro.au).
+</p><p>Some of the libraries used by ADMB (referred to as AutoDiff) can be used as libraries in standard C++ code. However, it is more common to develop models using the ADMB template (the TPL file) and using the ADMB preprocessor to generate a cpp file. This document concentrates on the latter. There is an NMFS "modelling site" (<a href="http://www.refm.noaa.gov/stocks/modeling.htm" class="external free" rel="nofollow">http://www.refm.noaa.gov/stocks/modeling.htm</a>) that (sometimes) provides useful information about ADMB and its problems, and a list server--see the NMFS site for further details.
+</p>
+<h2> <span class="mw-headline" id="Key_aspects_of_ADMB"> Key aspects of ADMB </span></h2>
+<p>There are four main uses for ADMB: 
+</p>
+<ul><li> determination of the values for the model parameters that minimise some objective function (usually a likelihood function), 
+</li><li> estimation of the variance-covariance matrix for the parameters (and chosen variables of interest), 
+</li><li> calculation of likelihood profiles for quantities of interest (parameters, model outputs), and 
+</li><li> development of posterior distributions based on a Bayesian analysis (using the MCMC algorithm).
+</li></ul>
+<p>The above order represents both the order of development and the frequency of use (and testing) by Dave Fournier. Therefore, the modules for estimating parameters are generally reliable (subject, of course, to the normal problems of model fitting). The variance and covariances for the model outputs are also considered reliable and robust. The likelihood profiles for the parameters appear correct. However, the likelihood profiles for other model outputs (e.g. biomass in a given year for a typical fisheries model) are questionable as (at one stage), these appeared to approximate Bayesian posteriors! 
+</p><p>The results of the MCMC algorithm should be used with considerable caution. This is because the variant of the MCMC algorithm implemented in ADMB is not documented and many practitioners have encountered what must be errors in the results. My (Andre Punt) recommendation is only to use the results of the MCMC output if (a) the standard diagnostics (see Punt and Hilborn: Rev Fish. Biol. Fish. 7:35-63) indicate things are OK and (b) preferably if the calculations have been repeated using other MCMC (or SIR) software. I (AP) have implementations of SIR and MCMC in FORTRAN while Sally Wayte (CSIRO) has these in C++.
+</p>
+<h2> <span class="mw-headline" id="C.2B.2B_compilers"> C++ compilers </span></h2>
+<ul><li> Your ADMB CD will contain several directories, each with a different implementation of ADMB for a different C++ compiler. You may find that different implementation will behave differently. The gnu and Borland implementations seem to be the more robust than the microsoft one, possibly because they have been used more by Dave Fournier. So if you're having trouble with one compiler, try another. The gnu compiler is provided on the ADMB disc. You can install more than one version of ADMB on your machine, just put them in different directories and make sure that your path command points to whichever one you're using at command line.
+</li><li> The MS C++ compiler when used at the command line might give an INTERNAL COMPILER ERROR whenever you use a number or a variable declared as a non-differentiable type, within an internal function e.g. log(2.0) or exp(val) where val is declared as a double. You can fix this by declaring a dvariable called temp and passing the value that you want to include within the function to temp first. Or you can use MS C++ through the Visual Studio or start using another C++ compiler, like gnu C++.
+</li></ul>
+<h2> <span class="mw-headline" id="Modifying_your_path_command"> Modifying your path command </span></h2>
+<ul><li> The notes below refer to "the path". This is a variable that tells the operating system where to look for any files that the user might refer to. It will look first in the current directory and then will search through the directories listed in the PATH variable. You can see this list by opening a DOS window and typing <i>path</i> at the DOS prompt.
+</li><li> The old fashioned way of modifying the path is to edit (or create) a file called AUTOEXEC.BAT in the root directory (i.e. C:\). All versions of windows support this method but note that they all have a PATH variable with a pre-existing list so that you need to be careful not to overwrite this list. Open or create C:\AUTOEXEC.BAT. Add the following line:
+</li></ul>
+<pre> SET PATH=%path%; c:\admb\bin;
+</pre>
+<dl><dd> where admb is the directory where you installed the ADMB files.&#160;%path% is a placeholder for the pre-existing list so that your directoryis added to this list, instead of replacing it.
+</dd></dl>
+<ul><li> Alternatively, in some versions of windows you can modify the path by clicking on the start button, go to settings, control panel, system, advanced, environment variables. Find PATH and add your directory. Different versions of windows will differ a little in where the environment variable are specified.
+</li></ul>
+<h2> <span class="mw-headline" id="Setting_up_C.2B.2B">Setting up C++</span></h2>
+<ul><li> Before attempting to install ADMB, make sure that you have a working version of C++ installed on your computer.
+</li><li> You will need to add your C++ compiler's "BIN" and "LIB" directories to your path.
+</li><li> If you are going to use gnu C++ and have not already installed it, follow the instructions in the ming32 directory on the ADMB CD. To test the installation, open a DOS window and at the command line type <i>gcc</i>. You should get the following error message: <i>GCC.EXE: no input files</i>. If you don't then you have not installed gnu C++ properly, check your path and the extra environment variable mentioned in the installation notes.
+</li><li> If you have Microsoft C++ type <i>cl</i> in a DOS window and you should get a message saying <i>usage</i>: etc. If you just get an unknown file error message then you have not included the directory where CL.EXE resides in your path.
+</li><li> You may prefer to use C++ though its environment (e.g. the Microsoft Visual Studio), rather than at command line. Instructions on setting up the Microsoft Visual Studio to use ADMB libraries are given in Appendix I. 
+</li></ul>
+<h2> <span class="mw-headline" id="Setting_up_and_using_ADMB">Setting up and using ADMB</span></h2>
+<ul><li> Identify the directory on the ADMB CD that corresponds to your C++ compiler. If you have a newer version (v5 and above) of ADMB you will probably find an executable on the CD with a name like MSCDSK.EXE. Go to the directory where you want your ADMB files installed and type <i>D:\ MSCDSK -d</i> where D:\ is your CD-ROM drive and -d is the option that tells MSCDSK.EXE to install your files into BIN, LIB, INCLUDE subdirectories. If you forget the -d all the files will be copied into your current directory and the ADMB batch files won't work because they will be looking for BIN, LIB, INCLUDE subdirectories. Alternatively, copy all the files and sub-directories from the CD into a new directory on your computer e.g. "C:\ADMB".
+</li><li> Add the "C:\ADMB\BIN" directory to the path command on your computer.
+</li><li> You are now in a position to convert *.tpl files to *.cpp files by typing <i>tpl2cpp program_name.tpl</i> at the command line. (Where <i>program_name</i> is the name of your executable.)
+</li><li> The next step is to convert the <i>program_name.cpp</i> file to an .exe. This can either be done at the command line or through your version of C++'s environment e.g. Microsoft Visual Studio. Note that gnu C++ does not have an environment. 
+</li><li> To use the CL command line compiler, Modify the "MYVCC.BAT" file in the "ADMB\BIN" directory so that it refers to the correct ADMB and C++ include directories. Modify the "LINKVCC.BAT" file so that it points to the "C:\ADMB\LIB" directory. There are also files called "MYVCCS.BAT" and "LINKVCCS.BAT" which produce "safe" versions of your program.
+</li><li> For the gnu compiler the batch files to be edited are called "MYEGCO.BAT" and "LINKEGCO.BAT". The "safe" equivalents have the same name but with the "O" changed to an "S".
+</li><li> You convert the <i>program_name.cpp</i> file to a <i>program_name.exe</i> file by typing "ADMB program_name" at the command prompt. This runs a batch file, ADM.BAT which in turn runs MYVCC.BAT and LINKVCC.BAT. 
+</li><li> You may also need to copy some C++ *.H files into your "C:\ADMB\INCLUDE" directory. If you get an error message that looks something like <i>cannot find IO.H</i> when you try to run ADM.BAT find out where IO.H is and copy it into "C:\ADMB\INCLUDE". There should be about 6 of these files that need copying over. This is not a problem with newer versions of ADMB, v5 and above I think, and is only a problem with the Microsoft C++ compiler.
+</li><li> Another problem you may get the first time you try to run ADMB is an error message indicating <i>PC.H not found</i>. Find the reference to PC.H in the FVAR.HPP file and comment this line out.
+</li><li> You will probably get a warning about "unknown pragma" you can ignore this.
+</li></ul>
+<h2> <span class="mw-headline" id="Input_files">Input files</span></h2>
+<p>The key ADMB input file is the <i>program_name.DAT</i> file. Warnings here are:
+</p>
+<ul><li> Avoid the use of TABs when entering data because at least some version of ADMB will crash if TABs are encountered, this applied to the .tpl file as well. 
+</li><li> Use the <i>program_name.DAT</i> file to read in all constants. It is horrible modifying a program that includes constants that have been "hard wired". An additional reason is that reading in array dimensions means that you don't have any arrays that are larger than they need to be.
+</li></ul>
+<h2> <span class="mw-headline" id="Ensuring_that_models_are_differentiable">Ensuring that models are differentiable</span></h2>
+<p>For ADMB to work, it is necessary that the function to be minimised be continuous and differentiable with respect to the parameters. This may seem like a trivial constraint but, for several fisheries problems, it is easy for the model not to satisfy this constraint.
+</p>
+<ul><li> Try not to use IF statements that have a model quantity (parameter or derived variable) in the IF clause, e.g. if (biomass &gt; 0.5) x = 1; else x = 2; If you used this in an ADMB program, the function would not be differentiable when the parameters chosen equated to biomass=0.5! Note that it is OK to have if statements that are based on variables read in the DATA SECTION.
+</li><li> A particular instance of the above occurs with extinctions (biomass less than catch). This can occur with models that remove the catch each year exactly and set the biomass to something like 0.01 if the catch exceeds the biomass. One way to avoid this problem messing things up is to help ADMB to keep away from situations where the population is already extinct by adding a penalty to the likelihood function. This penalty could be of the form:
+</li></ul>
+<center>[need to replace equation]</center>
+<dl><dd> where [need to replace equation] is the actual catch during year <i>y</i>, and
+</dd></dl>
+<dl><dd> [need to replace equation] is the model-estimate of the catch during year <i>y</i>.
+</dd></dl>
+<dl><dd> This term is ideally zero but will penalise cases in which the population went extinct so the model catch differs from the actual catch.
+</dd></dl>
+<ul><li> Keep the biomass from becoming zero (and causing errors when taking log's) by ensuring that the survival rate (1 - C/N) stays above some positive number <i>x</i>. This can be done using the built-in function <i>posfun()</i>. The syntax is <i>y = posfun(x,eps,pen);</i> where <i>y</i> &lt;= <i>x</i> and &gt;= <i>eps</i> and <i>pen</i> is a penalty function whose value is = 0.01*square(x-eps). <i>x</i> and <i>pen</i> are dvariables. You will need to add <i>pen</i> times some number (say 100) to the likelihood function as a penalty function. Before calling <i>posfun()</i> set <i>pen</i> = 0. because its value might be cumulative (depending on the version of AD Model Builder that you're using).
+</li></ul>
+<ul><li> Another related problem is the use of (iterative) numerical algorithms (say to solve a non-linear equation) inside the function to be minimised (think about the ADAPT-VPA method). You must not run the algorithm until some tolerance (which would then be a function of the model parameters) is reached. Rather when using (iterative) numerical methods, pre-specify the number of iterations to use.
+</li><li> Avoid taking the maximum of a set of numbers.
+</li></ul>
+<h2> <span class="mw-headline" id="Creating_libraries">Creating libraries</span></h2>
+<p>You can create your own library files containing commonly used functions. The names and argument types for these functions are contained in a header file (.h) and the name of this file is included in the .tpl. 
+</p>
+<ul><li> the name of the header file goes into the <i>GLOBALS_SECTION</i> in the .tpl. For example:
+</li></ul>
+<pre>GLOBALS_SECTION
+#include &lt;myheader.h&gt;  
+</pre>
+<ul><li> when tpl2cpp is run <i>myheader.h</i> is included at the top of the resulting .cpp file, before <i>admodel.h</i> is included therefore <i>myheader.h</i> must include <i>admodel.h</i>. An example of <i>myheader.h</i> follows:
+</li></ul>
+<pre>#if ndef _MYHEADER_  //ensures that this code isn't included twice
+#define _MYHEADER_
+#include &lt;admodel.h&gt;
+void get_numbers_at_age(dvariable&amp; log_popascale; int nyrs, int nages, dvar_vector&amp; log_initpop; dvar_matrix&amp; S);
+#endif
+</pre>
+<ul><li> The code for <i>get_numbers_at_age</i> is stored in a separate .cpp file and must be valid C++ / Autodiff code. As the user will not see this code, it should not alter the values of any global variables. An example of <i>mycode.cpp</i> follows:
+</li></ul>
+<pre>#include &lt;admodel.h&gt;
+void get_numbers_at_age(dvariable&amp; log_popascale; int nyrs, int nages, dvar_vector&amp; log_initpop; dvar_matrix&amp; S)
+{
+// ~ code ~
+}
+</pre>
+<p><br />
+</p>
+<ul><li> This code is called from the template file as follows:
+</li></ul>
+<pre>PROCEDURE_SECTION
+::get_numbers_at_age(log_popscale,nyrs,nages, log_initpop, S)
+// the&#160;:: isn't compulsory but may be necessary is there is a clash of names
+</pre>
+<ul><li> <i>mycode.cpp</i> is compiled as a "static-library application" and the <i>mycode.lib</i> is added to the string of library files, either in the link batch file or the link project settings depending on which compiler you're using.
+</li></ul>
+<h2> <span class="mw-headline" id="Debugging">Debugging</span></h2>
+<p>A useful trick when debugging is to read in a variable called "Diag". If this is zero no diagnostics are output and different levels of "Diag" correspond to different levels of diagnostic output. This means that you can keep the diagnostic outputs in a program even if a version designed for actual assessments but simply not output wads of unnecessary debug information.
+</p><p>It is possible to check for array bound errors so long as you are using your C compiler through its environment (i.e. not at command line):
+</p>
+<ul><li> type <i>tpl2cpp -bounds program_name</i>
+</li><li> compile the resulting <i>program_name.cpp</i> in the normal manner, ensuring that the safe and not the optimised version is being used (i.e. use the ads32.lib and not the ado32.lib library file when using Visual C and don't use OPT_LIB)
+</li><li> the <i>-bounds</i> option adds a function called <i>ad_bound</i> to your program. This function will be called if there is an array bounds error. Put a breakpoint in that function
+</li><li> run the program in debug mode
+</li><li> if you have an array bound error an error message will appear in the runtime window; the program will have stopped at the breakpoint in <i>ad_bound</i>, and the line that caused <i>ad_bound</i> to be called is the offending line
+</li><li> open the stack window (view menu: debug windows&#160;: call stack)                              
+</li><li> in the stack window, double click on the first line after the <i>ad_bound</i> call that gives a line number. This will then point to the line after the offending line in your code. Remember to correct errors in <i>program_name.tpl</i>, not in the .cpp file.
+</li></ul>
+<h2> <span class="mw-headline" id="Runtime_options">Runtime options</span></h2>
+<ul><li> type <i>program_name -?</i> or <i>program_name -help</i> to view an (almost) full list of runtime options
+</li><li> when testing a program ignore the final Hessian calculation stage by using the "-est" option.
+</li><li> you can tidy up the output written to screen a lot by using the "-nox" option
+</li><li> to use a data file with a name other than <i>program_name.dat</i> or one that is not in the default sub-directory use: <i>program_name -ind path\ name.dat</i>
+</li></ul>
+<ul><li> when using "-mcmc", "-mcrb n" where n is a number between 1 and 9 scales the correlation matrix can be used in order to get rid very high numbers, the larger the value of n the more severe the scaling, a value of 3 is recommended
+</li><li> to use starting values for mcmc other than the mode (stored in <i>svfile_name.pin</i>):
+</li></ul>
+<pre> program_name -mcmc 500000 -mcpin svfile_name.pin
+</pre>
+<p>This still uses the Hessian matrix calculated at the mode, not at the specified starting values.
+</p>
+<ul><li> there are three commands that can be issued while the program is executing:
+<ul><li> <i>q</i> stops execution
+</li><li> <i>n</i> skips to the next execution phase
+</li><li> <i>c</i> invokes the derivative checker
+</li></ul>
+</li></ul>
+<h2> <span class="mw-headline" id="More_efficient_code">More efficient code</span></h2>
+<ul><li> ADMB is frequently used to implement "Integrated Analysis". It is possible to speed up the calculations markedly but removing the catch under the assumption that it is taken in the middle of the year and is known exactly. This means that it is not necessary to estimate a (fully-selected) fishing mortality for each year and fleet (however, negative N's can be a problem, see above).
+</li><li> Any variable declared in the DATA_SECTION will be a non-differentiated variable whereas any declared in the PARAMETER_SECTION will have a lot of additional code automatically generated whenever it is used in any calculation. Therefore it is a good idea to define variable as non-differentiated types unless their values are derived from parameters and are used in calculating the objective function value.
+</li></ul>
+<ul><li> When calculating a quantity that uses the value of dvariables but does not need to be differentiated (e.g. some output statistic) make sure that this quantity is defined as a constant and use the <i>value() </i>function when calculating it e.g.
+</li></ul>
+<pre>dvariable N;
+double outstat;
+outstat = value(N) / 2.;
+</pre>
+<ul><li> Don't declare variables in the DATA_ and PARAMETER_ sections unless you need them to be global. Both differentiated and non-differentiated types can be declared locally within other sections or in FUNCTIONs. However their names will differ from those used in the DATA_ and PARAMETER_ sections. Appendix II shows the ADMB types.
+</li><li> You can assign a non-differentiated variable to a differentiated variable but not the other way around unless you use <i>value()</i>.
+</li></ul>
+<ul><li> Many fisheries models involve likelihood functions that include contributions from many sources. In several cases, data are not available for all years (e.g. the assessment starts in 1900 but data are only available from 1990). In such cases, avoid computing any unnecessary model predictions (e.g. predictions of the length-frequency of the catch to fit to observed length-frequencies for years for which actual length-frequency data are not available) as this can substantially reduce run times (AutoDiff keeps track of the derivatives of all model outputs, even if they are not used).
+</li></ul>
+<ul><li> It is always good to implement a model using several sub-routines. This is generally easy to do. However, ADMB doesn't like passing integer parameters. The way around this is to include the loop counter as a global variable in the PARAMETER SECTION. 
+</li><li> If there are calculations that involve modifying the data before they are used in the likelihood function (e.g. turning catch in number into catch proportion at age) do this in the PRELIMINARY CALCULATIONS SECTION as this reduces the amount of (unnecessary) calculations.
+</li><li> Always think about using phases when fitting a model; this can substantially reduce the time taken to solve the problem.
+</li><li> The values in the TOP_OF_MAIN_SECTION should be considered for every new model. Try different values and see if this affects run times--it can do so substantially.
+</li><li> When fitting models to age- and size-composition data, think seriously about "robustifying" the likelihood function. A simple way to do this is to add a small number to the squared residuals before they are included in the likelihood function. However, there are more sophisticated techniques (e.g. Fournier <i>et al</i>.: <i>Can. J. Fish. Aquat. Sci</i>. 47:301-311; 55:2105-2116).
+</li></ul>
+<h2> <span class="mw-headline" id="Running_tpl2cpp.exe_from_within_MS_Visual_Studio">Running tpl2cpp.exe from within MS Visual Studio</span></h2>
+<p>If you are using the Microsoft Visual Studio instead of the CL command line compiler you might not want to exit to DOS in order to run TPL2CPP.EXE whenever you alter your .tpl code. To run it from within the Visual Studio:
+</p>
+<ul><li> Add <i>program_name.tpl</i> to your project.
+</li><li> Click on <i>program_name.tpl</i> then on the Project menu, choose settings, in the Custom Build tab, Commands window, add:
+</li></ul>
+<pre> C:\ADMB\BIN\TPL2CPP.EXE $(InputName)
+ move $(InputName).htp $(WkspDir)
+</pre>
+<p>In the Output window put:
+</p>
+<pre> $(InputName).cpp
+</pre>
+<ul><li> If you plan to run <i>program_name.exe</i> from the DOS command line you might want to add a copy command Project/Settings/ Post-build. Note this is the project's settings, not the .tpl file's settings.
+</li></ul>
+<pre> copy debug\program_name.exe
+</pre>
+<ul><li> Another, unrelated, tip for Microsoft Developer Studio users: in order to have colour-coding applied to your .tpl file, open the .tpl file in the Developer Studio, right click somewhere in the middle of the screen, select Properties, on the General tab select "C/C++" in the Language window.
+</li></ul>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Here_are_a_few_other_tips_that_we_have_picked_up">Here are a few other tips that we have picked up</span></h2>
+<ul><li> <i>catch</i> is a reserved word in C++!
+</li><li> Even if the theory involves maximising the likelihood function, ADMB involves minimising the negative of the logarithm of the likelihood function. It is very embarrassing to find that instead of finding the values for the parameters that correspond to the best fit to the data, you found those that correspond to the worst fit to the data! This error is particularly easy to make when you have multinomial components in the likelihood function.
+</li><li> If you get weird error messages when multiplying or dividing real variables; try changing the order of the calculations, that can help! E.g. instead of "2*var" try "var*2".
+</li><li> ADMB "signals" an inability to find the minimum of the objective function by the Hessian not being positive definite. If you get the "Hessian not positive definite" message at the end of a run, it is time to (a) rerun the program, and (b) check if any parameters are hitting boundaries.
+</li><li> It is often best to impose bounds on all parameters (even if just for numerical stability reasons).
+</li><li> When implementing a multinomial likelihood, the term in the model is [[Image:]] where [[Image:]] is the observed proportion falling into category <i>i</i>, and [[Image:]] is the model estimate of the probability falling into category <i>i</i>. I (AP) have found that improved numerical stability arises by adding a constant to the negative log-likelihood so that the term [[Image:]] is minimised (this term equates to zero at its minimum).
+</li></ul>
+<ul><li> If you are not sure why the answers don't seem correct, it is a good idea to code the model separately (e.g. in C or FORTRAN) and check that it works (i.e. given values for the model parameters, one gets the correct value for the likelihood function). Getting the model coded wrong is <i>the</i> most frequent cause of ADMB problems!
+</li></ul>
+<ul><li> It is not advisable to pass parameters to subroutines. However, this can be done and the attached code (Appendix III) shows how (in a simple case); note the use of the GLOBALS section and the RETURN_ARRAYS statement. Note also that I am not totally sure how this is implemented but it seems to work!
+</li></ul>
+<p>Finally, remember when all else fails curse Dave Fournier! Or bother him with a whingeing email.
+</p>
+<h2> <span class="mw-headline" id="Appendix_I">Appendix I</span></h2>
+<p><i>Setup options to compile and link ADMB projects using the MSVC v6.0 compiler and the interactive development environment.</i>
+</p><p><br />
+<i><b>Debug version</b></i>
+</p><p><br />
+(a) When creating the new project create a blank 32 bit Windows console application in the folder where the source files are.
+</p><p><br />
+(b) In <b>Project/Settings/C++/Code generation</b>, ensure that the runtime library is Debug single-threaded.
+</p><p><br />
+(c) In <b>Project/Settings/C++/Preprocessor/Preprocessor definitions</b> add __MSVC32__ to the list so the list is: WIN32,_DEBUG,_CONSOLE,_MBCS,__MSVC32__
+</p><p><br />
+(d) In <b>Project/Settings/ C++/Preprocessor/Additional include directories</b> add the folder where the ADMB include files are, as well as the source folder for the current program e.g. c:\admodel\include,c:\admodel\examples\kalman-filter
+</p><p><br />
+(e) In <b>Project/Settings/Link/General</b> delete the Object/library models shown and add the ADMB ones: admod32.lib adt32.lib ads32.lib
+</p><p><br />
+(f) In <b>Project/Settings/Link/Input</b> add the ADMB library folder, e.g. c:\admodel\lib
+</p><p><br />
+You will probably see a warning: <i>c:\admodel\include\admodel.h(3)&#160;: warning C4068: unknown pragma</i> on compilation that can be ignored.
+</p><p><br />
+You might get the error message: <i>PC.H not found</i>. Find the reference to PC.H in FVAR.HPP and comment this line out.
+</p><p><br />
+<i><b>Release version</b></i>
+</p><p><br />
+All same as above except
+</p><p><br />
+(b) The runtime library is Single-threaded
+</p><p><br />
+(c) Add OPT_LIB to the default list of definitions as well as __MSVC32__ so that the definitions read WIN32,NDEBUG,_CONSOLE,_MBCS,__MSVC32__,OPT_LIB
+</p><p><br />
+(e) Change the library list to read: admod32.lib adt32.lib ado32.lib
+</p><p><br />
+<i><b>Compiling DLLs</b></i>
+</p><p><br />
+Select Win32 Dynamic-Link Library when creating a blank project. Other settings should be the same as above (except of course, that the default definitions are different).
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Appendix_II">Appendix II</span></h2>
+<p><i>Table showing the ADMB types. A "number" declared in the DATA_SECTION is equivalent to a "double" declared in e.g. the PRELIMINARY_CALCS or PROCEDURE_SECTION. Similarly a "number" in the PARAMETER_SECTION is equivalent to a "dvariable" declared elsewhere.</i>
+</p><p><br />
+</p>
+<table class="prettytable">
+<tr>
+<th> No differentiation
+</th>
+<th> Differentiated
+</th></tr>
+<tr>
+<td> DATA_SECTION
+</td>
+<td> PARAMETER_SECTION
+</td></tr>
+<tr>
+<td> number
+</td>
+<td> number
+</td></tr>
+<tr>
+<td> vector
+</td>
+<td> vector
+</td></tr>
+<tr>
+<td> matrix
+</td>
+<td> matrix
+</td></tr>
+<tr>
+<td> 3darray
+</td>
+<td> 3darray
+</td></tr>
+<tr>
+<td> 4darray
+</td>
+<td> 4darray
+</td></tr>
+<tr>
+<td> ...
+</td>
+<td> ...
+</td></tr>
+<tr>
+<td> PROCEDURE_SECTION, etc
+</td>
+<td> PROCEDURE_SECTION, etc
+</td></tr>
+<tr>
+<td> double
+</td>
+<td> dvariable
+</td></tr>
+<tr>
+<td> dvector
+</td>
+<td> dvar_vector
+</td></tr>
+<tr>
+<td> dmatrix
+</td>
+<td> dvar_dmatrix
+</td></tr>
+<tr>
+<td> d3_array
+</td>
+<td> dvar3_array
+</td></tr>
+<tr>
+<td> d4_array
+</td>
+<td> d4_array
+</td></tr>
+<tr>
+<td> ...
+</td>
+<td> ...
+</td></tr></table>
+<h2> <span class="mw-headline" id="Appendix_III">Appendix III</span></h2>
+<p><i>Example code: passing parameters to subroutines.</i>
+</p>
+<pre> GLOBALS_SECTION
+ #include &lt;admodel.h&gt;
+ dvariable mgexp(dvariable expo)
+  {
+   RETURN_ARRAYS_INCREMENT();
+   dvariable over;
+   if (expo &gt; 50.0)
+     over = mfexp(50.0);
+   else  
+    if (expo &lt; -50)
+      over = mfexp(-50.0);
+    else
+      over = mfexp(expo);  
+   RETURN_ARRAYS_DECREMENT();
+   return(over);
+  }
+</pre>
+<!-- 
+NewPP limit report
+Preprocessor node count: 79/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb-qerm_:pcache:idhash:317-0!*!0!!en!*!edit=0 and timestamp 20220505092544 -->
+<div class="printfooter">
+Retrieved from "<a href="https://www.cbr.washington.edu/qerm/index.php/AD_Model_Builder/Tips_and_Tricks">https://www.cbr.washington.edu/qerm/index.php/AD_Model_Builder/Tips_and_Tricks</a>"</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/qerm/index.php/AD_Model_Builder/Tips_and_Tricks" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="/qerm/index.php?title=Talk:AD_Model_Builder/Tips_and_Tricks&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="/qerm/index.php?title=AD_Model_Builder/Tips_and_Tricks&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/qerm/index.php?title=AD_Model_Builder/Tips_and_Tricks&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="/qerm/index.php/User:10.19.28.84" title="The user page for the IP address you are editing as [.]" accesskey="." class="new">10.19.28.84</a></li>
+				<li id="pt-anontalk"><a href="/qerm/index.php/User_talk:10.19.28.84" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP address</a></li>
+				<li id="pt-anonlogin"><a href="/qerm/index.php?title=Special:UserLogin&amp;returnto=AD_Model_Builder/Tips_and_Tricks&amp;returntoquery=oldid%3D1356" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/qerm/sites/qerm/logo.gif);" href="/qerm/index.php/Main_Page" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/qerm/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="/qerm/index.php/QERM_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/qerm/index.php/QERM_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/qerm/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/qerm/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/qerm/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/qerm/index.php" id="searchform">
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" title="Search QERM Wiki" accesskey="f" type="search" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&#160;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/qerm/index.php/Special:WhatLinksHere/AD_Model_Builder/Tips_and_Tricks" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/qerm/index.php/Special:RecentChangesLinked/AD_Model_Builder/Tips_and_Tricks" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/qerm/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="/qerm/index.php?title=AD_Model_Builder/Tips_and_Tricks&amp;oldid=1356&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/qerm/index.php?title=AD_Model_Builder/Tips_and_Tricks&amp;oldid=1356" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="/qerm/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="privacy"><a href="/qerm/index.php/QERM_Wiki:Privacy_policy" title="QERM Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="/qerm/index.php/QERM_Wiki:About" title="QERM Wiki:About">About QERM Wiki</a></li>
+		<li id="disclaimer"><a href="/qerm/index.php/QERM_Wiki:General_disclaimer" title="QERM Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+<script src="/qerm/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "AD_Model_Builder/Tips_and_Tricks", "wgTitle": "AD Model Builder/Tips and Tricks", "wgAction": "view", "wgArticleId": 317, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 1356, "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script>
+<script>if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script>if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mediaWiki.loader.state({"user.options":"ready"});
+}
+</script><!-- Served in 0.094 secs. --></body></html>
